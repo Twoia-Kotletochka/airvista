@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirVista Header</title>
+    <link rel="stylesheet" type="text/css" href="/style/index.css">
+    <link rel="stylesheet" type="text/css" href="/style/header_footer.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/style/img_header_footer/airvista.svg" alt="AirVista Logo" class="logo" style="height: 25px;">
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Відкрийте для себе AirVista</a></li>
+                    <li><a href="#" style="font-weight: bold;">Про подорож</a></li>
+                    <li><a href="#">Допомога</a></li>
+                    <li><a href="#">UAH</a></li>
+                    <li><a href="#"> <img src="/style/img_header_footer/flag.svg" alt="flag" class="logo"
+                                style="height: 20px; width: 25px;"></a></li>
+                    <li><a href="#"
+                            style="color: black; border: 12px solid white; background: white; border-radius: 12px;">Увійти</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="search-form">
+            <div>
+                <h1 style="font-size: 32px;">Про подорожування</h1>
+                <p style="font-size: 20px;">Введіть дані про рейс нижче, щоб слідкувати за рейсом і
+                    його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
+                    ви отримаєте від AirVista електронне та SMS-повідомлення.</p>
+                <div class="button-container">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <button id="location-btn" class="button active"></button>
+                        <p style="margin-left: 10px; margin-right: 10px;">Місце призначення</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <button id="ticket-number-btn" class="button"></button>
+                        <p style="margin-left: 10px; margin-right: 10px;">Номер рейсу</p>
+                    </div>
+                </div>
+            </div>
+            <div">
+                <input type="text" class="input-field" placeholder="Номер рейсу">
+                <input type="date" class="date-picker" placeholder="Дата">
+                <button class="search-button">Пошук</button>
+        </div>
+        </div>
+    </header>
+    <script src="/style/header.js"></script>
+
+    <div class="services-section">
+        <h2>Знайдіть корисну для Вас інформацію</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="/style/img/luggage.svg" alt="Baggage info">
+                <p>Інформація щодо багажу</p>
+            </div>
+            <div class="service-item">
+                <img src="/style/img/check_in.svg" alt="Registration info">
+                <p>Інформація про реєстрацію</p>
+            </div>
+            <div class="service-item">
+                <img src="/style/img/on_board.svg" alt="On board">
+                <p>На борту</p>
+            </div>
+            <div class="service-item">
+                <img src="/style/img/additional_services.svg" alt="Additional services">
+                <p>Додаткові послуги</p>
+            </div>
+            <div class="service-item">
+                <img src="/style/img/special_needs.svg" alt="Special needs">
+                <p>Особливі вимоги</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <p>Компанія AirVista</p>
+                <a href="#">Про нас</a>
+                <a href="#">Найцікавіши факти</a>
+            </div>
+            <div class="footer-column">
+                <p>Додаткові послуги</p>
+                <a href="#">Оренда автомобілю</a>
+                <a href="#">Вибір готелю</a>
+            </div>
+            <div class="footer-column">
+                <p>Корпорація AirVista</p>
+                <a href="#">Медіа-центр</a>
+                <a href="#">Кар'єра</a>
+                <a href="#">Зв'язки з інвесторами</a>
+                <a href="#">Загальні умови укладання<br>угод</a>
+            </div>
+            <div class="footer-column">
+                <p>Корисна інформація</p>
+                <a href="#">Довідковий центр</a>
+                <a href="#">Чеки за покупки на борту</a>
+                <a href="#">Переглянути історію<br>бронювань</a>
+            </div>
+            <div class="footer-column download">
+                <p>Завантажити</p>
+                <a href="#" class="google-play"><img src="/style/img_header_footer/Google_Play.svg"
+                        alt="Google Play"></a>
+                <a href="#" class="google-play"><img src="/style/img_header_footer/App_Store.svg" alt="App Store"></a>
+                <p style="padding-top: 40px;">Слідкуйте за нами</p>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><img src="/style/img_header_footer/social/x.svg" alt="X"></a>
+                    <a href="#" target="_blank"><img src="/style/img_header_footer/social/facebook.svg"
+                            alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="/style/img_header_footer/social/instagram.svg"
+                            alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="/style/img_header_footer/social/youtube.svg"
+                            alt="Youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><img src="/style/img_header_footer/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
+                права захищені.</p>
+
+            <div style="display: flex; flex-direction: row; align-items: flex-end;">
+                <div class="footer-pay" style="padding-right: 100px;">
+                    <a href="#"><img src="/style/img_header_footer/pay/visa.svg" alt="visa"></a>
+                    <a href="#"><img src="/style/img_header_footer/pay/masctercard.svg" alt="masctercard"></a>
+                    <a href="#"><img src="/style/img_header_footer/pay/maestro.svg" alt="maestro"></a>
+                    <a href="#"><img src="/style/img_header_footer/pay/jcb.svg" alt="jcb"></a>
+                    <a href="#"><img src="/style/img_header_footer/pay/paypal.svg" alt="paypal"></a>
+                </div>
+                <img src="/style/img_header_footer/fly.svg" style="width: 65px;">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
