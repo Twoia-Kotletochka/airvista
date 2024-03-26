@@ -4,6 +4,13 @@ body {
     padding: 0;
 }
 
+.search-form {
+    padding: 20px;
+    padding-left: 157px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
 
 .search-button:hover {
     background-color: #ffcc00;

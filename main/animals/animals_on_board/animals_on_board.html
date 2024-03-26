@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Про подорож</title>
-    <link rel="stylesheet" type="text/css" href="/main/about_travel/style.css">
-    <link rel="stylesheet" type="text/css" href="/main/about_travel/header_footer.css">
+    <title>Перевіз тварин на борту</title>
+    <link rel="stylesheet" type="text/css" href="/main/animals/animals_on_board/style.css">
+    <link rel="stylesheet" type="text/css" href="/main/animals/animals_on_board/header_footer.css">
 </head>
 
 <body>
@@ -30,87 +30,82 @@
             </nav>
         </div>
         <div class="search-form">
+            <div class="button-flights">
+                <div>
+                    <button id="btn-flights-one" class="btn-flights activeflights">Рейс</button>
+                </div>
+                <div>
+                    <button id="btn-flights-two" class="btn-flights">Мої бронювання</button>
+                </div>
+                <div>
+                    <button id="btn-flights-three" class="btn-flights">Реєстрація</button>
+                </div>
+                <div>
+                    <button id="btn-flights-four" class="btn-flights">Статус рейсу</button>
+                </div>
+            </div>
+
             <div>
-                <h1 style="font-size: 32px;">Про подорожування</h1>
-                <p style="font-size: 20px;">Введіть дані про рейс нижче, щоб слідкувати за рейсом і
-                    його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
-                    ви отримаєте від AirVista електронне та SMS-повідомлення.</p>
                 <div class="button-container">
                     <div style="display: flex; flex-direction: row; align-items: center;">
-                        <button id="location-btn" class="button"></button>
-                        <p style="margin-left: 10px; margin-right: 10px;">Місце призначення</p>
+                        <button id="one-btn" class="button-btn active"></button>
+                        <p style="margin-left: 10px; margin-right: 10px;">В обидві сторони</p>
                     </div>
                     <div style="display: flex; flex-direction: row; align-items: center;">
-                        <button id="ticket-number-btn" class="button active"></button>
-                        <p style="margin-left: 10px; margin-right: 10px;">Номер рейсу</p>
+                        <button id="two-btn" class="button-btn"></button>
+                        <p style="margin-left: 10px; margin-right: 10px;">В один бік</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <button id="three-btn" class="button-btn"></button>
+                        <p style="margin-left: 10px; margin-right: 10px;">Мульти-сіті</p>
                     </div>
                 </div>
             </div>
+
             <div class="destination" id="destination">
                 <input type="text" class="input-field21" placeholder="З">
                 <input type="text" class="input-field22" placeholder="До">
-                <input type="date" class="date-picker" placeholder="Дата">
+
+                <input type="date" class="date-picker21" placeholder="Виліт">
+                <input type="date" class="date-picker22" placeholder="Повернення">
+
+                <input type="date" class="date-picker" placeholder="Клас/Пасажири">
                 <button class="search-button">Пошук</button>
             </div>
 
-            <div class="flight-number" id="flight-number" style="display: none;">
+            <!-- <div class="flight-number" id="flight-number" style="display: none;">
                 <input type="text" class="input-field" placeholder="Номер рейсу">
                 <input type="date" class="date-picker" placeholder="Дата">
                 <button class="search-button">Пошук</button>
-            </div>
+            </div> -->
+
+            <button class="promo-button">Ввести промокод</button>
         </div>
     </header>
 
 
-    <div class="services-section">
-        <h2>Знайдіть корисну для Вас інформацію</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <img src="/main/about_travel/img/luggage.svg" alt="Baggage info">
-                <p>Інформація щодо багажу</p>
-            </div>
-            <div class="service-item">
-                <img src="/main/about_travel/img/check_in.svg" alt="Registration info">
-                <p>Інформація про реєстрацію</p>
-            </div>
-            <div class="service-item">
-                <img src="/main/about_travel/img/on_board.svg" alt="On board">
-                <p>На борту</p>
-            </div>
-            <div class="service-item">
-                <img src="/main/about_travel/img/additional_services.svg" alt="Additional services">
-                <p>Додаткові послуги</p>
-            </div>
-            <div class="service-item">
-                <img src="/main/about_travel/img/special_needs.svg" alt="Special needs">
-                <p>Особливі вимоги</p>
-            </div>
+    <div style="text-align: center;">
+        <div>
+            <p style="clear: #0E3049; font-size: 32px; font-weight: 700; line-height: 38.73px; margin-top: 150px;">
+                Перевіз
+                тварин на борту</p>
+            <img src="/main/animals/animals_on_board/img/dog.svg">
         </div>
-
-
-        <div class="Main-partn-h font-color">
-            <h1>Наші партнери</h1>
-        </div>
-
-        <div class="Main-partn-con font-color">
-            <div class="Main-partn-con-m">
-                <div class="Main-partn-con-m-h">
-                    <img src="/main/about_travel/img/bild.svg" />
-                    <h1>Оренда автомобілю</h1>
-                </div>
-                <p>Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно,<br>
-                    отримуючи при цьому ексклюзивні пропозиції.</p>
+        <div>
+            <div>
+                <p>Подорожуйте зі своїм улюбленцем!</p>
+                <p>Ви можете взяти свою собаку, кота або тхора на борт наших літаків. Ми можемо взяти на борт наших<br>літаків обмежену кількість домашніх тварин, тому придбання послуги залежить від поточної наявності місць. Перевірте це під час бронювання квитка на сайті lot.com або пізніше, за 12 годин до вильоту, в розділі «Мої бронювання».</p>
             </div>
-            <div class="Main-partn-con-m">
-                <div class="Main-partn-con-m-h">
-                    <img src="/main/about_travel/img/car.svg" />
-                    <h1>Вибір помешкання</h1>
-                </div>
-                <p>Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно<br>
-                    до ваших побажань за кращими цінами.</p>
+            <div>
+                <p>Збори за провезення тваринки </p>
+                <p>Збори за провезення тварини на борту – це не лише процедура, а й наша згуртована турбота про вашого чотирилапого друга. Дякуємо за ваше розуміння та співпрацю. Ви побачите точну суму комісії під час створення бронювання або в розділі
+                    «Мої бронювання».</p>
+                <button>Перевірити вартість перевезення тварини</button>
             </div>
         </div>
     </div>
+
+
     <footer>
         <div class="footer-container">
             <div class="footer-column">
@@ -148,8 +143,7 @@
                             alt="Facebook"></a>
                     <a href="#" target="_blank"><img src="/main/img_header_footer/social/instagram.svg"
                             alt="Instagram"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/youtube.svg"
-                            alt="Youtube"></a>
+                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/youtube.svg" alt="Youtube"></a>
                 </div>
             </div>
         </div>
@@ -170,7 +164,7 @@
             </div>
         </div>
     </footer>
-    <script src="/main/about_travel/about_travel_header.js"></script>
+    <script src="/main/animals/animals_on_board/animals_header.js"></script>
 </body>
 
 </html>
