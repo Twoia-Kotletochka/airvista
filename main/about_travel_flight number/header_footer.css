@@ -1,0 +1,228 @@
+/* HEADER */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    background-color: #116380;
+    color: #ffffff;
+    padding: 25px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-menu ul li {
+    padding: 0 16px;
+}
+
+.nav-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-menu ul li a:hover {
+    color: #ffcc00;
+}
+
+/* HEADER */
+
+
+.search-form {
+    padding: 20px;
+    padding-left: 157px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.input-field {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.date-picker {
+    height: 30px;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+.search-button {
+    height: 30px;
+    background-color: #F8AB12;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 150px;
+    height: 45px;
+    border-radius: 12px;
+}
+
+.search-button:hover {
+    background-color: #ffcc00;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lighten button on hover */
+}
+
+.active {
+    background-image: radial-gradient(circle, transparent 20%, #FFC107 20%);
+    /* Your active button color */
+}
+
+/* Extra styles for the active button */
+.active:hover {
+    background-image: radial-gradient(circle, transparent 20%, #E6B700 20%);
+    /* Darken the active button slightly on hover */
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #116380;
+    padding: 40px 0;
+    padding-bottom: 20px;
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-left: 157px;
+}
+
+.footer-column {
+    flex: 1 0 20%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    margin-bottom: 20px;
+    /* font-weight: bold; */
+    color: #F5F9FA;
+    /* font-family: Inter; */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    text-align: left;
+
+}
+
+.footer-column a {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+
+}
+
+.download a {
+    margin-top: 10px;
+}
+
+.footer-social img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-pay {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-pay a {
+    margin: 0px;
+    margin-right: 14px;
+}
+
+.footer-social a {
+    margin: 0px;
+    margin-right: 14px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 157px;
+    margin-right: 30px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.footer-bottom p {
+    color: #F5F9FA;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .footer-column {
+        flex: 1 0 40%;
+        text-align: center;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+    .footer-bottom{
+        flex: 1 0 40%;
+        text-align: center;
+    }
+}
+
+/* FOOTER */

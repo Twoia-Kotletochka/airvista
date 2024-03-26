@@ -34,3 +34,38 @@ body {
     font-size: 18px;
     color: #333;
 }
+
+
+.Main-partn-h{
+    margin-top: 120px;
+}
+.Main-partn-h h1{
+    font-size: 32px;
+}
+.Main-partn-con{
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 170px;
+}
+.Main-partn-con-m{
+    float: left;
+    width: 700px;
+    background: white;
+    border-radius: 8px;
+    padding-left: 10px;
+    margin-right: 20px;
+}
+.Main-partn-con-m-h{
+    height: 35px;
+}
+.Main-partn-con-m-h h1{
+    font-size: 24px;
+}
+.Main-partn-con-m-h img{
+  float: left;
+  margin-right:10px;
+}
+.Main-partn-con-m p{
+    font-size: 16px;
+}
