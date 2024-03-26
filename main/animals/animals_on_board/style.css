@@ -174,3 +174,68 @@ body {
 .promo-button:hover {
     background-color: rgb(233, 228, 228);
 }
+
+.container {
+    text-align: center;
+}
+
+.container-aboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container-aboard p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: left;
+}
+
+.container-aboard button {
+    color: white;
+    border: none;
+    width: 550px;
+    background: #116380;
+    top: 1438px;
+    left: 985px;
+    padding: 14px 10px 14px 10px;
+    gap: 10px;
+    border-radius: 12px 12px 12px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+}
+
+.container-cage{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.container-other-dog{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+.container-other-dog-img{
+    display: flex;
+}
+.container-other-dog-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.container-other-dog-text p{
+background-color: white;
+}
