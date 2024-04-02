@@ -1,3 +1,8 @@
+body{
+    background-color: #F5F9FA;
+    cursor: default;
+}
+
 a{
     color:black;
     text-decoration: none;
@@ -28,6 +33,10 @@ a{
     margin-bottom: 70px;
 }
 
+.airvista-mainpage-hot-toure:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
 .airvista-mainpage-hot-toure-textbox{
     margin-left: 15px;
 }
@@ -36,11 +45,12 @@ a{
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .airvista-mainpage-hot-toure-about-block{
     display: flex;
+    margin-bottom: -5px;
 }
 
 .airvista-mainpage-hot-toure-about{
@@ -55,7 +65,6 @@ a{
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    margin-top: 25px;
 }
 
 .airvista-mainpage-hot-toure-prices{
@@ -67,7 +76,6 @@ a{
     font-weight: 600;
     font-size: 16px;
     color: #B5B5B5;
-    text-decoration: line-through;
 }
 
 .airvista-mainpage-hot-toure-hotprice{
@@ -82,12 +90,16 @@ a{
 .airvista-mainpage-hot-toures-button{
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    margin-left: 30%;
     background-color: #116380;
     border-radius: 12px;
-    padding: 15px 140px;
+    padding: 15px 135px;
     font-size: 20px;
+    cursor: pointer;
     color: #fff;
+}
+
+.airvista-mainpage-hot-toures-button:hover{
+    background-color: #1d2742;
 }
 
 .airvista-mainpage-pets{
@@ -102,6 +114,11 @@ a{
     border-radius: 15px;
     margin-bottom: 70px;
 }
+
+.airvista-mainpage-pet:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
 
 .airvista-mainpage-pet-background{
     padding: 70px;
@@ -160,6 +177,10 @@ a{
     color: #fff;
 }
 
+.airvista-mainpage-class-button:hover{
+    background-color: #1d2742;
+}
+
 .airvista-mainpage-partners{
     display: flex;
     flex-wrap: nowrap;
@@ -171,6 +192,10 @@ a{
     padding: 20px;
     width: 670px;
     margin-right: 20px;
+}
+
+.airvista-mainpage-partner:hover{
+    box-shadow: 0 0 50px lightgrey;
 }
 
 .airvista-mainpage-partner-block{

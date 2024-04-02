@@ -1,0 +1,132 @@
+footer {
+    background-color: #116380;
+    padding: 40px 0;
+    padding-bottom: 20px;
+    margin: -8px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-left: 157px;
+}
+
+.footer-column {
+    flex: 1 0 20%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    cursor: default;
+    margin-bottom: 20px;
+    /* font-weight: bold; */
+    color: #F5F9FA;
+    /* font-family: Inter; */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    text-align: left;
+
+}
+
+.footer-column a {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    text-decoration: none;
+    cursor: default;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+}
+
+.footer-column a:hover{
+    text-decoration: underline;
+} 
+
+.download a {
+    margin-top: 10px;
+}
+
+.footer-social img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-pay {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-pay a {
+    margin: 0px;
+    margin-right: 14px;
+}
+
+.footer-social a {
+    margin: 0px;
+    margin-right: 14px;
+}
+
+.footer-bottom {
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 157px;
+    margin-right: 30px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.footer-bottom p {
+    color: #F5F9FA;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .footer-column {
+        flex: 1 0 40%;
+        text-align: center;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+    .footer-bottom{
+        flex: 1 0 40%;
+        text-align: center;
+    }
+}
+
+.footer-column-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.footer-column-element{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.footer-bottom-links{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.footer-bottom-links a{
+    cursor: default;
+}
