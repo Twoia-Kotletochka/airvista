@@ -1,0 +1,318 @@
+body{
+    background-color: #F5F9FA;
+}
+
+.flight{
+    cursor: default;
+}
+
+.flight-search{
+    display: flex;
+    background-color: #fff;
+    padding-left: 13%;
+}
+
+.flight-search-column{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.flight-search-block{
+    display: flex;
+}
+
+.flight-search-city{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #116380;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.flight-search-type{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 0;
+}
+
+.flight-search-edit{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border: 1px solid #116380;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-left: 30px;
+    margin-top: 5px;
+    color: #116380;
+}
+
+.flight-search-edit:hover{
+    cursor: pointer;
+    border: 1px solid #114140;
+    color: #114140;
+}
+
+.flight-flights{
+    padding-left: 13%;
+    padding-right: 13%;
+}
+
+.flight-flights-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.flight-flights-ticket{
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #F2F2F2;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.flight-flights-line{
+    height: 140px;
+    width: 1px;
+    background-color: #f2f2f2;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.flight-flights-time{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.flight-flights-location{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 0;
+}
+
+.flight-flights-travelinfo{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+}
+
+.flight-flights-tariff{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+    color: #B5B5B5;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.flight-flights-column{
+    display: flex;
+}
+
+.flight-flights-oldprice{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-top: 3px;
+}
+
+.flight-flights-price{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #2E2E2E;
+    margin: 0;
+    text-align: center;
+}
+
+.flight-flights-hotprice{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FF0101;
+    margin: 0;
+    margin-left: 20px;
+    text-align: right;
+}
+
+.flight-flights-buy{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px 50px;
+    color: #F5F9FA;
+    border: 1px solid #116380;
+    border-radius: 12px;
+    background-color: #116380;
+    margin: 12px 15px;
+}
+
+.flight-flights-buy:hover{
+    background-color: #1d2742;
+    cursor: pointer;
+}
+
+.flight-flights-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+}
+
+.flight-promo{
+    display: flex;
+    background-color: #F2F2F2;
+    padding-left: 13%;
+    padding-right: 13%;
+    margin-bottom: 100px;
+}
+
+.flight-promo-column{
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.flight-promo-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin: 20px 0 10px 0;
+}
+
+.flight-promo-subtitle{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0E3049;
+    margin: 0;
+}
+
+.flight-promo-possibilities{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 10px;
+}
+
+.flight-promo-block{
+    display: flex;
+}
+
+.flight-promo-email{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 15px;
+    border: 1px solid #B5B5B5;
+    border-radius: 12px;
+    height: 52px;
+    width: 290px;
+    margin: 0;
+}
+
+.flight-promo-register{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
+    padding: 15px 30px;
+    color: #0E3049;
+    border: 1px solid #0E3049;
+    border-radius: 12px;
+}
+
+.flight-promo-register:hover{
+    cursor: pointer;
+    border: 1px solid #60a9c4;
+    background-color: #60a9c4;
+}
+
+.orange-checkbox-container {
+    margin-top: 15px;
+    margin-right: 25px;
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .orange-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #F8AB12;
+    border-radius: 6px;
+  }
+
+  
+  /* When the checkbox is checked, add a orange background */
+  .orange-checkbox-container input:checked ~ .checkmark {
+    background-color: #F8AB12;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .orange-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .orange-checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.flight-promo-politics{
+    font-family: "Inter", sans-serif;
+    font-weight:400;
+    font-size: 16px;
+    color: #116380;
+    margin: 0 35px;
+    cursor: pointer;
+}
+
+.flight-promo-politics:hover{
+    text-decoration: underline
+}
