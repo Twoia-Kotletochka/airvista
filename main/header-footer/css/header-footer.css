@@ -201,3 +201,53 @@ footer {
 .footer-bottom-links a{
     cursor: default;
 }
+
+.footer-small{
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-small-logo{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    color: #fff;
+    margin: 0 35% 0 40px;
+}
+
+.footer-small-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+    color: #fff;
+    margin: 0;
+    margin-left: 45px;
+}
+
+.footer-small-chat{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    background-color: #F5F9FA;
+    border-radius: 30px;
+    padding: 15px 20px;
+    margin: 0;
+    margin-left: 30px;
+}
+
+.footer-small-chat:hover{
+    background-color: #75bdcf;
+    color:#fff;
+}
+
+.footer-small-about a{
+    color: #fff;
+    cursor: default;
+    text-decoration: none;
+}
+
+.footer-small-about a:hover{
+    text-decoration: underline;
+}

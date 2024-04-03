@@ -1,0 +1,62 @@
+body{
+    background-color: #F5F9FA;
+    cursor: default;
+}
+
+.header-about{
+    display: flex;
+    padding-left: 13%;
+}
+
+.header-about a{
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.header-about-current{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.refounds{
+    padding-left: 13%;
+    padding-right: 13%;
+}
+
+.refounds-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin: 0;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+.refounds-list{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 100px;
+}
+
+.refounds-element{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.refounds-element:hover{
+    text-decoration: underline;
+}
