@@ -1,0 +1,118 @@
+body{
+    background-color: #F5F9FA;
+    cursor: default;
+}
+
+.header-about{
+    display: flex;
+    padding-left: 13%;
+    background-image: url(../img/header-background.svg);
+    background-repeat: no-repeat;
+    margin: 0 -16px -25px -16px;
+}
+
+.header-about a{
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    margin-right: 25px;
+    margin-top: 600px;
+    margin-bottom: 136px;
+}
+
+.header-about-current{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #F5F9FA;
+    font-weight: bold;
+    margin-top: 600px;
+    margin-bottom: 120px;
+}
+
+.additional-services{
+    padding-left: 11%;
+    padding-right: 12%;
+}
+
+.additional-services-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 120px;
+    color: #0E3049;
+}
+
+.additional-services-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #0E3049;
+}
+
+.additional-services-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    padding-left: 10%;
+}
+
+.additional-services-card{
+    display: block;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+}
+
+.additional-services-card:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.additional-services-card a{
+    text-decoration: none;
+    padding: 15px 60px;
+    border-radius: 12px;
+    color: #F5F9FA;
+    background-color: #368BA3;
+}
+
+.additional-services-card-top{
+    margin: 0;
+    width: 580px;
+    height: 232px;
+    background-color: #80BECE;
+    border-radius: 12px 12px 0 0;
+    margin-top: -25px;
+}
+
+.additional-services-card-bot{
+    margin: 0;
+    width: 580px;
+    height: 141px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    margin-top: -25px;
+}
+
+.additional-services-cards-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0E3049;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 35px;
+}
+
+.additional-services-cards-link{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
