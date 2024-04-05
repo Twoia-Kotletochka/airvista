@@ -7,8 +7,8 @@ airvistaTouresShowBtn.addEventListener('click', changeColorButton);
 
 function changeColorButton()
 {
-    setTimeout(showAllToures, 500)
-    airvistaTouresShowBtn.style.backgroundColor = "#4fabcc";
+    setTimeout(showAllToures, 250)
+    airvistaTouresShowBtn.style.backgroundColor = "#116380";
 }
 
 function showAllToures()

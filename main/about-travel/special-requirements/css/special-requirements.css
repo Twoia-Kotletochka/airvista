@@ -1,0 +1,111 @@
+body{
+    background-color: #F5F9FA;
+    cursor: default;
+}
+
+.header-about{
+    display: flex;
+    padding-left: 13%;
+    background-image: url(../img/header-background.svg);
+    background-repeat: no-repeat;
+    margin: 15px -16px -25px -16px;
+}
+
+.header-about a{
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    margin-right: 25px;
+    margin-top: 600px;
+    margin-bottom: 136px;
+}
+
+.header-about-current{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #F5F9FA;
+    font-weight: bold;
+    margin-top: 600px;
+    margin-bottom: 120px;
+}
+
+.special-requirements{
+    margin: 150px 0;
+    padding: 0 11%;
+}
+
+.special-requirements-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #0E3049;
+}
+
+.special-requirements-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    padding-left: 10%;
+}
+
+.special-requirements-card{
+    display: block;
+    margin-right: 20px;
+    margin-bottom: 80px;
+    border-radius: 12px;
+}
+
+.special-requirements-card a{
+    text-decoration: none;
+    padding: 15px 60px;
+    border-radius: 12px;
+    color: #F5F9FA;
+    background-color: #368BA3;
+    cursor: default;
+}
+
+.special-requirements-card a:hover{
+    transition: background 0.5s ease;
+    background-color: #80bccc;
+}
+
+.special-requirements-card-top{
+    margin: 0;
+    width: 580px;
+    height: 232px;
+    border-radius: 12px 12px 0 0;
+    margin-top: -25px;
+}
+
+.special-requirements-card-bot{
+    margin: 0;
+    width: 580px;
+    height: 141px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    margin-top: -25px;
+}
+
+.special-requirements-cards-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0E3049;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 35px;
+}
+
+.special-requirements-cards-link{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
