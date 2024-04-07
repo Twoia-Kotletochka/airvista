@@ -12,11 +12,34 @@
     display: flex;
     flex-direction: column;
     margin: -8px;
+    font-family: "Inter", sans-serif;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav-menu-about-item {
+    transition: box-shadow 0.3s;
+}
+
+.nav-menu-about-item:hover {
+    box-shadow: 0 0.1em 0 0 white;
+}
+
+.nav-menu-about-currency {
+    padding: 6px;
+    display: inline;
+}
+
+.nav-menu-about-currency:hover {
+    transition: background-color 0.3s;
+    background-color: rgba(173, 216, 230, 0.5);
 }
 
 .nav-menu ul {
@@ -41,19 +64,19 @@
     text-decoration: underline;
 }
 
-.nav-menu-about-item{
+.nav-menu-about-item {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 18px;
 }
 
-.nav-menu-about-currency{
+.nav-menu-about-currency {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 18px;
 }
 
-.nav-menu-about-btn{
+.nav-menu-about-btn {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 18px;
@@ -73,6 +96,7 @@ footer {
     padding: 40px 0;
     padding-bottom: 20px;
     margin: -8px;
+    font-family: "Inter", sans-serif;
 }
 
 .footer-container {
@@ -114,9 +138,9 @@ footer {
     text-align: left;
 }
 
-.footer-column a:hover{
+.footer-column a:hover {
     text-decoration: underline;
-} 
+}
 
 .download a {
     margin-top: 10px;
@@ -173,40 +197,41 @@ footer {
     .footer-social {
         margin-top: 20px;
     }
-    .footer-bottom{
+
+    .footer-bottom {
         flex: 1 0 40%;
         text-align: center;
     }
 }
 
-.footer-column-title{
+.footer-column-title {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 18px;
 }
 
-.footer-column-element{
+.footer-column-element {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
 }
 
-.footer-bottom-links{
+.footer-bottom-links {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
 }
 
-.footer-bottom-links a{
+.footer-bottom-links a {
     cursor: default;
 }
 
-.footer-small{
+.footer-small {
     display: flex;
     align-items: baseline;
 }
 
-.footer-small-logo{
+.footer-small-logo {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -215,7 +240,7 @@ footer {
     margin: 0 35% 0 40px;
 }
 
-.footer-small-about{
+.footer-small-about {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -225,7 +250,7 @@ footer {
     margin-left: 45px;
 }
 
-.footer-small-chat{
+.footer-small-chat {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 24px;
@@ -236,17 +261,17 @@ footer {
     margin-left: 30px;
 }
 
-.footer-small-chat:hover{
+.footer-small-chat:hover {
     background-color: #75bdcf;
-    color:#fff;
+    color: #fff;
 }
 
-.footer-small-about a{
+.footer-small-about a {
     color: #fff;
     cursor: default;
     text-decoration: none;
 }
 
-.footer-small-about a:hover{
+.footer-small-about a:hover {
     text-decoration: underline;
 }

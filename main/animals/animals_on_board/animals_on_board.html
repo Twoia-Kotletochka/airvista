@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перевіз тварин на борту</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="../../header-footer/css/header-footer.css">
 </head>
@@ -13,19 +17,18 @@
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <img src="/main/img_header_footer/airvista.svg" alt="AirVista Logo" class="logo" style="height: 25px;">
+                <img src="../../header-footer/img/airvista.svg" alt="AirVista Logo" class="logo" style="height: 25px;">
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Відкрийте для себе AirVista</a></li>
-                    <li><a href="#" style="font-weight: bold;">Про подорож</a></li>
-                    <li><a href="#">Допомога</a></li>
-                    <li><a href="#">UAH</a></li>
-                    <li><a href="#"> <img src="/main/img_header_footer/flag.svg" alt="flag" class="logo"
-                                style="height: 20px; width: 25px;"></a></li>
-                    <li><a href="#"
-                            style="color: black; border: 12px solid white; background: white; border-radius: 12px;">Увійти</a>
-                    </li>
+                    <li><a class="nav-menu-about-item" href="#">Відкрийте для себе AirVista</a></li>
+                    <li><a class="nav-menu-about-item" href="#">Про подорож</a></li>
+                    <li><a class="nav-menu-about-item" href="#">Допомога</a></li>
+
+                    <li><a class="nav-menu-about-currency" href="#">UAH</a></li>
+                    <li><a class="nav-menu-about-country" href="#"> <img src="../../header-footer/img/flag.svg"
+                                alt="flag" class="logo" style="height: 20px; width: 25px;"></a></li>
+                    <li class="nav-menu-about-btn"><a href="#" style="color: #0E3049;">Увійти</a>
                 </ul>
             </nav>
         </div>
@@ -89,7 +92,7 @@
             <p style="color: #0E3049; font-size: 32px; font-weight: 700; line-height: 38.73px; margin-top: 150px;">
                 Перевіз
                 тварин на борту</p>
-            <img src="/main/animals/animals_on_board/img/dog.svg">
+            <img src="../animals_on_board/img/dog.svg">
         </div>
         <div class="container-aboard">
             <div>
@@ -101,7 +104,7 @@
                     кількість домашніх тварин, тому придбання послуги залежить<br>
                     від поточної наявності місць. Перевірте це під час бронювання<br>
                     квитка на сайті lot.com або пізніше, за 12 годин до вильоту, в<br>
-                    розділі «Мої бронювання».</p>
+                    розділі <a href="#">«Мої бронювання».</a></p>
             </div>
             <div>
                 <p style="font-size: 24px; font-weight: 700; line-height: 29.05px; text-align: left;">Збори за
@@ -109,8 +112,8 @@
                 <p>Збори за провезення тварини на борту – це не лише процедура,<br>
                     а й наша згуртована турбота про вашого чотирилапого друга.<br>
                     Дякуємо за ваше розуміння та співпрацю. Ви побачите точну<br>
-                    суму комісії під часстворення бронювання або в розділі<br> «Мої бронювання».</p>
-                <button>Перевірити вартість перевезення тварини</button>
+                    суму комісії під часстворення бронювання або в розділі<br><a href="#">«Мої бронювання».</a></p>
+                <button class="cost-transporting-animals">Перевірити вартість перевезення тварини</button>
             </div>
         </div>
 
@@ -129,7 +132,7 @@
         </div>
 
         <div class="container-cage">
-            <img src="/main/animals/animals_on_board/img/cage.svg">
+            <img src="../animals_on_board/img/cage.svg">
             <div style="text-align: left;">
                 <p style="width: 352px;
                 height: 22px;
@@ -155,30 +158,68 @@
             розміщені під сидінням перед вами.</p>
 
         <div class="container-other">
-            <p style="color: #0E3049; font-size: 32px; font-weight: 700; line-height: 38.73px; margin-top: 150px;">Інші
-                питання</p>
-            <p style="
+            <div class="dropdown">
+                <p style="color: #0E3049; font-size: 32px; font-weight: 700; line-height: 38.73px; margin-top: 150px;">
+                    Інші питання</p>
+                <b style="
             font-size: 24px;
             font-weight: 500;
             line-height: 29.05px;
-            ">Що приготувати перед поїздкою з домашніми тваринами?</p>
-            <p style="
+            cursor: pointer;
+            ">Що приготувати перед поїздкою з домашніми тваринами?</b>
+
+                <div class="dropdown-content1" style="display: none;">
+                    <h4>Не забудьте підготуватись до поїздки:</h4>
+                    <p>• актуальна книга про щеплення (проти сказу),</p>
+                    <p>• спецільний паспорт (виданий ветеренаром) з описом кольору,<br>
+                        породи, статі тварин разом з мікрочіпом або номером татуювання,</p>
+                    <p>• правильно підібраний транспортер,</p>
+                    <p>• встановити мікрочіп.</p>
+                    <p>Дозволено пеервозити тварин віком 3 місяці і коли минуло 21<br>
+                        дні після останньої вакцинції проти сказу.</p>
+                </div>
+            </div>
+
+            <div class="dropdown2">
+                <b style="
             font-size: 24px;
             font-weight: 500;
-            line-height: 29.05px;
-            ">Як підготувати тварину до авіаперельотів?</p>
+            line-height: 69.05px;
+            cursor: pointer;
+            ">Як підготувати тварину до авіаперельотів?</b>
+
+                <div class="dropdown-content1" style="display: none;">
+                    <h4>Наші поради:</h4>
+                    <p>• За кілька днів до поїздки привчіть свого улюбленця до<br>
+                        транспортера, йому буде легше витримати поїздку;</p>
+                    <p>• Перед поїздкою прикріпіть ярлик на бічній стороні переноски з<br>
+                        іменем вашого вихованця та інструкціями щодо годування;</p>
+                    <p>• Процес реєстрації домашніх тварин триває довше, тому ви повинні<br>
+                        зареєструватися в аеропорту принаймні за 3 години до вильоту;</p>
+                    <p>• Перед поїздкою тварину слід заздалегідь вивести на прогулянку;</p>
+                    <p>Не давайте своєму вихованцеві пити і не годуйте його за кілька<br>
+                        годин до вильоту;</p>
+
+                    <p>• Перед польотом дайте лише невелику кількість води;</p>
+                    <p>• Щоб забезпечити безпеку свого вихованця, покладіть повідець і <br>
+                        намордник поза переноски або у ручну поклажу;</p>
+                    <p>• Седацію тварини слід проводити після консультації з ветеринаром.</p>
+                </div>
+            </div>
         </div>
 
         <div class="container-other-dog">
-            <div class="container-other-dog-img">
-                <div><img src="/main/animals/animals_on_board/img/dog-cat.svg"></div>
-                <div><img src="/main/animals/animals_on_board/img/guide-dog.svg"></div>
-                
-            </div>
-            <div class="container-other-dog-text">
-                <p>Перевіз тварини в багажному<br>відділенні</p>
-                <p>Собака-повадир</p>
-            </div>
+            <a class="container-other-dog-dogcat" href="#1">
+                <div><img src="../animals_on_board/img/dog-cat.svg">
+                    <p>Перевіз тварини в багажному<br>відділенні</p>
+                </div>
+            </a>
+
+            <a class="container-other-dog-dog" href="#2">
+                <div style="padding-top: 85px;"><img src="../animals_on_board/img/guide-dog.svg">
+                    <p>Собака-повадир</p>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -186,62 +227,64 @@
     <footer>
         <div class="footer-container">
             <div class="footer-column">
-                <p>Компанія AirVista</p>
-                <a href="#">Про нас</a>
-                <a href="#">Найцікавіши факти</a>
+                <p class="footer-column-title">Компанія AirVista</p>
+                <a href="#" class="footer-column-element">Про нас</a>
+                <a href="#" class="footer-column-element">Найцікавіши факти</a>
             </div>
             <div class="footer-column">
-                <p>Додаткові послуги</p>
-                <a href="#">Оренда автомобілю</a>
-                <a href="#">Вибір готелю</a>
+                <p class="footer-column-title">Додаткові послуги</p>
+                <a href="#" class="footer-column-element">Оренда автомобілю</a>
+                <a href="#" class="footer-column-element">Вибір готелю</a>
             </div>
             <div class="footer-column">
-                <p>Корпорація AirVista</p>
-                <a href="#">Медіа-центр</a>
-                <a href="#">Кар'єра</a>
-                <a href="#">Зв'язки з інвесторами</a>
-                <a href="#">Загальні умови укладання<br>угод</a>
+                <p class="footer-column-title">Корпорація AirVista</p>
+                <a href="#" class="footer-column-element">Медіа-центр</a>
+                <a href="#" class="footer-column-element">Кар'єра</a>
+                <a href="#" class="footer-column-element">Зв'язки з інвесторами</a>
+                <a href="#" class="footer-column-element">Загальні умови укладання<br>угод</a>
             </div>
             <div class="footer-column">
-                <p>Корисна інформація</p>
-                <a href="#">Довідковий центр</a>
-                <a href="#">Чеки за покупки на борту</a>
-                <a href="#">Переглянути історію<br>бронювань</a>
+                <p class="footer-column-title">Корисна інформація</p>
+                <a href="#" class="footer-column-element">Довідковий центр</a>
+                <a href="#" class="footer-column-element">Чеки за покупки на борту</a>
+                <a href="#" class="footer-column-element">Переглянути історію<br>бронювань</a>
             </div>
             <div class="footer-column download">
                 <p>Завантажити</p>
-                <a href="#" class="google-play"><img src="/main/img_header_footer/Google_Play.svg"
+                <a href="#" class="google-play"><img src="../../header-footer/img/Google_Play.svg"
                         alt="Google Play"></a>
-                <a href="#" class="google-play"><img src="/main/img_header_footer/App_Store.svg" alt="App Store"></a>
+                <a href="#" class="google-play"><img src="../../header-footer/img/App_Store.svg" alt="App Store"></a>
                 <p style="padding-top: 40px;">Слідкуйте за нами</p>
                 <div class="footer-social">
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/x.svg" alt="X"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/facebook.svg"
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/x.svg" alt="X"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/facebook.svg"
                             alt="Facebook"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/instagram.svg"
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/instagram.svg"
                             alt="Instagram"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/youtube.svg" alt="Youtube"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/youtube.svg" alt="Youtube"></a>
                 </div>
             </div>
         </div>
+        
 
         <div class="footer-bottom">
-            <p><img src="/main/img_header_footer/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
+            <p><img src="../../header-footer/img/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
                 права захищені.</p>
 
             <div style="display: flex; flex-direction: row; align-items: flex-end;">
                 <div class="footer-pay" style="padding-right: 100px;">
-                    <a href="#"><img src="/main/img_header_footer/pay/visa.svg" alt="visa"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/masctercard.svg" alt="masctercard"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/maestro.svg" alt="maestro"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/jcb.svg" alt="jcb"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/paypal.svg" alt="paypal"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/visa.svg" alt="visa"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/masctercard.svg" alt="masctercard"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/maestro.svg" alt="maestro"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/jcb.svg" alt="jcb"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/paypal.svg" alt="paypal"></a>
                 </div>
-                <img src="/main/img_header_footer/fly.svg" style="width: 65px;">
+                <img href="#" style="cursor: pointer;" src="../../header-footer/img/fly.svg" style="width: 65px;">
             </div>
         </div>
     </footer>
-    <script src="/main/animals/animals_on_board/animals_header.js"></script>
+    </footer>
+    <script src="../animals_on_board/animals_header.js"></script>
 </body>
 
 </html>

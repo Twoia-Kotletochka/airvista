@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Про подорож</title>
-    <link rel="stylesheet" type="text/css" href="css//style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="../../header-footer/css/header-footer.css">
 </head>
 
@@ -13,19 +17,18 @@
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <img src="/main/img_header_footer/airvista.svg" alt="AirVista Logo" class="logo" style="height: 25px;">
+                <img src="../../header-footer/img/airvista.svg" alt="AirVista Logo" class="logo" style="height: 25px;">
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Відкрийте для себе AirVista</a></li>
-                    <li><a href="#" style="font-weight: bold;">Про подорож</a></li>
-                    <li><a href="#">Допомога</a></li>
-                    <li><a href="#">UAH</a></li>
-                    <li><a href="#"> <img src="/main/img_header_footer/flag.svg" alt="flag" class="logo"
-                                style="height: 20px; width: 25px;"></a></li>
-                    <li><a href="#"
-                            style="color: black; border: 12px solid white; background: white; border-radius: 12px;">Увійти</a>
-                    </li>
+                    <li><a class="nav-menu-about-item" href="#">Відкрийте для себе AirVista</a></li>
+                    <li><a class="nav-menu-about-item" href="#" style="font-weight: bold;">Про подорож</a></li>
+                    <li><a class="nav-menu-about-item" href="#">Допомога</a></li>
+
+                    <li><a class="nav-menu-about-currency" href="#">UAH</a></li>
+                    <li><a class="nav-menu-about-country" href="#"> <img src="../../header-footer/img/flag.svg"
+                                alt="flag" class="logo" style="height: 20px; width: 25px;"></a></li>
+                    <li class="nav-menu-about-btn"><a href="#" style="color: #0E3049;">Увійти</a>
                 </ul>
             </nav>
         </div>
@@ -66,23 +69,23 @@
         <h2>Знайдіть корисну для Вас інформацію</h2>
         <div class="services-grid">
             <div class="service-item">
-                <img src="/main/about_travel/img/luggage.svg" alt="Baggage info">
+                <img src="././img/luggage.svg" alt="Baggage info">
                 <p>Інформація щодо багажу</p>
             </div>
             <div class="service-item">
-                <img src="/main/about_travel/img/check_in.svg" alt="Registration info">
+                <img src="././img/check_in.svg" alt="Registration info">
                 <p>Інформація про реєстрацію</p>
             </div>
             <div class="service-item">
-                <img src="/main/about_travel/img/on_board.svg" alt="On board">
+                <img src="././img/on_board.svg" alt="On board">
                 <p>На борту</p>
             </div>
             <div class="service-item">
-                <img src="/main/about_travel/img/additional_services.svg" alt="Additional services">
+                <img src="././img/additional_services.svg" alt="Additional services">
                 <p>Додаткові послуги</p>
             </div>
             <div class="service-item">
-                <img src="/main/about_travel/img/special_needs.svg" alt="Special needs">
+                <img src="././img/special_needs.svg" alt="Special needs">
                 <p>Особливі вимоги</p>
             </div>
         </div>
@@ -95,7 +98,7 @@
         <div class="Main-partn-con font-color">
             <div class="Main-partn-con-m">
                 <div class="Main-partn-con-m-h">
-                    <img src="/main/about_travel/img/bild.svg" />
+                    <img src="././img/bild.svg" />
                     <h1>Оренда автомобілю</h1>
                 </div>
                 <p>Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно,<br>
@@ -103,7 +106,7 @@
             </div>
             <div class="Main-partn-con-m">
                 <div class="Main-partn-con-m-h">
-                    <img src="/main/about_travel/img/car.svg" />
+                    <img src="././img/car.svg" />
                     <h1>Вибір помешкання</h1>
                 </div>
                 <p>Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно<br>
@@ -114,63 +117,64 @@
     <footer>
         <div class="footer-container">
             <div class="footer-column">
-                <p>Компанія AirVista</p>
-                <a href="#">Про нас</a>
-                <a href="#">Найцікавіши факти</a>
+                <p class="footer-column-title">Компанія AirVista</p>
+                <a href="#" class="footer-column-element">Про нас</a>
+                <a href="#" class="footer-column-element">Найцікавіши факти</a>
             </div>
             <div class="footer-column">
-                <p>Додаткові послуги</p>
-                <a href="#">Оренда автомобілю</a>
-                <a href="#">Вибір готелю</a>
+                <p class="footer-column-title">Додаткові послуги</p>
+                <a href="#" class="footer-column-element">Оренда автомобілю</a>
+                <a href="#" class="footer-column-element">Вибір готелю</a>
             </div>
             <div class="footer-column">
-                <p>Корпорація AirVista</p>
-                <a href="#">Медіа-центр</a>
-                <a href="#">Кар'єра</a>
-                <a href="#">Зв'язки з інвесторами</a>
-                <a href="#">Загальні умови укладання<br>угод</a>
+                <p class="footer-column-title">Корпорація AirVista</p>
+                <a href="#" class="footer-column-element">Медіа-центр</a>
+                <a href="#" class="footer-column-element">Кар'єра</a>
+                <a href="#" class="footer-column-element">Зв'язки з інвесторами</a>
+                <a href="#" class="footer-column-element">Загальні умови укладання<br>угод</a>
             </div>
             <div class="footer-column">
-                <p>Корисна інформація</p>
-                <a href="#">Довідковий центр</a>
-                <a href="#">Чеки за покупки на борту</a>
-                <a href="#">Переглянути історію<br>бронювань</a>
+                <p class="footer-column-title">Корисна інформація</p>
+                <a href="#" class="footer-column-element">Довідковий центр</a>
+                <a href="#" class="footer-column-element">Чеки за покупки на борту</a>
+                <a href="#" class="footer-column-element">Переглянути історію<br>бронювань</a>
             </div>
             <div class="footer-column download">
                 <p>Завантажити</p>
-                <a href="#" class="google-play"><img src="/main/img_header_footer/Google_Play.svg"
+                <a href="#" class="google-play"><img src="../../header-footer/img/Google_Play.svg"
                         alt="Google Play"></a>
-                <a href="#" class="google-play"><img src="/main/img_header_footer/App_Store.svg" alt="App Store"></a>
+                <a href="#" class="google-play"><img src="../../header-footer/img/App_Store.svg" alt="App Store"></a>
                 <p style="padding-top: 40px;">Слідкуйте за нами</p>
                 <div class="footer-social">
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/x.svg" alt="X"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/facebook.svg"
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/x.svg" alt="X"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/facebook.svg"
                             alt="Facebook"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/instagram.svg"
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/instagram.svg"
                             alt="Instagram"></a>
-                    <a href="#" target="_blank"><img src="/main/img_header_footer/social/youtube.svg"
-                            alt="Youtube"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/youtube.svg" alt="Youtube"></a>
                 </div>
             </div>
         </div>
+        
 
         <div class="footer-bottom">
-            <p><img src="/main/img_header_footer/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
+            <p><img src="../../header-footer/img/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
                 права захищені.</p>
 
             <div style="display: flex; flex-direction: row; align-items: flex-end;">
                 <div class="footer-pay" style="padding-right: 100px;">
-                    <a href="#"><img src="/main/img_header_footer/pay/visa.svg" alt="visa"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/masctercard.svg" alt="masctercard"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/maestro.svg" alt="maestro"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/jcb.svg" alt="jcb"></a>
-                    <a href="#"><img src="/main/img_header_footer/pay/paypal.svg" alt="paypal"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/visa.svg" alt="visa"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/masctercard.svg" alt="masctercard"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/maestro.svg" alt="maestro"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/jcb.svg" alt="jcb"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/paypal.svg" alt="paypal"></a>
                 </div>
-                <img src="/main/img_header_footer/fly.svg" style="width: 65px;">
+                <img href="#" style="cursor: pointer;" src="../../header-footer/img/fly.svg" style="width: 65px;">
             </div>
         </div>
     </footer>
-    <script src="/main/about_travel/about_travel_header.js"></script>
+    </footer>
+    <script src="../animals_on_board/animals_header.js"></script>
 </body>
 
 </html>

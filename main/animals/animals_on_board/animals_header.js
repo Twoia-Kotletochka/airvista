@@ -68,3 +68,22 @@ btnflightsThree.addEventListener('click', function () {
 btnflightsFour.addEventListener('click', function () {
   activateBtn(btnflightsFour);
 });
+
+
+document.querySelector('.dropdown b').addEventListener('click', function() {
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === 'block') {
+    dropdownContent.style.display = 'none';
+  } else {
+    dropdownContent.style.display = 'block';
+  }
+});
+
+document.querySelector('.dropdown2 b').addEventListener('click', function() {
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === 'block') {
+    dropdownContent.style.display = 'none';
+  } else {
+    dropdownContent.style.display = 'block';
+  }
+});
