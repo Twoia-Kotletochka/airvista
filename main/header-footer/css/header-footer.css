@@ -25,6 +25,9 @@
 }
 
 .nav-menu-about-item {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     transition: box-shadow 0.3s;
 }
 
@@ -60,15 +63,6 @@
     padding-bottom: 5px;
 }
 
-.nav-menu-about-item a:hover {
-    text-decoration: underline;
-}
-
-.nav-menu-about-item {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-}
 
 .nav-menu-about-currency {
     font-family: "Inter", sans-serif;
