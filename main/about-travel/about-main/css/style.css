@@ -124,6 +124,7 @@ body {
     margin-bottom: 30px;
     text-align: left;
     font-weight: bolder;
+    text-decoration: none;
 }
 
 .service-item p {
@@ -147,33 +148,166 @@ body {
     box-shadow: 0 0 50px lightgrey;
 }
 
-
 .chest-left {
     position: relative;
-    background: url('left-chest.svg');
     transition: transform 0.7s, margin 0.7s;
-    margin-right: -10px; /* добавим отступ справа */
+    margin-right: -10px;
     z-index: 2;
-  }
-  
-  .chest-right {
-    position: relative;
-    background: url('right-chest.svg');
-    transition: transform 0.7s, margin 0.7s;
-    margin-left: -10px; /* добавим отступ слева */
-    z-index: 1;
-  }
-  
-  .container-baggage:hover .chest-left {
-    transform: rotate(-25deg) translateX(-20px);
-    margin-right: 20px; /* увеличим отступ справа при наведении */
-  }
-  
-  .container-baggage:hover .chest-right {
-    transform: rotate(25deg) translateX(20px);
-    margin-left: 20px; /* увеличим отступ слева при наведении */
-  }
+}
 
+.chest-right {
+    position: relative;
+    transition: transform 0.7s, margin 0.7s;
+    margin-left: -10px;
+    z-index: 1;
+}
+
+.container-baggage:hover .chest-left {
+    transform: rotate(-25deg) translateX(-20px);
+    margin-right: 20px;
+}
+
+.container-baggage:hover .chest-right {
+    transform: rotate(25deg) translateX(20px);
+    margin-left: 20px;
+}
+
+
+.container-registration {
+    width: 460px;
+    height: 236px;
+    transition: box-shadow 0.3s;
+    background-color: #F2F2F2;
+    text-align: center;
+    position: relative;
+}
+
+.container-registration:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.registration-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+}
+
+.human-right {
+    position: absolute;
+    top: 12%;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s, transform 1s;
+    z-index: 2;
+}
+
+.container-registration:hover .human-right {
+    opacity: 1;
+    transform: translateX(-155%);
+}
+
+
+.container-on-board {
+    width: 460px;
+    height: 236px;
+    transition: box-shadow 0.3s;
+    background-color: #F2F2F2;
+    text-align: center;
+    position: relative;
+}
+
+.container-on-board:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.board-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.human-board-right {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 1s;
+}
+
+.container-on-board:hover .human-board-right {
+    opacity: 1;
+    transform: translateX(-90%) scale(1);
+}
+
+
+.container-dditional-services {
+    width: 460px;
+    height: 236px;
+    transition: box-shadow 0.3s;
+    background-color: #F2F2F2;
+    /* text-align: center; */
+    position: relative;
+    overflow: hidden;
+}
+
+.container-dditional-services:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.cities {
+    position: absolute;
+    bottom: 0px;
+}
+
+.plane1 {
+    position: absolute;
+    width: 20px;
+    height: 14px;
+    opacity: 0;
+    top: 50%;
+    left: 35%;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.container-dditional-services:hover .plane1 {
+    opacity: 1;
+    transform: translate(380%, -480%);
+}
+
+.plane2 {
+    position: absolute;
+    width: 20px;
+    height: 14px;
+    opacity: 0;
+    top: 10%;
+    left: 10%;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.container-dditional-services:hover .plane2 {
+    opacity: 1;
+    transform: translate(1800%, 10%);
+}
+
+.plane3 {
+    position: absolute;
+    width: 20px;
+    height: 14px;
+    opacity: 0;
+    top: 30%;
+    left: 80%;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.container-dditional-services:hover .plane3 {
+    opacity: 1;
+    transform: translate(-250%, 300%);
+}
 
 /* animation main */
 .Main-partn-h {
