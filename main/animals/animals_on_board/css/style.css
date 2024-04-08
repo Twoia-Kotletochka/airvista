@@ -47,6 +47,29 @@ body {
     /* Darken the active button slightly on hover */
 }
 
+.header-about{
+    display: flex;
+    padding-left: 13%;
+}
+
+.header-about a{
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.header-about-current{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    font-weight: bold;
+}
 
 .input-field {
     width: 200px;

@@ -124,8 +124,30 @@ body {
     width: 150px;
     height: 45px;
     border-radius: 12px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
 }
 
+.destination input {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    color: #B5B5B5;
+}
+
+.flight-number input {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    color: #B5B5B5;
+}
 
 .services-section {
     text-align: left;

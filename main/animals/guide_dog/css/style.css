@@ -1,0 +1,73 @@
+.header-about{
+    display: flex;
+    padding-left: 13%;
+}
+
+.header-about a{
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.header-about-current{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+
+.container-other-dog {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-other-dog a {
+    text-decoration: none;
+    color: #2E2E2E;
+    cursor: pointer;
+height: 360px;
+}
+
+.container-other-dog p {
+    text-align: left;
+    background-color: white;
+    width: 400px;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.container-other-dog-dogcat {
+    margin-left: 40px;
+    margin-right: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.container-other-dog-dogcat:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.container-other-dog-dog {
+    margin-left: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.container-other-dog-dog:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
