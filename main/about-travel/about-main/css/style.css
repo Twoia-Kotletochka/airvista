@@ -126,14 +126,56 @@ body {
     font-weight: bolder;
 }
 
-
 .service-item p {
     margin-top: 10px;
     font-size: 18px;
     color: #333;
+    /* background-color: #F5F9FA; */
+}
+
+/* animation main */
+.container-baggage {
+    width: 460px;
+    height: 236px;
+    transition: box-shadow 0.3s;
+    background-color: #F2F2F2;
+    text-align: center;
+    position: relative;
+}
+
+.container-baggage:hover {
+    box-shadow: 0 0 50px lightgrey;
 }
 
 
+.chest-left {
+    position: relative;
+    background: url('left-chest.svg');
+    transition: transform 0.7s, margin 0.7s;
+    margin-right: -10px; /* добавим отступ справа */
+    z-index: 2;
+  }
+  
+  .chest-right {
+    position: relative;
+    background: url('right-chest.svg');
+    transition: transform 0.7s, margin 0.7s;
+    margin-left: -10px; /* добавим отступ слева */
+    z-index: 1;
+  }
+  
+  .container-baggage:hover .chest-left {
+    transform: rotate(-25deg) translateX(-20px);
+    margin-right: 20px; /* увеличим отступ справа при наведении */
+  }
+  
+  .container-baggage:hover .chest-right {
+    transform: rotate(25deg) translateX(20px);
+    margin-left: 20px; /* увеличим отступ слева при наведении */
+  }
+
+
+/* animation main */
 .Main-partn-h {
     margin-top: 120px;
 }
