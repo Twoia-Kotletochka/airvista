@@ -1,21 +1,21 @@
-.header-about{
+.header-about {
     display: flex;
     padding-left: 13%;
 }
 
-.header-about a{
+.header-about a {
     color: #F5F9FA;
     text-decoration: none;
 }
 
-.header-about-main{
+.header-about-main {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 32px;
     margin-right: 25px;
 }
 
-.header-about-current{
+.header-about-current {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 32px;
@@ -24,6 +24,158 @@
 
 .container {
     text-align: center;
+}
+
+.container-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-title-text-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title-text {
+    font-family: "Inter", sans-serif;
+    color: #0E3049;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.73px;
+    margin-top: 150px;
+}
+
+.mini-title-text {
+    font-family: "Inter", sans-serif;
+    color: #0E3049;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+}
+
+.mini-title-text-list-info {
+    font-family: "Inter", sans-serif;
+    color: #2E2E2E;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+}
+
+.mini-title-text-list-info a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #116380;
+}
+
+.mini-title-text-list {
+    font-family: "Inter", sans-serif;
+    color: #2E2E2E;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: left;
+}
+
+.container-card {
+    text-align: center;
+    background-color: #368BA3;
+    max-width: 1063px;
+    max-height: 346px;
+    border-radius: 12px;
+    padding: 30px, 0px, 30px, 0px;
+    gap: 30px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.container-card-mini-title-text {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: center;
+}
+
+.container-card-mini-title-text-list {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+}
+
+.container-checking-passport {
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checking-passport-title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    color: #0E3049;
+}
+
+.checking-passport-list {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+
+    color: #2E2E2E;
+}
+
+.container-denial{
+    margin-top: 150px;
+}
+
+.container-denial-title {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.73px;
+    text-align: center;
+    color: #0E3049;
+}
+
+.container-denial-title-mini {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29.05px;
+    text-align: center;
+    color: #2E2E2E;
+}
+
+.container-denial-title-list {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+    color: #2E2E2E;
+}
+
+.container-denial-info {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: center;
+    color: #368BA3;
 }
 
 .container-other-dog {
@@ -39,7 +191,7 @@
     text-decoration: none;
     color: #2E2E2E;
     cursor: pointer;
-height: 360px;
+    height: 360px;
 }
 
 .container-other-dog p {
@@ -57,6 +209,7 @@ height: 360px;
     margin-left: 40px;
     margin-right: 20px;
     transition: box-shadow 0.3s;
+    border-radius: 12px;
 }
 
 .container-other-dog-dogcat:hover {
@@ -66,6 +219,7 @@ height: 360px;
 .container-other-dog-dog {
     margin-left: 20px;
     transition: box-shadow 0.3s;
+    border-radius: 12px;
 }
 
 .container-other-dog-dog:hover {
