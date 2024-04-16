@@ -67,7 +67,7 @@ body{
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    margin-right: 10px;
+    margin-right: 25px;
     color: #fff;
 }
 
@@ -442,4 +442,33 @@ a{
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
+}
+
+.button-radio {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.button-radio:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lighten button on hover */
+}
+
+.activeradio {
+    background-image: radial-gradient(circle, transparent 20%, #FFC107 20%);
+    /* Your active button color */
+}
+
+/* Extra styles for the active button */
+.activeradio:hover {
+    background-image: radial-gradient(circle, transparent 20%, #E6B700 20%);
+    /* Darken the active button slightly on hover */
 }

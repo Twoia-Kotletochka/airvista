@@ -73,6 +73,9 @@ function hideAllBlocks()
 
 function hideAllRadioBlocks()
 {
+    withRadio.classList.remove('activeradio');
+    withoutRadio.classList.remove('activeradio');
+    multyRadio.classList.remove('activeradio');
     withDiv.style.display = "none";
     withoutDiv.style.display = "none";
     multyDiv.style.display = "none";
@@ -81,18 +84,21 @@ function hideAllRadioBlocks()
 function activeWithRadio()
 {
     hideAllRadioBlocks()
+    withRadio.classList.add('activeradio');
     withDiv.style.display = "flex";
 }
 
 function activeWithoutRadio()
 {
     hideAllRadioBlocks()
+    withoutRadio.classList.add('activeradio');
     withoutDiv.style.display = "flex";
 }
 
 function activeMultyRadio()
 {
     hideAllRadioBlocks()
+    multyRadio.classList.add('activeradio');
     multyDiv.style.display = "flex";
 }
 
