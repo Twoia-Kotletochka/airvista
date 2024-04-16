@@ -34,6 +34,7 @@ body{
 }
 
 .header-search-nav{
+    transition: all 0.2s;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -42,6 +43,7 @@ body{
     cursor: pointer;
 }
 .header-search-nav:hover{
+    transition: all 0.2s;
     font-weight: bold;
 }
 
@@ -133,6 +135,7 @@ body{
 }
 
 .header-flight-addflight{
+    transition: all 0.5s ease;
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 18px;
@@ -145,10 +148,12 @@ body{
 }
 
 .header-flight-addflight:hover{
+    transition: all 0.5s ease;
     background-color: #5197a8;
 }
 
 .header-flight-code{
+    transition: all 0.5s ease;
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 16px;
@@ -160,6 +165,7 @@ body{
 }
 
 .header-flight-code:hover{
+    transition: all 0.5s ease;
     border: 1px solid #74b2c2;
     color: #74b2c2;
 }
@@ -179,6 +185,7 @@ body{
 }
 
 .header-reservation-btn{
+    transition: all 0.5s ease;
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 18px;
@@ -190,6 +197,7 @@ body{
 }
 
 .header-reservation-btn:hover{
+    transition: all 0.5s ease;
     background-color: #db970f;
 }
 
@@ -256,6 +264,7 @@ a{
 }
 
 .airvista-mainpage-hot-toure{
+    transition: all 0.3s ease;
     margin-right: 15px;
     background-color: #fff;
     border-radius: 15px;
@@ -263,6 +272,7 @@ a{
 }
 
 .airvista-mainpage-hot-toure:hover{
+    transition: all 0.3s ease;
     box-shadow: 0 0 50px lightgrey;
 }
 
@@ -325,9 +335,11 @@ a{
     font-size: 20px;
     cursor: pointer;
     color: #fff;
+    transition: all 0.5s ease;
 }
 
 .airvista-mainpage-hot-toures-button:hover{
+    transition: all 0.5s ease;
     background-color: #1d2742;
 }
 
@@ -342,9 +354,11 @@ a{
     background-color: #fff;
     border-radius: 15px;
     margin-bottom: 70px;
+    transition: all 0.3s ease;
 }
 
 .airvista-mainpage-pet:hover{
+    transition: all 0.3s ease;
     box-shadow: 0 0 50px lightgrey;
 }
 
@@ -403,9 +417,11 @@ a{
     padding: 15px 140px;
     font-size: 20px;
     color: #fff;
+    transition: all 0.5s ease;
 }
 
 .airvista-mainpage-class-button:hover{
+    transition: all 0.5s ease;
     background-color: #1d2742;
 }
 
@@ -420,9 +436,11 @@ a{
     padding: 20px;
     width: 670px;
     margin-right: 20px;
+    transition: all 0.3s ease;
 }
 
 .airvista-mainpage-partner:hover{
+    transition: all 0.3s ease;
     box-shadow: 0 0 50px lightgrey;
 }
 
@@ -454,10 +472,12 @@ a{
     cursor: pointer;
     margin-top: 13px;
     margin-right: 10px;
-    transition: background-color 0.3s;
+    cursor: default;
+    transition: all 0.2s;
 }
 
 .button-radio:hover {
+    transition: all 0.2s;
     background-color: rgba(255, 255, 255, 0.2);
     /* Lighten button on hover */
 }

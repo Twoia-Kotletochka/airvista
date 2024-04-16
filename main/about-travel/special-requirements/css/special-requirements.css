@@ -69,10 +69,11 @@ body{
     color: #F5F9FA;
     background-color: #368BA3;
     cursor: default;
+    transition: all 0.3s ease;
 }
 
 .special-requirements-card a:hover{
-    transition: background 0.5s ease;
+    transition: all 0.5s ease;
     background-color: #80bccc;
 }
 
