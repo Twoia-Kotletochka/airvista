@@ -28,7 +28,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 18px;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.5s ease;
 }
 
 .nav-menu-about-item:hover {
@@ -36,11 +36,23 @@
 }
 
 .nav-menu-about-currency {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
     padding: 6px;
     display: inline;
+    transition: background-color 0.5s ease;
 }
 
 .nav-menu-about-currency:hover {
+    background-color: rgba(173, 216, 230, 0.5);
+}
+
+.nav-menu-about-country {
+    transition: background-color 0.5s ease;
+}
+
+.nav-menu-about-country:hover {
     transition: background-color 0.3s;
     background-color: rgba(173, 216, 230, 0.5);
 }
@@ -63,13 +75,6 @@
     padding-bottom: 5px;
 }
 
-
-.nav-menu-about-currency {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-}
-
 .nav-menu-about-btn {
     font-family: "Inter", sans-serif;
     font-weight: 700;
@@ -79,6 +84,13 @@
     padding: 15px 30px;
     margin-left: 15px;
     border-radius: 12px;
+    transition: all 0.5s ease;
+}
+
+.nav-menu-about-btn:hover {
+    transition: all 0.5s ease;
+    border: 12px solid #c5d3d6;
+    background: #c5d3d6;
 }
 
 /* HEADER */
@@ -97,11 +109,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
-    margin-left: 157px;
+    padding-left: 13%;
 }
 
 .footer-column {
-    flex: 1 0 20%;
+    margin-right: 45px;
     text-align: left;
     margin-bottom: 20px;
 }
@@ -134,6 +146,10 @@ footer {
 
 .footer-column a:hover {
     text-decoration: underline;
+}
+
+.download{
+    margin-left: 280px;
 }
 
 .download a {
@@ -170,7 +186,7 @@ footer {
     display: flex;
     flex-direction: row;
     text-align: left;
-    margin-left: 157px;
+    padding-left: 13%;
     margin-right: 30px;
     align-items: baseline;
     justify-content: space-between;
@@ -223,6 +239,7 @@ footer {
 .footer-small {
     display: flex;
     align-items: baseline;
+    margin-top: -10px;
 }
 
 .footer-small-logo {
@@ -253,9 +270,11 @@ footer {
     padding: 15px 20px;
     margin: 0;
     margin-left: 30px;
+    transition: all 0.3s ease;
 }
 
 .footer-small-chat:hover {
+    transition: all 0.5s ease;
     background-color: #75bdcf;
     color: #fff;
 }
@@ -264,8 +283,9 @@ footer {
     color: #fff;
     cursor: default;
     text-decoration: none;
+    padding-bottom: 5px;
 }
 
 .footer-small-about a:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid #fff;
 }

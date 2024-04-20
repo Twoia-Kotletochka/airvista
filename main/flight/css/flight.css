@@ -9,6 +9,7 @@ body{
 .flight-search{
     display: flex;
     background-color: #fff;
+    margin-top: 10px;
     padding-left: 13%;
 }
 
@@ -48,9 +49,11 @@ body{
     margin-left: 30px;
     margin-top: 5px;
     color: #116380;
+    transition: all 0.5s ease;
 }
 
 .flight-search-edit:hover{
+    transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid #114140;
     color: #114140;
@@ -164,9 +167,11 @@ body{
     border-radius: 12px;
     background-color: #116380;
     margin: 12px 15px;
+    transition: all 0.5s ease;
 }
 
 .flight-flights-buy:hover{
+    transition: all 0.3s ease;
     background-color: #1d2742;
     cursor: pointer;
 }
@@ -241,9 +246,11 @@ body{
     color: #0E3049;
     border: 1px solid #0E3049;
     border-radius: 12px;
+    transition: all 0.5s ease;
 }
 
 .flight-promo-register:hover{
+    transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid #60a9c4;
     background-color: #60a9c4;
@@ -271,11 +278,13 @@ body{
     width: 24px;
     border: 1px solid #F8AB12;
     border-radius: 6px;
+    transition: all 0.4s ease;
   }
 
   
   /* When the checkbox is checked, add a orange background */
   .orange-checkbox-container input:checked ~ .checkmark {
+    transition: all 0.8s ease;
     background-color: #F8AB12;
   }
   

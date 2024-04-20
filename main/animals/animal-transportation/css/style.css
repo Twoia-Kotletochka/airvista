@@ -2,6 +2,7 @@ body {
 
     background-color: #F5F9FA;
     font-family: "Inter", sans-serif;
+    cursor: default;
 }
 
 .search-form {
