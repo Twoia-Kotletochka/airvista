@@ -377,16 +377,29 @@ footer {
     align-items: flex-start;
 }
 
-/* .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
+.container-form-input a {
+    color: #116380;
+    text-decoration: none;
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    padding-top: 5px;
     cursor: pointer;
-    width: 100%;
-   margin-top: 10px; 
-  }
-*/
+}
+
+.btn-enter {
+    cursor: pointer;
+    background-color: #F8AB12;
+    color: white;
+    width: 340px;
+    height: 45px;
+    border-radius: 6px;
+    border-color: #F5F9FA;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .btn-cancel {
     cursor: pointer;
@@ -405,6 +418,7 @@ footer {
     justify-content: center;
     border-radius: 6px;
     margin-top: 25px;
+    cursor: pointer;
 }
 
 .form-container-google p {
@@ -429,6 +443,7 @@ footer {
     justify-content: center;
     border-radius: 6px;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 .form-container-google p {
@@ -463,4 +478,23 @@ footer {
     padding: 0;
 }
 
+.link-registration{
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+    margin-bottom: 70px;
+}
+
+.link-registration a{
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #116380;
+    cursor: pointer;
+}
 /* Вхід */

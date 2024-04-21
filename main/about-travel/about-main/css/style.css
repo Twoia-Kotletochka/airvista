@@ -200,14 +200,12 @@ body {
 }
 
 .chest-left {
-    position: relative;
     transition: transform 0.7s, margin 0.7s;
     margin-right: -10px;
     z-index: 2;
 }
 
 .chest-right {
-    position: relative;
     transition: transform 0.7s, margin 0.7s;
     margin-left: -10px;
     z-index: 1;
@@ -238,16 +236,12 @@ body {
 }
 
 .registration-left {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 19px;
     z-index: 1;
-
 }
 
 .human-right {
-    position: absolute;
+    margin-left: 20px;
     top: 12%;
     right: 0;
     opacity: 0;

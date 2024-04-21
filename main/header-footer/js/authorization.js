@@ -3,7 +3,7 @@ document.getElementById("showForm").addEventListener("click", function() {
   document.querySelector(".overlay").style.display = "block";
   setTimeout(function() {
     document.getElementById("myForm").style.opacity = 1;
-    document.getElementById("myForm").style.transform = "translate(-50%, 50%)";
+    document.getElementById("myForm").style.transform = "translate(-50%, 44%)";
   }, 100);
   document.body.style.overflow = 'hidden'; // блокировка скролла
 });

@@ -68,10 +68,39 @@
                 <div class="container-form-input">
                     <label style="margin-top: 20px;" for="psw">Пароль</label>
                     <input type="password" class="form-input" name="psw" required>
-                    <a class="forgot-password">Забули пароль?</a>
+                    <a>Забули пароль?</a>
                 </div>
 
-                <button type="submit" class="enter">Войти</button>
+                <button type="submit" class="btn-enter">Увійти</button>
+
+                <p class="link-registration">Не маєте облікового запису? <a>Зареєструватися</a></p>
+            </form>
+        </div>
+
+        <div class="form-popup" id="myForm">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista">
+                    <p><b>Забули пароль</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/login" class="form-container">
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email" required>
+                </div>
+
+                <div class="container-form-input">
+                    <label style="margin-top: 20px;" for="psw">Пароль</label>
+                    <input type="password" class="form-input" name="psw" required>
+                    <a>Забули пароль?</a>
+                </div>
+
+                <button type="submit" class="btn-enter">Увійти</button>
+
+                <p class="link-registration">Не маєте облікового запису? <a>Зареєструватися</a></p>
             </form>
         </div>
 
