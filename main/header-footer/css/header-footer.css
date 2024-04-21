@@ -148,7 +148,7 @@ footer {
     text-decoration: underline;
 }
 
-.download{
+.download {
     margin-left: 280px;
 }
 
@@ -289,3 +289,178 @@ footer {
 .footer-small-about a:hover {
     border-bottom: 1px solid #fff;
 }
+
+/* Вхід */
+.list-item {
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 2;
+    /* padding: 15px; */
+    transition: opacity 0.5s, transform 0.5s;
+    max-width: 500px;
+    max-height: 812px;
+    opacity: 0;
+}
+
+
+.text-logo-arvista {
+    display: flex;
+    background-color: #116380;
+    width: 500;
+    border-radius: 12px 12px 0 0;
+    padding: 13px 20px 13px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-logo-arvista img {
+    width: 119px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.text-logo-arvista p {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 21.78px;
+    text-align: left;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F9FA;
+    border-radius: 0 0 12px 12px;
+    width: 100%;
+}
+
+.form-container label {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.form-input {
+    width: 340px;
+    height: 50px;
+    border: 1px solid #B5B5B5;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.container-form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+   margin-top: 10px; 
+  }
+*/
+
+.btn-cancel {
+    cursor: pointer;
+}
+
+.div-btn-cancel {
+    text-align: right;
+}
+
+.form-container-apple {
+    display: flex;
+    width: 340px;
+    height: 50px;
+    background-color: #121315;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-top: 25px;
+}
+
+.form-container-google p {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    color: #FFFFFF;
+    padding-left: 13px;
+}
+
+.form-container-google img {
+    width: 24px;
+}
+
+.form-container-google {
+    display: flex;
+    width: 340px;
+    height: 50px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-top: 50px;
+}
+
+.form-container-google p {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    color: #2E2E2E;
+    padding-left: 13px;
+}
+
+.form-container-google img {
+    width: 24px;
+}
+
+.or {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.or p {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    color: #2E2E2E;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0;
+}
+
+/* Вхід */
