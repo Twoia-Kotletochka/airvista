@@ -15,5 +15,118 @@
                 </li>
             </ul>
         </nav>
+
+        <div class="overlay"></div>
+        <div class="form-popup" id="myForm">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista">
+                    <p><b>Увійдіть</b> в обліковий запис <b>myAirVista</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/login" class="form-container">
+                <div class="form-container-google">
+                    <img src="../../header-footer/img/authorization/google.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="form-container-apple">
+                    <img src="../../header-footer/img/authorization/apple.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="or">
+                    <img src="../../header-footer/img/authorization/line.svg">
+                    <p>або</p>
+                    <img src="../../header-footer/img/authorization/line.svg">
+                </div>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email" required>
+                </div>
+
+                <div class="container-form-input">
+                    <label style="margin-top: 20px;" for="psw">Пароль</label>
+                    <input type="password" class="form-input" name="psw" required>
+                    <a id="showForgot-password">Забули пароль?</a>
+                </div>
+
+                <button type="submit" class="btn-enter">Увійти</button>
+
+                <p class="link-registration" id="link-registration">Не маєте облікового запису? <a>Зареєструватися</a></p>
+            </form>
+        </div>
+
+        <div class="form-popup-forgot-password" id="myForm-forgot-password">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm-forgot-password" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista-forgot-password">
+                    <p><b>Забули пароль</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/forgot" class="form-container-forgot-password">
+
+                <p class="forgot-password-info">Будь ласка вкажіть адресу електронної
+                    пошти, на яку ми можемо відправити лист
+                    з відновленням паролю.</p>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email">
+                </div>
+
+                <button type="submit" class="btn-enter">Надіслати лист</button>
+                <a class="btn-back" id="btn-back">Відмінити</a>
+            </form>
+        </div>
+
+        <div class="form-popup-registration" id="myForm-registration">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm-registration" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista">
+                    <p><b>Створити</b> в обліковий запис <b>myAirVista</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/registration" class="form-container">
+                <div class="form-container-google">
+                    <img src="../../header-footer/img/authorization/google.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="form-container-apple">
+                    <img src="../../header-footer/img/authorization/apple.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="or">
+                    <img src="../../header-footer/img/authorization/line.svg">
+                    <p>або</p>
+                    <img src="../../header-footer/img/authorization/line.svg">
+                </div>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email" required>
+                </div>
+
+                <div class="container-form-input">
+                    <label style="margin-top: 20px;" for="psw">Пароль</label>
+                    <input type="password" class="form-input" name="psw" required>
+                    <p>Реєструючись, ви погоджуєтеся з Політикою<br> 
+                        конфіденційності та Умовами користування AirVista</p>
+                </div>
+
+                <button type="submit" class="btn-enter">Створити обліковий запис</button>
+
+                <p class="link-login">Вже зареєстровані? <a id="link-login">Увійти</a></p>
+            </form>
+        </div>
     </div>
 </header>
