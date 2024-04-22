@@ -320,13 +320,41 @@ footer {
     opacity: 0;
 }
 
+.form-popup-forgot-password {
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 2;
+    /* padding: 15px; */
+    transition: opacity 0.5s, transform 0.5s;
+    max-width: 500px;
+    max-height: 556px;
+    opacity: 0;
+}
+
+.form-popup-registration{
+    display: none;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 2;
+    /* padding: 15px; */
+    transition: opacity 0.5s, transform 0.5s;
+    max-width: 500px;
+    max-height: 812px;
+    opacity: 0;
+}
+
 
 .text-logo-arvista {
     display: flex;
     background-color: #116380;
     width: 500;
     border-radius: 12px 12px 0 0;
-    padding: 13px 20px 13px 20px;
+    padding: 13px 0 13px 20px;
     justify-content: center;
     align-items: center;
 }
@@ -354,7 +382,17 @@ footer {
     width: 100%;
 }
 
+
 .form-container label {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.form-container-forgot-password label {
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
@@ -389,6 +427,15 @@ footer {
     cursor: pointer;
 }
 
+.container-form-input p{
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;  
+    line-height: 14.52px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
 .btn-enter {
     cursor: pointer;
     background-color: #F8AB12;
@@ -399,6 +446,28 @@ footer {
     border-color: #F5F9FA;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+}
+
+.btn-back {
+    cursor: pointer;
+    text-align: center;
+    background-color: #F5F9FA;
+    color: #116380;
+    width: 340px;
+    border-radius: 6px;
+    border: 1px solid #116380;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    padding-top: 11.25px;
+    padding-bottom: 11.25px;
 }
 
 .btn-cancel {
@@ -478,7 +547,7 @@ footer {
     padding: 0;
 }
 
-.link-registration{
+.link-registration {
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
@@ -488,7 +557,7 @@ footer {
     margin-bottom: 70px;
 }
 
-.link-registration a{
+.link-registration a {
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
@@ -497,4 +566,70 @@ footer {
     color: #116380;
     cursor: pointer;
 }
+
 /* Вхід */
+
+.forgot-password-info {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+    width: 340px;
+}
+
+.form-container-forgot-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F9FA;
+    border-radius: 0 0 12px 12px;
+    width: 500px;
+}
+
+.text-logo-arvista-forgot-password {
+    display: flex;
+    background-color: #116380;
+    width: 500;
+    border-radius: 12px 12px 0 0;
+    padding: 13px 0 13px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-logo-arvista-forgot-password img {
+    width: 119px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.text-logo-arvista-forgot-password p {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 21.78px;
+    text-align: left;
+}
+
+.link-login {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+    margin-bottom: 70px;
+}
+
+.link-login a {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #116380;
+    cursor: pointer;
+}
