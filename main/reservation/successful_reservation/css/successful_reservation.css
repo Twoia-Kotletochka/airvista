@@ -1,0 +1,145 @@
+body{
+    background-color: #F5F9FA;
+    font-family: "Inter", sans-serif;
+}
+
+.successful-reservation{
+    margin-top: -15px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 13%;
+    padding-right: 13%;
+    cursor: default;
+}
+
+.successful-reservation-notification{
+    background-color: #fff;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    width: 1420px;
+}
+
+.successful-reservation-notification-img{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.successful-reservation-notification-title{
+    font-weight: 700;
+    font-size: 24px;
+    color: #2E2E2E;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.successful-reservation-notification-item{
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    text-align: center;
+}
+
+.successful-reservation-info{
+    width: 1420px;
+}
+
+.successful-reservation-info-flight{
+    display: flex;
+    background-color: #F8AB1233;
+    margin-bottom: 50px;
+}
+
+.successful-reservation-info-flight-img{
+    margin: 30px 30px 30px 50px;
+}
+
+.successful-reservation-info-flight-data{
+    font-weight: 500;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin-top: 30px;
+}
+
+.successful-reservation-info-title{
+    font-weight: 600;
+    font-size: 16px;
+    color: #116380;
+    margin-bottom: 30px;
+}
+
+.successful-reservation-info-columns{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.successful-reservation-info-column-columns{
+    display: flex;
+}
+
+.successful-reservation-info-column-title{
+    font-weight: 600;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.successful-reservation-info-column-value{
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.successful-reservation-info-details{
+    display: flex;
+    margin-bottom: 70px;
+}
+
+.successful-reservation-info-details-column-ticket-time{
+    font-weight: 600;
+    font-size: 20px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right: 75px;
+}
+
+.successful-reservation-info-details-column-ticket-airport{
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-right: 55px;
+}
+
+.successful-reservation-info-details-column-ticket-flighttime{
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.successful-reservation-info-details-column-ticket-img{
+    margin: 0;
+    margin-left: -30px;
+    margin-right: 40px;
+}
+
+.successful-reservation-info-details-column-ticket-type{
+    margin: 0;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.successful-reservation-info-details-column-item{
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2E2E2E;
+}
