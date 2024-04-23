@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../header-footer/css/header-footer.css">
+    <link rel="stylesheet" href="css/food_and_drinks.css">
+    <title>AirVista</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="../../../index.html"><img src="../../header-footer/img/airvista.svg"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-menu-about-item"><a href="#">Відкрийте для себе AirVista</a></li>
+                    <li class="nav-menu-about-item"><a href="#">Про подорож</a></li>
+                    <li class="nav-menu-about-item"><a href="#">Допомога</a></li>
+                    <li class="nav-menu-about-currency"><a href="#">UAH</a></li>
+                    <li class="nav-menu-about-country"><a href="#"> <img src="../../header-footer/img/flag.svg"
+                                alt="flag" class="logo" style="height: 20px; width: 25px;"></a></li>
+                    <li class="nav-menu-about-btn" id="showForm"><a href="#" style="color: #0E3049;">Увійти</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="form-popup" id="myForm">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista">
+                    <p><b>Увійдіть</b> в обліковий запис <b>myAirVista</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/login" class="form-container">
+                <div class="form-container-google">
+                    <img src="../../header-footer/img/authorization/google.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="form-container-apple">
+                    <img src="../../header-footer/img/authorization/apple.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="or">
+                    <img src="../../header-footer/img/authorization/line.svg">
+                    <p>або</p>
+                    <img src="../../header-footer/img/authorization/line.svg">
+                </div>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email" required>
+                </div>
+
+                <div class="container-form-input">
+                    <label style="margin-top: 20px;" for="psw">Пароль</label>
+                    <input type="password" class="form-input" name="psw" required>
+                    <a id="showForgot-password">Забули пароль?</a>
+                </div>
+
+                <button type="submit" class="btn-enter">Увійти</button>
+
+                <p class="link-registration" id="link-registration">Не маєте облікового запису? <a>Зареєструватися</a></p>
+            </form>
+        </div>
+
+        <div class="form-popup-forgot-password" id="myForm-forgot-password">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm-forgot-password" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista-forgot-password">
+                    <p><b>Забули пароль</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/forgot" class="form-container-forgot-password">
+
+                <p class="forgot-password-info">Будь ласка вкажіть адресу електронної
+                    пошти, на яку ми можемо відправити лист
+                    з відновленням паролю.</p>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email">
+                </div>
+
+                <button type="submit" class="btn-enter">Надіслати лист</button>
+                <a class="btn-back" id="btn-back">Відмінити</a>
+            </form>
+        </div>
+
+        <div class="form-popup-registration" id="myForm-registration">
+            <div class="div-btn-cancel">
+                <img class="btn-cancel" id="closeForm-registration" src="../../header-footer/img/authorization/cencel.svg">
+                <div class="text-logo-arvista">
+                    <p><b>Створити</b> в обліковий запис <b>myAirVista</b></p>
+                    <img src="../../header-footer/img/airvista_mini.svg">
+                </div>
+            </div>
+
+            <form action="/registration" class="form-container">
+                <div class="form-container-google">
+                    <img src="../../header-footer/img/authorization/google.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="form-container-apple">
+                    <img src="../../header-footer/img/authorization/apple.svg">
+                    <p>Продовжити з Google</p>
+                </div>
+
+                <div class="or">
+                    <img src="../../header-footer/img/authorization/line.svg">
+                    <p>або</p>
+                    <img src="../../header-footer/img/authorization/line.svg">
+                </div>
+
+                <div class="container-form-input">
+                    <label for="email">Електронна пошта</label>
+                    <input type="text" class="form-input" name="email" required>
+                </div>
+
+                <div class="container-form-input">
+                    <label style="margin-top: 20px;" for="psw">Пароль</label>
+                    <input type="password" class="form-input" name="psw" required>
+                    <p>Реєструючись, ви погоджуєтеся з Політикою<br> 
+                        конфіденційності та Умовами користування AirVista</p>
+                </div>
+
+                <button type="submit" class="btn-enter">Створити обліковий запис</button>
+
+                <p class="link-login">Вже зареєстровані? <a id="link-login">Увійти</a></p>
+            </form>
+        </div>
+
+        <div class="header-search">
+            <p class="header-search-nav activeflights" id="header-flight-btn">Рейс</p>
+            <p class="header-search-nav" id="header-reservation-btn">Мої бронювання</p>
+            <p class="header-search-nav" id="header-registration-btn">Реєстрація</p>
+            <p class="header-search-nav" id="header-status-btn">Статус рейсу</p>
+        </div>
+
+        <div class="header-flight" id="header-flight-div">
+            <div class="header-flight-line" style="display: flex; margin-bottom: 20px;">
+                <button id="radio-with-back" class="button-radio activeradio"></button>
+                <p class="header-search-radiobutton-text" >В обидві сторони</p>
+                <button id="radio-without-back" class="button-radio"></button>
+                <p class="header-search-radiobutton-text">В один бік</p>
+                <button id="radio-multy" class="button-radio"></button>
+                <p class="header-search-radiobutton-text">Мульти-сіті</p>
+
+            </div>
+            
+            <div class="header-flight-line" style="display: flex; flex-wrap: wrap;" id="with-back-div">
+                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                <img src="../../index/img/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                <div class="header-flight-from">
+                    <p class="header-flight-title">Виліт</p>
+                    <p class="header-flight-date">01 Бер.2024</p>
+                </div>
+                <div class="header-flight-to">
+                    <p class="header-flight-title">Повернення</p>
+                    <p class="header-flight-date">04 Бер.2024</p>
+                </div>
+                <div class="header-flight-class">
+                    <p class="header-flight-title">Клас / Пасажири</p>
+                    <div style="display: flex;">
+                        <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                        <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                    </div>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
+            </div>
+
+            <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="without-back-div">
+                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                <img src="../../index/img/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                </div>
+                <div class="header-flight-class">
+                    <p class="header-flight-title">Клас / Пасажири</p>
+                    <div style="display: flex;">
+                        <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                        <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                    </div>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
+            </div>
+
+            <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="multy-div">
+                <div style="display: block;">
+                    <div style="display: flex;">
+                        <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                        <img src="../../index/img/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                        <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                        <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                            <p class="header-flight-title">Дата подорожі</p>
+                            <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-top: 40px;">
+                        <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                        <img src="../../index/img/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                        <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                        <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                            <p class="header-flight-title">Дата подорожі</p>
+                            <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                        </div>
+                        <div class="header-flight-class">
+                            <p class="header-flight-title">Клас / Пасажири</p>
+                            <div style="display: flex;">
+                                <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                                <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                            </div>
+                        </div>
+                        <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                    </div>
+                    <div style="display: flex;">
+                        <a href="#" style="color: #0E3049;"><p class="header-flight-addflight" style="margin-right: 150px;">Додати рейс</p></a>
+                        <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header-reservation" id="header-reservation-div">
+            <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+            <input type="text" placeholder="Прізвище" class="header-reservation-input">
+            <a href="#" style="color: #fff;"><p class="header-reservation-btn">Знайти</p></a>
+        </div>
+
+        <div class="header-registration" id="header-registration-div">
+            <p class="header-registration-title">Онлайн-реєстрація можлива за <span style="font-weight: 700;">36 годин</span> до планового вильоту рейсу.</p>
+            <div class="header-registrarion-line" style="display: flex;">
+                <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+                <input type="text" placeholder="Прізвище" class="header-reservation-input">
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn">Далi</p></a>
+            </div>
+        </div>
+
+        <div class="header-status" id="header-status-div">
+            <p class="header-registration-title">Перевіряйте інформацію про рейси, затримки, скасування і зміни в розкладі рейсів.</p>
+            <div style="display: flex;">
+                <p class="header-status-nav activestatus" id="header-status-route-btn">Маршрут</p>
+                <p class="header-status-nav" id="header-status-number-btn">Номер рейсу</p>
+            </div>
+            <div style="display: flex;" id="header-status-route-div">
+                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                <img src="../../index/img/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+            <div style="display: none;" id="header-status-number-div">
+                <input type="text" placeholder="Номер рейсу" class="header-number-input">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="food-and-drinks">
+        <ul class="food-and-drinks-list">
+            <a href="#"><li class="food-and-drinks-item" style="cursor: pointer;">На борту</li></a>
+            <li class="food-and-drinks-item"><img src="img/arrow_right.svg"></li>
+            <li class="food-and-drinks-item foodactive">Страви і напої</li>
+        </ul>
+
+        <p class="food-and-drinks-title">Страви і напої</p>
+        <p class="food-and-drinks-text">На борту наших літаків вам запропонують страви високої якості. Якщо ви маєте особливі дієтичні або релігійні потреби, ми можемо підібрати для вас спеціальні страви, щоб вони відповідали вашим вимогам. Також ознайомтеся з вибором страв для ближніх і дальніх рейсів. А щодо перекусу? У AirVista Sky Bar завжди є щось, що сподобається вам.</p>
+
+        <div class="food-and-drinks-cards">
+            <div class="food-and-drinks-card">
+                <img class="food-and-drinks-card-img" src="img/card1.svg">
+                <p class="food-and-drinks-card-title">Спеціальна страва</p>
+            </div>
+
+            <div class="food-and-drinks-card">
+                <img class="food-and-drinks-card-img" src="img/card2.svg">
+                <p class="food-and-drinks-card-title">Замовити страву <br> на борт літака</p>
+            </div>
+
+            <div class="food-and-drinks-card">
+                <img class="food-and-drinks-card-img" src="img/card3.svg">
+                <p class="food-and-drinks-card-title">Страва преміум-класу</p>
+            </div>
+
+            <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+                <img class="food-and-drinks-card-img" src="img/card4.svg">
+                <p class="food-and-drinks-card-title">Їжа і напої на рейсах<br>тривалістю більше 6 годин</p>
+            </div>
+
+            <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+                <img class="food-and-drinks-card-img" src="img/card5.svg">
+                <p class="food-and-drinks-card-title">AirVista Sky Bar</p>
+            </div>
+            
+            <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+                <img class="food-and-drinks-card-img" src="img/card6.svg">
+                <p class="food-and-drinks-card-title">Їжа і напої на рейсах<br>тривалістю меньше 6 годин</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <p class="footer-column-title">Компанія AirVista</p>
+                <a href="#" class="footer-column-element">Про нас</a>
+                <a href="#" class="footer-column-element">Найцікавіши факти</a>
+            </div>
+            <div class="footer-column">
+                <p class="footer-column-title">Додаткові послуги</p>
+                <a href="#" class="footer-column-element">Оренда автомобілю</a>
+                <a href="#" class="footer-column-element">Вибір готелю</a>
+            </div>
+            <div class="footer-column">
+                <p class="footer-column-title">Корпорація AirVista</p>
+                <a href="#" class="footer-column-element">Медіа-центр</a>
+                <a href="#" class="footer-column-element">Кар'єра</a>
+                <a href="#" class="footer-column-element">Зв'язки з інвесторами</a>
+                <a href="#" class="footer-column-element">Загальні умови укладання<br>угод</a>
+            </div>
+            <div class="footer-column">
+                <p class="footer-column-title">Корисна інформація</p>
+                <a href="#" class="footer-column-element">Довідковий центр</a>
+                <a href="#" class="footer-column-element">Чеки за покупки на борту</a>
+                <a href="#" class="footer-column-element">Переглянути історію<br>бронювань</a>
+            </div>
+            <div class="footer-column download">
+                <p class="footer-column-title">Завантажити</p>
+                <a href="#" class="google-play"><img src="../../header-footer/img/Google_Play.svg"
+                        alt="Google Play"></a>
+                <a href="#" class="google-play"><img src="../../header-footer/img/App_Store.svg" alt="App Store"></a>
+                <p class="footer-column-title" style="padding-top: 40px;">Слідкуйте за нами</p>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/x.svg" alt="X"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/facebook.svg"
+                            alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/instagram.svg"
+                            alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="../../header-footer/img/social/youtube.svg"
+                            alt="Youtube"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="footer-column-element"><img src="../../header-footer/img/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі
+                права захищені.</p>
+        
+            <div class="footer-bottom-links">
+                <div class="footer-pay" style="padding-right: 100px;">
+                    <a href="#"><img src="../../header-footer/img/pay/visa.svg" alt="visa"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/masctercard.svg" alt="masctercard"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/maestro.svg" alt="maestro"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/jcb.svg" alt="jcb"></a>
+                    <a href="#"><img src="../../header-footer/img/pay/paypal.svg" alt="paypal"></a>
+                </div>
+                <a href="#" style="cursor: pointer;"><img src="../../header-footer/img/fly.svg" style="width: 65px;"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="../../header-footer/js/main_header.js"></script>
+    <script src="../../header-footer/js/authorization.js"></script>
+</body>
+</html>
