@@ -1,0 +1,112 @@
+.baggage{
+    font-family: "Inter", sans-serif;
+    background-color: #F5F9FA;
+    margin-top: -15px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 12%;
+    padding-right: 10%;
+    cursor: default;
+}
+
+.baggage a{
+    cursor: default;
+}
+
+.baggage-list{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin-bottom: 150px;
+}
+
+.baggage-item{
+    font-weight: 400;
+    font-size: 16px;
+    color: #116380;
+    margin-right: 20px;
+    margin-top: 150px;
+    margin-left: 0;
+    padding: 0;
+}
+
+.baggageactive{
+    font-weight: 700;
+}
+
+.baggage-title{
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin-bottom: 20px;
+}
+
+.baggage-text{
+    font-weight: 400;
+    font-size: 18px;
+    color: #2E2E2E;
+    margin-bottom: 30px;
+}
+
+.baggage-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.baggage-card{
+    width: 460px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+
+.baggage-card-title{
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.baggage-card-img-container{
+    border: 5px solid #f2f2f2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.baggage-card-img{
+    transform: scale(1.2);
+    margin: 0;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.baggage-card-img:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.4);
+}
+
+.baggage-card-about{
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.baggage-card-details{
+    font-weight: 500;
+    font-size: 18px;
+    color: #368BA3;
+    padding: 15px 20px;
+    border: 2px solid #368BA3;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.baggage-card-details:hover{
+    transition: all 0.5s ease;
+    background-color:#116380;
+    border: 2px solid #116380;
+    color: #fff;
+}
