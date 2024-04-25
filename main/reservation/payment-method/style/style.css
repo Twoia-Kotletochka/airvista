@@ -1,5 +1,6 @@
 body {
     background-color: #F5F9FA;
+    font-family: "Inter", sans-serif;
 }
 
 .flight {
@@ -233,7 +234,8 @@ body {
     background-color: #F2F2F2;
     border-radius: 12px;
     width: 551px;
-    height: 850px;
+    height: 950px;
+    text-align: center;
 }
 
 .payment-method-card {
@@ -287,6 +289,7 @@ body {
 }
 
 .payment-processing-title {
+    text-align: left;
     color: #2E2E2E;
     font-family: "Inter", sans-serif;
     font-size: 24px;
@@ -314,9 +317,193 @@ body {
 .payment-processing-info {
     font-family: "Inter", sans-serif;
     font-size: 18px;
-    font-weight: 550;
+    font-weight: 400;
     line-height: 21.78px;
     text-align: left;
     color: #2E2E2E;
     margin-left: 40px;
+}
+
+.successful-reservation-info {
+    width: 1420px;
+    margin-left: 40px;
+}
+
+.successful-reservation-info-flight {
+    display: flex;
+    background-color: #F8AB1233;
+    margin-bottom: 50px;
+}
+
+.successful-reservation-info-flight-img {
+    margin: 30px 30px 30px 50px;
+}
+
+.successful-reservation-info-flight-data {
+    font-weight: 500;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin-top: 30px;
+}
+
+.successful-reservation-info-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #116380;
+    margin-bottom: 30px;
+}
+
+.successful-reservation-info-columns {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.successful-reservation-info-column-columns {
+    display: flex;
+}
+
+.successful-reservation-info-column-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.successful-reservation-info-column-value {
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.successful-reservation-info-details {
+    display: flex;
+    margin-bottom: 70px;
+    width: 551px;
+    justify-content: flex-start;
+}
+
+.successful-reservation-info-details-column-ticket-time {
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right: 75px;
+
+}
+
+.successful-reservation-info-details-column-ticket-airport {
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-right: 55px;
+    max-width: 79px;
+    text-align: left;
+}
+
+.successful-reservation-info-details-column-ticket-flighttime {
+    font-weight: 400;
+    font-size: 16px;
+    color: #2E2E2E;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.successful-reservation-info-details-column-ticket-img {
+    margin: 0;
+    margin-left: -30px;
+    margin-right: 40px;
+}
+
+.successful-reservation-info-details-column-ticket-type {
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+.successful-reservation-info-details-column-item {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2E2E2E;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.price-text {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    color: #0E3049;
+    margin: 0;
+    margin-right: 40px;
+    padding: 0;
+}
+
+.price-text-info {
+    /* font-family: Inter; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    color: #B5B5B5;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    margin-right: 40px;
+}
+
+.btn-pay{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    cursor: pointer;
+    background-color: #F8AB12;
+    color: white;
+    width: 450px;
+    height: 52px;
+    border-radius: 12px;
+    border-color: #F2F2F2;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lighten button on hover */
+}
+
+.active {
+    background-image: radial-gradient(circle, transparent 20%, #FFC107 20%);
+    /* Your active button color */
+}
+
+/* Extra styles for the active button */
+.active:hover {
+    background-image: radial-gradient(circle, transparent 20%, #E6B700 20%);
+    /* Darken the active button slightly on hover */
 }
