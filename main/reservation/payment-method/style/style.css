@@ -204,11 +204,12 @@ body {
     text-decoration: underline
 }
 
-.container {
+.container-payment {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin-top: 50px;
     margin-bottom: 150px;
 }
@@ -465,7 +466,7 @@ body {
     margin-right: 40px;
 }
 
-.btn-pay{
+.btn-pay {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -506,4 +507,20 @@ body {
 .active:hover {
     background-image: radial-gradient(circle, transparent 20%, #E6B700 20%);
     /* Darken the active button slightly on hover */
+}
+
+.page-payment-method {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 13%;
+}
+
+.page-payment-method p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: left;
+    color: #0E3049;
+    padding-right: 20px;
 }
