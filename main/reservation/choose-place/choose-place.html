@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../../header-footer/css/header-footer.css">
+    <title>AirVista</title>
+</head>
+
+<body>
+    <div class="flight">
+        <div class="flight-search">
+            <div class="flight-search-column">
+                <div class="flight-search-block">
+                    <p class="flight-search-city">Берлін</p>
+                    <img src="img/flight-img/Arrows-yellow.svg" style="margin: -7px 7px 0 7px;">
+                    <p class="flight-search-city">Афіни</p>
+                </div>
+
+                <div class="flight-search-block">
+                    <p class="flight-search-type">В обидві сторони</p>
+                    <img src="img/flight-img/Ellipse-yellow.svg" style="margin: 0px 15px">
+                    <p class="flight-search-type">14 Бер.-16 Бер. 2024</p>
+                    <img src="img/flight-img/Ellipse-yellow.svg" style="margin: 0px 15px">
+                    <p class="flight-search-type">1</p>
+                    <img src="img/flight-img/User-filled.svg" style="margin: 0px 2px;">
+                </div>
+            </div>
+
+            <div class="flight-search-column">
+                <p class="flight-search-edit">Редагувати пошуковий запит</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-payment-method">
+        <p>Виліт</p>
+        <img src="img/flight-img/line.svg" style="padding-right: 20px;">
+        <p>Вибір тарифа</p>
+        <img src="img/flight-img/line.svg" style="padding-right: 20px;">
+        <p>Ввести дані</p>
+        <img src="img/flight-img/line.svg" style="padding-right: 20px;">
+        <p>Обрати місце</p>
+        <img src="img/flight-img/line.svg" style="padding-right: 20px;">
+        <p><b>Додати спосіб оплати</b></p>
+    </div>
+
+    <div class="container-choose-place">
+        <div class="seat-selection">
+            <div style="padding-bottom: 40px; padding-left: 40px; padding-top: 20px;">
+                <p class="seat-selection-choice">Вибір сидіння</p>
+                <p class="seat-selection-passenger">Пасажири</p>
+
+                <div class="user-info">
+                    <div class="img-user">
+                        <img src="img/user-icon.svg">
+                        <p>AM</p>
+                    </div>
+                    <p class="user-info-username">Alice Mcroyt</p>
+                </div>
+
+                <p class="seat-selection-minitext" style="padding-top: 20px;">Наші сидіння з найкращим співвідношенням
+                    ціни і якості.</p>
+                <p class="seat-selection-minitext">Зареєструйтесь за 60 днів до вильоту.
+                </p>
+            </div>
+
+            <div class="choose-place">
+                <div class="choose-place-plane">
+                    <div>
+                        <div class="choose-place-img">
+                            <img src="img/plane-right.svg" style="width: 24px; height: 24px;">
+                            <p class="choose-place-miniside"><b>VIE</b> - <b>BRU</b></p>
+                        </div>
+
+                        <div id="left" class="choose-place-ticket" onclick="toggleActive('left')">
+                            <div class="ticket-group">
+                                <img src="img/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-left">3C</p>
+                            </div>
+
+                            <p class="choose-place-ticket-price">€ 19</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="choose-place-img">
+                            <img src="img/plane-left.svg" style="width: 24px; height: 24px;">
+                            <p class="choose-place-miniside"><b>BRU</b> - <b>VIE</b></p>
+                        </div>
+
+                        <div id="right" class="choose-place-ticket" onclick="toggleActive('right')">
+                            <div class="ticket-group">
+                                <img src="img/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-right">3C</p>
+                            </div>
+
+                            <p class="choose-place-ticket-price">€ 19</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seat-selection-down"></div>
+        </div>
+
+        <div class="container-place">
+            <div class="grid-container">
+                <div>
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/blue-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">A</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/blue-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">B</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">C</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">1</p>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/blue-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">D</p>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">E</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="img/blue-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">F</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flight-promo">
+        <div class="flight-promo-column">
+            <p class="flight-promo-title">Не проґавте <span style="color: #F8AB12">акційні квитки</span> від AirVista.*
+            </p>
+            <p class="flight-promo-subtitle">*Ви можете скасувати підписку будь-коли.</p>
+        </div>
+
+        <div class="flight-promo-column" style="margin-top: 30px; margin-left: 0;">
+            <div class="flight-promo-block">
+                <img src="img/flight-img/Check-blue.svg">
+                <p class="flight-promo-possibilities">Першими дізнавайтесь про розпродаж місць.</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <img src="img/flight-img/Check-blue.svg">
+                <p class="flight-promo-possibilities">Отримуйте розродажі авіаквитків та акції прямо у свою почтову
+                    скриньку.</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <img src="img/flight-img/Check-blue.svg">
+                <p class="flight-promo-possibilities">Дізнавайтеся про нові маршрути та напрямки.</p>
+            </div>
+        </div>
+
+        <div class="flight-promo-column" style="margin-bottom: 50px;">
+            <div class="flight-promo-block" style="margin-bottom: -20px;">
+                <input type="email" placeholder="Електронна пошта" class="flight-promo-email">
+                <p class="flight-promo-register">Реєстрація</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <label class="orange-checkbox-container"><input type="checkbox" style="margin-top: 15px;"><span
+                        class="checkmark"></span></label>
+                <p class="flight-promo-possibilities" style="margin-top: 15px;">Реєструючись, ви підтверджуєте, що
+                    приймаєте нашу</p>
+            </div>
+
+            <p class="flight-promo-politics">Політику конфіденційності</p>
+        </div>
+    </div>
+
+    <script src="js/choose-place.js"></script>
+</body>
+
+</html>
