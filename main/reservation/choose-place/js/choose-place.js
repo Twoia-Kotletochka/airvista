@@ -1,63 +1,58 @@
-let activeDivId = null;
+// let activeDivId = null;
 
-function toggleActive(id) {
-    const div = document.getElementById(id);
+// function toggleActive(id) {
+//     const div = document.getElementById(id);
 
-    // Якщо клікнули на активний блок, то знімаємо стиль актив
-    if (activeDivId === id) {
-        div.classList.remove('active');
-        activeDivId = null;
-    } else {
-        // Знімаємо стиль із попереднього активного блоку, якщо такий є
-        if (activeDivId) {
-            const activeDiv = document.getElementById(activeDivId);
-            activeDiv.classList.remove('active');
-        }
+//     // Якщо клікнули на активний блок, то знімаємо стиль актив
+//     if (activeDivId === id) {
+//         div.classList.remove('active');
+//         activeDivId = null;
+//     } else {
+//         // Знімаємо стиль із попереднього активного блоку, якщо такий є
+//         if (activeDivId) {
+//             const activeDiv = document.getElementById(activeDivId);
+//             activeDiv.classList.remove('active');
+//         }
 
-        // Додаємо стиль до поточного блоку та оновлюємо активний id
-        div.classList.add('active');
-        activeDivId = id;
-    }
-}
+//         // Додаємо стиль до поточного блоку та оновлюємо активний id
+//         div.classList.add('active');
+//         activeDivId = id;
+//     }
+// }
 
 
-let selectedArea = null;
-let selectedTicket = null;
+let selectedAreas = {};
 
 function selectTicket(ticket) {
     const ticketNumber = ticket.getAttribute('data-ticket');
     const ticketPrice = ticket.getAttribute('data-price');
-    const ticketName = ticket.innerText;
-    selectedTicket = ticket;
 
-    if (selectedArea) {
-        document.getElementById(`ticketName${selectedArea}`).innerText = `Выбран билет ${ticketNumber}: ${ticketName}`;
-        document.getElementById(`ticketPrice${selectedArea}`).innerText = `Цена: ${ticketPrice} грн`;
-        ticket.classList.add('selected');
-    } else {
-        alert('Выберите область для размещения номера билета');
-    }
+
+    // Remove 'selected' class from all tickets
+    const tickets = document.querySelectorAll('.ticket');
+    tickets.forEach(t => t.classList.remove('selected'));
+
+    // Add 'selected' class to the clicked ticket
+    ticket.classList.add('selected');
+
+    // Update the ticket information in the selected areas
+    Object.keys(selectedAreas).forEach(area => {
+        if (selectedAreas[area]) {
+            document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
+            document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
+        }
+    });
 }
 
-function selectArea(area) {
-    if (selectedArea === area) {
-        document.getElementById(`area${area}`).classList.remove('selected');
-        document.getElementById(`ticketName${area}`).innerText = '';
-        document.getElementById(`ticketPrice${area}`).innerText = '';
-        selectedArea = null;
-        if (selectedTicket) {
-            selectedTicket.classList.remove('selected');
-            selectedTicket = null;
-        }
+function toggleArea(area) {
+    const areaElement = document.getElementById(`area${area}`);
+    if (areaElement.classList.contains('active')) {
+        // Area is already active, make it inactive
+        areaElement.classList.remove('active');
+        selectedAreas[area] = false;
     } else {
-        document.getElementById(`area${area}`).classList.add('selected');
-        selectedArea = area;
-        if (selectedTicket) {
-            const ticketNumber = selectedTicket.getAttribute('data-ticket');
-            const ticketName = selectedTicket.innerText;
-            const ticketPrice = selectedTicket.getAttribute('data-price');
-            document.getElementById(`ticketName${area}`).innerText = `Выбран билет ${ticketNumber}: ${ticketName}`;
-            document.getElementById(`ticketPrice${area}`).innerText = `Цена: ${ticketPrice} грн`;
-        }
+        // Area is not active, make it active
+        areaElement.classList.add('active');
+        selectedAreas[area] = true;
     }
 }
