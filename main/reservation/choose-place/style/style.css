@@ -313,21 +313,10 @@ body {
     margin: 0;
 }
 
-.ticket-group {
-    width: 80px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19.36px;
-}
 
 .ticket-text {
     position: absolute;
+    pointer-events: none; 
 }
 
 .choose-place-ticket {
@@ -374,7 +363,7 @@ body {
 }
 
 .first-rectangle-right {
-    margin-left: 590px;
+    margin-left: 610px;
 }
 
 .second-rectangle-left {
@@ -382,7 +371,7 @@ body {
 }
 
 .second-rectangle-right {
-    margin-left: 590px;
+    margin-left: 610px;
 }
 
 .container-place-price-info {
@@ -412,6 +401,9 @@ body {
     padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-container19-2 {
@@ -427,6 +419,9 @@ body {
     padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-container19-3 {
@@ -442,6 +437,9 @@ body {
     padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-container19-4 {
@@ -454,12 +452,13 @@ body {
     padding-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-item {
     cursor: pointer;
-    width: 80px;
-    height: 67px;
 }
 
 .grid-item-number {
@@ -519,4 +518,23 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 21.78px;
+}
+
+.ticket-group {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+}
+
+
+
+.visible {
+    transition: opacity 0.5s;
+    /* Добавляем плавный переход для прозрачности */
 }

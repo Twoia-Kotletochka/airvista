@@ -75,13 +75,13 @@
                             <p class="choose-place-miniside"><b>VIE</b> - <b>BRU</b></p>
                         </div>
 
-                        <div id="left" class="choose-place-ticket" onclick="toggleActive('left')">
+                        <div id="area1" class="choose-place-ticket" onclick="selectArea(1),toggleActive('area1')">
                             <div class="ticket-group">
                                 <img src="img/yellow-ticket.svg">
-                                <p class="ticket-text" id="ticket-text-left">3C</p>
+                                <p class="ticket-text" id="ticketName1"></p>
                             </div>
 
-                            <p class="choose-place-ticket-price">€ 19</p>
+                            <p class="choose-place-ticket-price" id="ticketPrice1"></p>
                         </div>
                     </div>
 
@@ -91,13 +91,14 @@
                             <p class="choose-place-miniside"><b>BRU</b> - <b>VIE</b></p>
                         </div>
 
-                        <div id="right" class="choose-place-ticket" onclick="toggleActive('right')">
+                        <div id="area2" class="choose-place-ticket" onclick="selectArea(2),toggleActive('area2')"
+                            onclick="toggleActive('right')">
                             <div class="ticket-group">
                                 <img src="img/yellow-ticket.svg">
-                                <p class="ticket-text" id="ticket-text-right">3C</p>
+                                <p class="ticket-text" id="ticketName2"></p>
                             </div>
 
-                            <p class="choose-place-ticket-price">€ 19</p>
+                            <p class="choose-place-ticket-price" id="ticketPrice2"></p>
                         </div>
                     </div>
                 </div>
@@ -113,17 +114,22 @@
             <img src="img/right-rectangle.svg" class="first-rectangle-right">
 
             <p class="container-place-price-info">Місця з додатковим простором для ніг <b>€ 30</b></p>
+
             <div class="grid-container30-1">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/blue-ticket.svg">
+                        <img src="img/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="1A"
+                            data-price="€ 1">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/blue-ticket.svg">
+                        <img src="img/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="1B"
+                            data-price="€ 2">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
@@ -141,7 +147,8 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/blue-ticket.svg">
+                        <img src="img/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
@@ -154,7 +161,8 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/blue-ticket.svg">
+                        <img src="img/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -173,14 +181,16 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -191,21 +201,24 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -214,14 +227,16 @@
             <div class="grid-container19-3">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
@@ -239,21 +254,24 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -262,7 +280,8 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
@@ -276,7 +295,8 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -287,14 +307,16 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
@@ -310,21 +332,24 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -342,14 +367,16 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -358,7 +385,8 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
@@ -372,7 +400,8 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -383,21 +412,24 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -406,21 +438,24 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -431,21 +466,24 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -475,7 +513,8 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -486,20 +525,23 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/gray-ticket.svg">
+                        <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -508,21 +550,24 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -540,14 +585,16 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -556,21 +603,24 @@
             <div class="grid-container19-4">
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">A</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">B</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">C</p>
                     </div>
                 </div>
@@ -581,21 +631,24 @@
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">D</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">E</p>
                     </div>
                 </div>
 
                 <div class="grid-item">
                     <div class="ticket-group">
-                        <img src="img/white-blue-ticket.svg">
+                        <img src="img/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                            onmouseout="resetImage(this)">
                         <p class="ticket-text" id="ticket-text-right">F</p>
                     </div>
                 </div>
@@ -604,7 +657,8 @@
 
         <div class="container-place-info">
             <div>
-                <img src="img/gray-ticket.svg">
+                <img src="img/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                    onmouseout="resetImage(this)">
                 <p>Не обрані місця</p>
             </div>
 
@@ -623,6 +677,7 @@
                 <p>Найкращі пропозиції місць ззаду</p>
             </div>
         </div>
+
     </div>
 
     <div class="btn-container">
@@ -670,7 +725,16 @@
             <p class="flight-promo-politics">Політику конфіденційності</p>
         </div>
     </div>
+    <script>
+        function changeImage(element) {
+            element.dataset.previousSrc = element.src;
+            element.src = 'img/opacity-yellow.svg';
+        }
 
+        function resetImage(element) {
+            element.src = element.dataset.previousSrc;
+        }
+    </script>
     <script src="js/choose-place.js"></script>
 </body>
 
