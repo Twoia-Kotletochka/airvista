@@ -21,38 +21,38 @@
 // }
 
 
-let selectedAreas = {};
+// let selectedAreas = {};
 
-function selectTicket(ticket) {
-    const ticketNumber = ticket.getAttribute('data-ticket');
-    const ticketPrice = ticket.getAttribute('data-price');
+// function selectTicket(ticket) {
+//     const ticketNumber = ticket.getAttribute('data-ticket');
+//     const ticketPrice = ticket.getAttribute('data-price');
 
 
-    // Remove 'selected' class from all tickets
-    const tickets = document.querySelectorAll('.ticket');
-    tickets.forEach(t => t.classList.remove('selected'));
+//     // Remove 'selected' class from all tickets
+//     const tickets = document.querySelectorAll('.ticket');
+//     tickets.forEach(t => t.classList.remove('selected'));
 
-    // Add 'selected' class to the clicked ticket
-    ticket.classList.add('selected');
+//     // Add 'selected' class to the clicked ticket
+//     ticket.classList.add('selected');
 
-    // Update the ticket information in the selected areas
-    Object.keys(selectedAreas).forEach(area => {
-        if (selectedAreas[area]) {
-            document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
-            document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
-        }
-    });
-}
+//     // Update the ticket information in the selected areas
+//     Object.keys(selectedAreas).forEach(area => {
+//         if (selectedAreas[area]) {
+//             document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
+//             document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
+//         }
+//     });
+// }
 
-function toggleArea(area) {
-    const areaElement = document.getElementById(`area${area}`);
-    if (areaElement.classList.contains('active')) {
-        // Area is already active, make it inactive
-        areaElement.classList.remove('active');
-        selectedAreas[area] = false;
-    } else {
-        // Area is not active, make it active
-        areaElement.classList.add('active');
-        selectedAreas[area] = true;
-    }
-}
+// function toggleArea(area) {
+//     const areaElement = document.getElementById(`area${area}`);
+//     if (areaElement.classList.contains('active')) {
+//         // Area is already active, make it inactive
+//         areaElement.classList.remove('active');
+//         selectedAreas[area] = false;
+//     } else {
+//         // Area is not active, make it active
+//         areaElement.classList.add('active');
+//         selectedAreas[area] = true;
+//     }
+// }
