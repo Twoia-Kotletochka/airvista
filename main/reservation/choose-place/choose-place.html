@@ -753,6 +753,8 @@
 
         let selectedAreas = {};
 
+        let selectedTickets = {};
+
         function selectTicket(element) {
             // Проверка на наличие хотя бы одного активного поля
             if (!Object.values(selectedAreas).some(value => value === true)) {
@@ -761,11 +763,19 @@
 
             const ticketNumber = element.getAttribute('data-ticket');
             const ticketPrice = element.getAttribute('data-price');
+            const area = Object.keys(selectedAreas).find(area => selectedAreas[area]);
+
+            // Если в этой области уже есть выбранный тикет, сбросить его изображение и статус
+            if (selectedTickets[area]) {
+                selectedTickets[area].src = selectedTickets[area].getAttribute('data-original-src');
+                selectedTickets[area].setAttribute('data-clicked', 'false');
+                selectedTickets[area].classList.remove('selected');
+            }
 
             // Переключение изображения тикета
             if (element.getAttribute('data-clicked') === 'true') {
                 element.src = element.getAttribute('data-original-src');
-                element.removeAttribute('data-clicked');
+                element.setAttribute('data-clicked', 'false');
             } else {
                 if (!element.getAttribute('data-original-src')) {
                     element.setAttribute('data-original-src', element.src);
@@ -774,29 +784,17 @@
                 element.setAttribute('data-clicked', 'true');
             }
 
-            // Обновление информации о выбранных местах
-            // Удаление класса 'selected' у всех тикетов
-            const tickets = document.querySelectorAll('.ticket');
-            tickets.forEach(t => t.classList.remove('selected'));
-
             // Добавление класса 'selected' к кликнутому тикету
             element.classList.add('selected');
 
-            // Очистка информации о тикете во всех активных областях
-            Object.keys(selectedAreas).forEach(area => {
-                if (selectedAreas[area]) {
-                    document.getElementById(`ticketName${area}`).innerText = '';
-                    document.getElementById(`ticketPrice${area}`).innerText = '';
-                }
-            });
-
             // Обновление информации о тикете в выбранных областях
-            Object.keys(selectedAreas).forEach(area => {
-                if (selectedAreas[area]) {
-                    document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
-                    document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
-                }
-            });
+            if (selectedAreas[area]) {
+                document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
+                document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
+            }
+
+            // Обновление выбранного тикета в этой области
+            selectedTickets[area] = element;
         }
 
         function toggleArea(area) {
