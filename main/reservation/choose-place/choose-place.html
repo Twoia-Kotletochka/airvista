@@ -729,14 +729,6 @@
         </div>
     </div>
     <script>
-        // function changeImage(element) {
-        //     element.dataset.previousSrc = element.src;
-        //     element.src = 'img/opacity-yellow.svg';
-        // }
-
-        // function resetImage(element) {
-        //     element.src = element.dataset.previousSrc;
-        // }
 
         function changeImage(element) {
             if (element.getAttribute('data-clicked') !== 'true') {
@@ -765,11 +757,7 @@
             const area = Object.keys(selectedAreas).find(area => selectedAreas[area]);
 
             // Если в этой области уже есть выбранный тикет, сбросить его изображение и статус
-            if (selectedTickets[area]) {
-                // Если этот тикет уже выбран в другой области, не сбрасывать его
-                if (Object.values(selectedTickets).includes(element) && selectedTickets[area] !== element) {
-                    return;
-                }
+            if (selectedTickets[area] && selectedTickets[area] !== element) {
                 selectedTickets[area].src = selectedTickets[area].getAttribute('data-original-src');
                 selectedTickets[area].setAttribute('data-clicked', 'false');
                 selectedTickets[area].classList.remove('selected');
@@ -777,7 +765,7 @@
             }
 
             // Переключение изображения тикета
-            if (element.getAttribute('data-clicked') === 'true') {
+            if (element.getAttribute('data-clicked') === 'true' && !Object.values(selectedTickets).includes(element)) {
                 element.src = element.getAttribute('data-original-src');
                 element.setAttribute('data-clicked', 'false');
                 element.classList.remove('selected');
@@ -813,7 +801,6 @@
             areaElement.classList.add('active');
             selectedAreas[area] = true;
         }
-
     </script>
     <script src="js/choose-place.js"></script>
 </body>
