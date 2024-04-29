@@ -752,7 +752,6 @@
         }
 
         let selectedAreas = {};
-
         let selectedTickets = {};
 
         function selectTicket(element) {
@@ -767,15 +766,21 @@
 
             // Если в этой области уже есть выбранный тикет, сбросить его изображение и статус
             if (selectedTickets[area]) {
+                // Если этот тикет уже выбран в другой области, не сбрасывать его
+                if (Object.values(selectedTickets).includes(element) && selectedTickets[area] !== element) {
+                    return;
+                }
                 selectedTickets[area].src = selectedTickets[area].getAttribute('data-original-src');
                 selectedTickets[area].setAttribute('data-clicked', 'false');
                 selectedTickets[area].classList.remove('selected');
+                selectedTickets[area] = null;
             }
 
             // Переключение изображения тикета
             if (element.getAttribute('data-clicked') === 'true') {
                 element.src = element.getAttribute('data-original-src');
                 element.setAttribute('data-clicked', 'false');
+                element.classList.remove('selected');
             } else {
                 if (!element.getAttribute('data-original-src')) {
                     element.setAttribute('data-original-src', element.src);
@@ -787,28 +792,28 @@
             // Добавление класса 'selected' к кликнутому тикету
             element.classList.add('selected');
 
-            // Обновление информации о тикете в выбранных областях
+            // Обновление информации о тикете в выбранной области
             if (selectedAreas[area]) {
                 document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
                 document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
+                selectedTickets[area] = element;
             }
-
-            // Обновление выбранного тикета в этой области
-            selectedTickets[area] = element;
         }
 
         function toggleArea(area) {
-            const areaElement = document.getElementById(`area${area}`);
-            if (areaElement.classList.contains('active')) {
-                // Area is already active, make it inactive
+            // Сначала делаем все области неактивными
+            Object.keys(selectedAreas).forEach(area => {
+                const areaElement = document.getElementById(`area${area}`);
                 areaElement.classList.remove('active');
                 selectedAreas[area] = false;
-            } else {
-                // Area is not active, make it active
-                areaElement.classList.add('active');
-                selectedAreas[area] = true;
-            }
+            });
+
+            // Затем активируем выбранную область
+            const areaElement = document.getElementById(`area${area}`);
+            areaElement.classList.add('active');
+            selectedAreas[area] = true;
         }
+
     </script>
     <script src="js/choose-place.js"></script>
 </body>
