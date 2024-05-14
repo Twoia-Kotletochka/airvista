@@ -1,0 +1,176 @@
+.I-Body{
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.main-image {
+    margin-top: 100px;
+    position: relative;
+    display: flex; /* Это важно для того, чтобы контейнер мог обтекаться другими элементами на странице */
+}
+  
+.text-overlay {
+    
+    font-size: 16px;
+    position: absolute;
+    top: 64%; /* Расположение текста по вертикали в середине изображения */
+    margin-left: 12%; /* Расположение текста по горизонтали в середине изображения */
+    width: 80%;
+    color: #116380;
+    /* Цвет текста */
+    
+  }
+.i{
+    margin-left: 15px;
+    margin-right: 20px;
+    height: 12px;
+  }
+.f{
+    color: #116380;
+    flex: 1;
+    margin: 0;
+   width: 1100px;
+   padding-bottom: 20px;
+  } 
+.bold {
+    font-weight: bold;
+  }
+/* Стили для заголовка и текста */
+.title {
+   margin-top: 35px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.text1 {
+    font-size: 18px;    
+    width: 1420px;
+    margin-bottom: 40px;
+}
+.text {
+    font-size: 24px;
+   
+    
+}
+.bold {
+    font-weight: bold;
+  }
+
+.container {
+    margin-top: 140px;
+    display: flex;
+    margin-bottom: 120px;
+    width: 88%;
+    margin-left: 12%;
+}
+.colors{
+    background-color: #F2F2F2;
+    width: 100%;
+}
+
+.title1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container1 {    
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row; /* Располагаем элементы в ряд */
+  }
+  .image {
+    margin-top: 17px;
+    margin-right: 20px; /* Отступ вправо для картинки */
+  }
+  .text {
+    margin-right: 20px; /* Отступ вправо для текста */
+  }
+
+.title2 {
+    font-size: 16px;
+    font-weight: bold;
+    width: 412px;
+    margin-right: 20px;
+}
+.text2 {
+    font-size: 16px;  
+    width: 412px;
+    margin-right: 20px;
+}
+.text3 {
+    font-size: 16px;  
+    width: 393px;
+    margin-right: 20px;
+}
+
+.button-container {
+    margin-top: 30px;
+    text-align: center; /* Выравниваем текст кнопки по центру */
+    margin-bottom: 50px;
+  }
+
+.button3{
+    width: 460px;
+    height: 62px;   
+    border: none;
+    background-color: #F8AB12;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+}
+
+.container4 {
+  margin-left: 12%;
+  width: 76%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.block4 {
+  border: 1px solid #ccc;
+  padding: 20px;
+  
+  flex-basis: 30%; /* Розмір блоку */
+}
+.title4{
+  color: #116380;
+}
+.text4 {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 420px;
+ 
+}
+
+.link4 {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #116380;
+  font-weight: bold;
+}
+
+.block5{
+  margin-left: 12%;
+  width: 76%;
+  margin-bottom: 50px;
+}
+
+.title5 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.title6 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #116380;
+}
+
+.block6{
+  margin-left: 12%;
+  width: 76%;
+  margin-bottom: 150px;
+}

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "baggage";
+    Layout = "~/Views/Shared/main_s_layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style/baggage.css">
+</head>
+
+<div class="baggage">
+    <ul class="baggage-list">
+        <a href="/home/business">
+        <li class="baggage-item" style="cursor: pointer;">На борту</li></a>
+        <li class="baggage-item"><img src="~/Content/img/baggage/arrow_right.svg"></li>
+        <li class="baggage-item baggageactive">Багаж</li>
+    </ul>
+
+    <p class="baggage-title">Багаж</p>
+    <p class="baggage-text">Вивчіть правила перевезення багажу і спеціального обладнання.</p>
+
+    <div class="baggage-cards">
+        <div class="baggage-card">
+            <p class="baggage-card-title">Багаж на близькомагістральних<br>перельотах</p>
+            <div class="baggage-card-img-container">
+                <img src="~/Content/img/baggage/card1.svg" class="baggage-card-img">
+            </div>
+            <p class="baggage-card-about">Норми зареєстрованого багажу на рейсах в межах  Європи, на Близький Схід (ОАЕ, Саудівська Аравія) та з/до Центральної Азії (Узбекистан, Казахстан)</p>
+            <a href="#" class="baggage-card-details">Ознайомитися детальніше</a>
+        </div>
+
+        <div class="baggage-card">
+            <p class="baggage-card-title">Багаж на далекомагістральних<br>рейсах</p>
+            <div class="baggage-card-img-container">
+                <img src="~/Content/img/baggage/card2.svg" class="baggage-card-img">
+            </div>
+            <p class="baggage-card-about" style="margin-bottom: 51px;">Багаж на рейсах до/з Китаю, Індії, Японії, Канади, Південної Кореї, США та Японії.</p>
+            <a href="#" class="baggage-card-details">Ознайомитися детальніше</a>
+        </div>
+
+        <div class="baggage-card">
+            <p class="baggage-card-title" style="margin-top: 52px;">Перевезення продуктів харчування</p>
+            <div class="baggage-card-img-container">
+                <img src="~/Content/img/baggage/card3.svg" class="baggage-card-img">
+            </div>
+            <p class="baggage-card-about" style="margin-bottom: 51px;">Умови перевезення продуктів тваринного походження</p>
+            <a href="#" class="baggage-card-details">Ознайомитися детальніше</a>
+        </div>
+
+        <div class="baggage-card">
+            <p class="baggage-card-title" style="margin-top: 52px;">Перевезення спортивного інвентарю</p>
+            <div class="baggage-card-img-container">
+                <img src="~/Content/img/baggage/card4.svg" class="baggage-card-img">
+            </div>
+            <p class="baggage-card-about" style="margin-bottom: 73px;">Дізнайтеся, як перевозити спортивний інвентар.</p>
+            <a href="#" class="baggage-card-details">Ознайомитися детальніше</a>
+        </div>
+
+        <div class="baggage-card" style="margin-bottom: 170px;">
+            <p class="baggage-card-title">Заборонені предмети і небезпечні матеріали</p>
+            <div class="baggage-card-img-container">
+                <img src="~/Content/img/baggage/card5.svg" class="baggage-card-img">
+            </div>
+            <p class="baggage-card-about" style="margin-bottom: 51px;">Перелік предметів, заборонених до провезення в ручній поклажі і зареєстрованому багажі. </p>
+            <a href="#" class="baggage-card-details">Ознайомитися детальніше</a>
+        </div>
+    </div>
+</div>

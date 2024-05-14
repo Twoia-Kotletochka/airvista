@@ -1,0 +1,150 @@
+body {
+
+    background-color: #F5F9FA;
+    font-family: "Inter", sans-serif;
+    cursor: default;
+}
+
+.cost-transporting-animals{
+    color: white;
+    border: none;
+    width: 550px;
+    background-color: #116380;
+    top: 1438px;
+    left: 985px;
+    padding: 14px 10px 14px 10px;
+    gap: 10px;
+    border-radius: 12px 12px 12px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+    transition: background-color 1s;
+}
+
+.cost-transporting-animals:hover {
+    background-color: #5c8c9e;
+}
+
+.header-about {
+    display: flex;
+    padding-left: 13%;
+}
+
+.header-about a {
+    color: #F5F9FA;
+    text-decoration: none;
+}
+
+.header-about-main {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-right: 25px;
+}
+
+.header-about-current {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+
+.title-text {
+    font-family: "Inter", sans-serif;
+    color: #0E3049;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.73px;
+    margin-top: 150px;
+}
+
+.container-title-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mini-title-text {
+    font-family: "Inter", sans-serif;
+    color: #0E3049;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+}
+
+.mini-title-text-list-info {
+    font-family: "Inter", sans-serif;
+    color: #2E2E2E;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+}
+
+.mini-title-text-list-info a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #116380;
+}
+
+.container-title-text-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container-other-dog {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-other-dog a {
+    text-decoration: none;
+    color: #2E2E2E;
+    cursor: pointer;
+    height: 360px;
+}
+
+.container-other-dog p {
+    text-align: left;
+    background-color: white;
+    width: 400px;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.container-other-dog-dogcat {
+    margin-left: 40px;
+    margin-right: 20px;
+    transition: box-shadow 0.3s;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.container-other-dog-dogcat:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.container-other-dog-dog {
+    margin-left: 20px;
+    transition: box-shadow 0.3s;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.container-other-dog-dog:hover {
+    box-shadow: 0 0 50px lightgrey;
+}

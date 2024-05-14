@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "food_and_drinks";
+    Layout = "~/Views/Shared/main_s_layout.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style/food_and_drinks.css">
+</head>
+
+
+
+<div class="food-and-drinks">
+    <ul class="food-and-drinks-list">
+        <a href="/home/business">
+        <li class="food-and-drinks-item" style="cursor: pointer;">На борту</li></a>
+        <li class="food-and-drinks-item"><img src="~/Content/img/food_and_drinks/arrow_right.svg"></li>
+        <li class="food-and-drinks-item foodactive">Страви і напої</li>
+    </ul>
+
+    <p class="food-and-drinks-title">Страви і напої</p>
+    <p class="food-and-drinks-text">На борту наших літаків вам запропонують страви високої якості. Якщо ви маєте особливі дієтичні або релігійні потреби, ми можемо підібрати для вас спеціальні страви, щоб вони відповідали вашим вимогам. Також ознайомтеся з вибором страв для ближніх і дальніх рейсів. А щодо перекусу? У AirVista Sky Bar завжди є щось, що сподобається вам.</p>
+
+    <div class="food-and-drinks-cards">
+        <div class="food-and-drinks-card">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card1.svg">
+            <p class="food-and-drinks-card-title">Спеціальна страва</p>
+        </div>
+
+        <div class="food-and-drinks-card">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card2.svg">
+            <p class="food-and-drinks-card-title">Замовити страву <br> на борт літака</p>
+        </div>
+
+        <div class="food-and-drinks-card">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card3.svg">
+            <p class="food-and-drinks-card-title">Страва преміум-класу</p>
+        </div>
+
+        <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card4.svg">
+            <p class="food-and-drinks-card-title">Їжа і напої на рейсах<br>тривалістю більше 6 годин</p>
+        </div>
+
+        <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card5.svg">
+            <p class="food-and-drinks-card-title">AirVista Sky Bar</p>
+        </div>
+
+        <div class="food-and-drinks-card" style="margin-bottom: 150px;">
+            <img class="food-and-drinks-card-img" src="~/Content/img/food_and_drinks/card6.svg">
+            <p class="food-and-drinks-card-title">Їжа і напої на рейсах<br>тривалістю меньше 6 годин</p>
+        </div>
+    </div>
+</div>

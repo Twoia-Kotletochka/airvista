@@ -1,0 +1,259 @@
+﻿
+@{
+    string email = null;
+    WDsite.Models.persons_table person = (WDsite.Models.persons_table)Session["account"];
+    if (person != null)
+    {
+        email = person.email;
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/Content/style/h_f.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style/header_dropdown1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="/home/index"><img src="~/Content/img/img_header_footer/airvista.svg"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-menu-about-item"><a href="/home/view_airvista">Відкрийте для себе AirVista</a></li>
+                    <li class="nav-menu-about-item" style="font-weight: bold;">
+                        <a href="/about_travel/index" style="cursor: default;">
+                            Про
+                            подорож
+                        </a>
+                    </li>
+                    <li class="nav-menu-about-item"><a href="/help/help">Допомога</a></li>
+                    <li class="nav-menu-about-currency">
+                        @if (Session["val"] == null)
+                        {
+                            <a href="#" id="currencyToggle">UAH</a>
+                        }
+                        else
+                        {
+                            <a href="#" id="currencyToggle">@Session["val"]</a>
+                        }
+                        <div class="dropdown-menu1">
+                            <div class="dropdown-header">Оберіть валюту</div>
+                            <div class="currency-grid">
+                                <div class="currency-box">
+                                    <p>Українська гривня</p>
+                                    <span>UAH</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Долар США</p>
+                                    <span>USD</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Євро</p>
+                                    <span>EUR</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Австралійський долар</p>
+                                    <span>AUD</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Азейбарджанский Манат</p>
+                                    <span>AZN</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Аргентинський песо</p>
+                                    <span>ARS</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Бухрейнський Динар</p>
+                                    <span>BHD</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Болгарський Лев</p>
+                                    <span>BGN</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Бразильський Реал</p>
+                                    <span>BRL</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Гонконгський доллар</p>
+                                    <span>HKD</span>
+                                </div>
+                                <div class="currency-box">
+                                    <p>Дріхам OAE</p>
+                                    <span>AED</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-menu-about-country">
+                        <a href="#">
+                            <img src="~/Content/img/img_header_footer/flag.svg"
+                                 alt="flag" class="logo" style="height: 20px; width: 25px;">
+                        </a>
+                    </li>
+                    @if (Session["account"] != null)
+                    {
+                        <form action="/home/exit" method="post">
+                            <lable>@email</lable>
+                            <button type="submit" style="color: black; border: 12px solid white; background: white; border-radius: 12px;">Вийти</button>
+                        </form>
+                    }
+                    else
+                    {
+
+
+                        <li class="nav-menu-about-btn" id="showForm"><a href="#" style="color: #0E3049;">Увійти</a></li>
+                    }
+                </ul>
+            </nav>
+
+            <div class="overlay"></div>
+            <div class="form-popup" id="myForm">
+                <div class="div-btn-cancel">
+                    <img class="btn-cancel" id="closeForm" src="~/Content/img/authorization/cencel.svg">
+                    <div class="text-logo-arvista">
+                        <p><b>Увійдіть</b> в обліковий запис <b>myAirVista</b></p>
+                        <img src="~/Content/img/img_header_footer/airvista_mini.svg">
+                    </div>
+                </div>
+
+                <form action="/home/login" method="post" class="form-container">
+                    <div class="form-container-google">
+                        <img src="~/Content/img/authorization/google.svg">
+                        <p>Продовжити з Google</p>
+                    </div>
+
+                    <div class="form-container-apple">
+                        <img src="~/Content/img/authorization/apple.svg">
+                        <p>Продовжити з Google</p>
+                    </div>
+
+                    <div class="or">
+                        <img src="~/Content/img/authorization/line.svg">
+                        <p>або</p>
+                        <img src="~/Content/img/authorization/line.svg">
+                    </div>
+
+                    <div class="container-form-input">
+                        <label for="email">Електронна пошта</label>
+                        <input type="text" class="form-input" name="email" required>
+                    </div>
+
+                    <div class="container-form-input">
+                        <label style="margin-top: 20px;" for="psw">Пароль</label>
+                        <input type="password" class="form-input" name="password" required>
+                        <a id="showForgot-password">Забули пароль?</a>
+                    </div>
+
+                    <button type="submit" class="btn-enter">Увійти</button>
+
+                    <p class="link-registration" id="link-registration">Не маєте облікового запису? <a>Зареєструватися</a></p>
+                </form>
+            </div>
+
+            <div class="form-popup-forgot-password" id="myForm-forgot-password">
+                <div class="div-btn-cancel">
+                    <img class="btn-cancel" id="closeForm-forgot-password" src="~/Content/img/authorization/cencel.svg">
+                    <div class="text-logo-arvista-forgot-password">
+                        <p><b>Забули пароль</b></p>
+                        <img src="~/Content/img/authorization/airvista_mini.svg">
+                    </div>
+                </div>
+
+                <form action="/forgot" class="form-container-forgot-password">
+
+                    <p class="forgot-password-info">
+                        Будь ласка вкажіть адресу електронної
+                        пошти, на яку ми можемо відправити лист
+                        з відновленням паролю.
+                    </p>
+
+                    <div class="container-form-input">
+                        <label for="email">Електронна пошта</label>
+                        <input type="text" class="form-input" name="email">
+                    </div>
+
+                    <button type="submit" class="btn-enter">Надіслати лист</button>
+                    <a class="btn-back" id="btn-back">Відмінити</a>
+                </form>
+            </div>
+
+            <div class="form-popup-registration" id="myForm-registration">
+                <div class="div-btn-cancel">
+                    <img class="btn-cancel" id="closeForm-registration" src="~/Content/img/authorization/cencel.svg">
+                    <div class="text-logo-arvista">
+                        <p><b>Створити</b> в обліковий запис <b>myAirVista</b></p>
+                        <img src="~/Content/img/authorization/airvista_mini.svg">
+                    </div>
+                </div>
+
+                <form action="/registration" class="form-container">
+                    <div class="form-container-google">
+                        <img src="~/Content/img/authorization/google.svg">
+                        <p>Продовжити з Google</p>
+                    </div>
+
+                    <div class="form-container-apple">
+                        <img src="~/Content/img/authorization/apple.svg">
+                        <p>Продовжити з Google</p>
+                    </div>
+
+                    <div class="or">
+                        <img src="~/Content/img/authorization/line.svg">
+                        <p>або</p>
+                        <img src="~/Content/img/authorization/line.svg">
+                    </div>
+
+                    <div class="container-form-input">
+                        <label for="email">Електронна пошта</label>
+                        <input type="text" class="form-input" name="email" required>
+                    </div>
+
+                    <div class="container-form-input">
+                        <label style="margin-top: 20px;" for="psw">Пароль</label>
+                        <input type="password" class="form-input" name="psw" required>
+                        <p>
+                            Реєструючись, ви погоджуєтеся з Політикою<br>
+                            конфіденційності та Умовами користування AirVista
+                        </p>
+                    </div>
+
+                    <button type="submit" class="btn-enter">Створити обліковий запис</button>
+
+                    <p class="link-login">Вже зареєстровані? <a id="link-login">Увійти</a></p>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div @*class="container"*@>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-small">
+            <p class="footer-small-logo"><img src="~/Content/img/img_header_footer/airvista_mini.svg" style="width: 25px;"> 2024 © AirVista CLS. Усі права захищені.</p>
+            <p class="footer-small-about"><a href="#">Умови використання</a></p>
+            <p class="footer-small-about"><a href="#">Політика конфіденційності</a></p>
+            <p class="footer-small-about"><a href="#">Файли cookie</a></p>
+            <div class="footer-small-chat" style="margin-left: 50px;"><img src="~/Content/img/img_header_footer/chat.svg"> Chat</div>
+        </div>
+    </footer>
+    <script src="~/Scripts/authorization.js" asp-append-version="true"></script>
+    <script src="~/Scripts/header.js" asp-append-version="true"></script>
+    <script src="~/Scripts/header_dropdown_jquery.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" asp-append-version="true"></script>
+
+
+</body>
+</html>
+

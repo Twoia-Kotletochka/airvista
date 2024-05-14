@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "travel_requirements";
+    Layout = "~/Views/Shared/main_h_f_layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="~/Content/style/travel_requirements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="hImage">
+        <div class="image-con">
+            <div><p class="img-text"><a href="/help/help" style="text-decoration: none; color: inherit;">Допомога</a></p></div>
+            <div class="image-con-arr">></div>
+            <div class="img-text-h"><h1>Вимоги до подорожі</h1></div>
+        </div>
+    </div>
+
+
+    <div class="main-div">
+        <div>
+            <div>
+                <p>Будь ласка, прочитайте вимоги до поїздки та<a href="#"> візові деталі </a>перед бронюванням поїздки та переконайтеся, що у вас є необхідні документи під час подорожі.</p>
+            </div>
+            <div class="main-div-textblock">
+                <h1>Знайдіть вимоги до входу або виходу</h1>
+                <p>Введіть свої дані нижче, щоб знайти вимоги до країни/регіону залежно від вашого маршруту.</p>
+            </div>
+            <div class="main-div-req">
+
+                <input type="text" class="input-field" placeholder="Походження">
+                <input type="text" class="input-field" placeholder="Призначення">
+                <div class="custom-dropdown">
+                    <div class="selected-option">
+                        Тип подорожі
+                        <div class="arr"><img src="~/Content/img/travel_requirements_img/Vector6.svg" /></div>
+                    </div>
+                    <ul class="options">
+                        <li>В один бік</li>
+                        <li>В обидві сторони</li>
+                    </ul>
+
+                </div>
+                <button class="main-div-req-button">Перевірити вимоги</button>
+
+            </div>
+
+            <div class="main-div-textblock">
+                <h1>Візи та інші вимоги</h1>
+                <p>Перш ніж бронювати рейс у AirVista, ми рекомендуємо вам ознайомитися з найновішою інформацією про обмеження на поїздки в країні/регіоні, а також паспортні, візові, санітарні та митні вимоги.</p>
+            </div>
+            <div class="main-div-vise">
+                <div style="padding-top: 50px;">
+                    <input type="text" class="input-field margin" placeholder="Країна/регіон призначення*"><input type="text" class="input-field" placeholder="Громадянство*">
+                </div>
+                <div>
+                    <input type="text" class="input-field margin" placeholder="Тип проїзного документа*"><input type="text" class="input-field" placeholder="Країна/регіон проживання*">
+                </div>
+                <div style="padding-bottom: 50px;">
+                    <input type="text" class="input-field margin" placeholder="Транзитні країни/регіони*">
+                </div>
+
+            </div>
+            <div class="main-div-vise-btn-block">
+                <button class="main-div-req-button">Надіслати</button>
+            </div>
+            <div class="main-div-textblock">
+                <div class="bot-textblock">
+                    <p>Ця інформація надається AirVista як люб'язність, і, незважаючи на те, що вона регулярно оновлюється, ми рекомендуємо вам часто перевіряти її через швидкі зміни умов подорожі, а також перевіряти вимоги щодо подорожі та в'їзду за допомогою незалежних запитів перед поїздкою.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const dropdown = document.querySelector(".custom-dropdown");
+  const selectedOption = document.querySelector(".selected-option");
+  const selectedValueDisplay = document.createElement("div");
+  selectedValueDisplay.classList.add("selected-value");
+  selectedOption.appendChild(selectedValueDisplay);
+  const optionsList = document.querySelector(".options");
+
+  selectedOption.addEventListener("click", function() {
+    optionsList.style.display = optionsList.style.display === "block" ? "none" : "block";
+  });
+
+  optionsList.addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+      const selectedValue = event.target.textContent;
+      selectedValueDisplay.textContent = selectedValue;
+      optionsList.style.display = "none";
+    }
+  });
+
+  document.addEventListener("click", function(event) {
+    if (!dropdown.contains(event.target)) {
+      optionsList.style.display = "none";
+    }
+  });
+});
+    </script>
+
+
+</body>

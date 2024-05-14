@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "index";
+}
+
+
+
+
+
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Про подорож</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="~/Content/style/about-travel/about-main/style1.css">
+
+    </head>
+    <body>
+        <header class="header">
+
+
+            <div class="search-form">
+                <div>
+                    <h1 class="header-about-main">Про подорожування</h1>
+                    <p class="header-about-current">
+                        Введіть дані про рейс нижче, щоб слідкувати за рейсом і
+                        його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
+                        ви отримаєте від AirVista електронне та SMS-повідомлення.
+                    </p>
+                    <div class="button-container">
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <button id="location-btn" class="button"></button>
+                            <p class="header-about-properties">Місце призначення</p>
+                        </div>
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <button id="ticket-number-btn" class="button active1"></button>
+                            <p class="header-about-properties">Номер рейсу</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination" id="destination">
+                    <input type="text" class="input-field21" placeholder="З">
+                    <input type="text" class="input-field22" placeholder="До">
+                    <input type="date" class="date-picker" placeholder="Дата">
+                    <button class="search-button">Пошук</button>
+                </div>
+
+                <div class="flight-number" id="flight-number" style="display: none;">
+                    <input type="text" class="input-field" placeholder="Номер рейсу">
+                    <input type="date" class="date-picker" placeholder="Дата">
+                    <button class="search-button">Пошук</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="services-section">
+            <h2>Знайдіть корисну для Вас інформацію</h2>
+            <div class="services-grid">
+                <a href="/about_travel/baggage" class="service-item">
+                    <div class="container-baggage">
+                        <img class="chest-left" src="~/Content/img/about-travel/about-main/chest-left.svg">
+                        <img class="chest-right" src="~/Content/img/about-travel/about-main/chest-right.svg">
+                    </div>
+                    <p>Інформація щодо багажу</p>
+                </a>
+                <a href="/about_travel/inf_reg" class="service-item">
+                    <div class="container-registration">
+                        <img class="registration-left" src="~/Content/img/about-travel/about-main/registration.svg">
+                        <img class="human-right" src="~/Content/img/about-travel/about-main/human.svg">
+                    </div>
+                    <p>Інформація про реєстрацію</p>
+                </a>
+                <a href="/about_travel/aboard" class="service-item">
+                    <div class="container-on-board">
+                        <img class="board-left" src="~/Content/img/about-travel/about-main/board.svg">
+                        <img class="human-board-right" src="~/Content/img/about-travel/about-main/human-board.svg">
+                    </div>
+                    <p>На борту</p>
+                </a>
+                <a href="/about_travel/additional_services" class="service-item">
+                    <div class="container-dditional-services">
+                        <img class="cities" src="~/Content/img/about-travel/about-main/cities.svg">
+                        <img class="plane1" src="~/Content/img/about-travel/about-main/plane1.svg">
+                        <img class="plane2" src="~/Content/img/about-travel/about-main/plane2.svg">
+                        <img class="plane3" src="~/Content/img/about-travel/about-main/plane3.svg">
+                    </div>
+                    <p>Додаткові послуги</p>
+                </a>
+                <a href="/about_travel/special_requirements" class="service-item">
+                    <div class="container-special-needs">
+                        <img class="yellow-baggage" src="~/Content/img/about-travel/about-main/yellow-baggage.svg">
+                        <img class="family" src="~/Content/img/about-travel/about-main/family.svg">
+                    </div>
+                    <p>Особливі вимоги</p>
+                </a>
+            </div>
+
+
+            <div class="Main-partn-h font-color">
+                <h1>Наші партнери</h1>
+            </div>
+
+            <div class="Main-partn-con font-color">
+                <div class="Main-partn-con-m">
+                    <div class="Main-partn-con-m-h">
+                        <img src="~/Content/img/about-travel/about-main/bild.svg" />
+                        <h1>Оренда автомобілю</h1>
+                    </div>
+                    <p>
+                        Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно,<br>
+                        отримуючи при цьому ексклюзивні пропозиції.
+                    </p>
+                </div>
+                <div class="Main-partn-con-m">
+                    <div class="Main-partn-con-m-h">
+                        <img src="~/Content/img/about-travel/about-main/car.svg" />
+                        <h1>Вибір помешкання</h1>
+                    </div>
+                    <p>
+                        Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно<br>
+                        до ваших побажань за кращими цінами.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="~/Scripts/authorization.js"></script>
+
+        <script src="~/Scripts/about_travel_header.js"></script>
+    </body>
+
+

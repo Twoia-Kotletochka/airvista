@@ -1,0 +1,40 @@
+.busin-main-con{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    
+}
+.busin-m-con{
+ width:1420px;
+}
+.busin-m-con img{
+ width: 100%;
+}
+.busin-m-con h1{
+ font-size: 32px;
+ color: #0E3049;
+}
+.busin-m-con h2{
+ margin-top: 55px;
+ font-size: 24px;
+ color: #0E3049;
+}
+.busin-m-con p{
+    font-size: 18px;
+}
+.busin-m-con-mini-img{
+    float: left;
+    
+}
+.busin-m-con-mini-img-con{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+
+}
+.img-size-wrap{
+    max-width: 700px;
+    margin-top: 15px;
+
+}

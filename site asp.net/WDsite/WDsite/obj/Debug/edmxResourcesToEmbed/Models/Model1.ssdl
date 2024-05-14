@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище AirWModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bilet_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="form_id" Type="int" />
+    <Property Name="to_id" Type="int" />
+    <Property Name="date_from" Type="datetime" />
+    <Property Name="price" Type="float" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="date_to" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Countries_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Redu" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="persons_table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="30" />
+    <Property Name="phone_namber" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_Bilet_table_Countries_table">
+    <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+    <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries_table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bilet_table">
+        <PropertyRef Name="form_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bilet_table_Countries_table1">
+    <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+    <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries_table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bilet_table">
+        <PropertyRef Name="to_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище AirWModelContainer">
+    <EntitySet Name="Bilet_table" EntityType="Self.Bilet_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries_table" EntityType="Self.Countries_table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="persons_table" EntityType="Self.persons_table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bilet_table_Countries_table" Association="Self.FK_Bilet_table_Countries_table">
+      <End Role="Countries_table" EntitySet="Countries_table" />
+      <End Role="Bilet_table" EntitySet="Bilet_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bilet_table_Countries_table1" Association="Self.FK_Bilet_table_Countries_table1">
+      <End Role="Countries_table" EntitySet="Countries_table" />
+      <End Role="Bilet_table" EntitySet="Bilet_table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

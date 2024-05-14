@@ -1,0 +1,218 @@
+body{
+    background-color: #F5F9FA;
+    cursor: default;
+    margin:0px;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+.airvista-mainpage{
+    padding-left: 13%;
+    background-color: #F5F9FA;
+}
+
+.airvista-mainpage-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin-bottom: 50px;
+}
+
+.airvista-mainpage-hot-toures{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.airvista-mainpage-hot-toure{
+    margin-right: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
+
+.airvista-mainpage-hot-toure:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.airvista-mainpage-hot-toure-textbox{
+    margin-left: 15px;
+}
+
+.airvista-mainpage-hot-toure-title{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.airvista-mainpage-hot-toure-about-block{
+    display: flex;
+    margin-bottom: -5px;
+}
+
+.airvista-mainpage-hot-toure-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.airvista-mainpage-hot-toure-company{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.airvista-mainpage-hot-toure-prices{
+    display: flex;
+}
+
+.airvista-mainpage-hot-toure-price{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #B5B5B5;
+}
+
+.airvista-mainpage-hot-toure-hotprice{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FF0101;
+    margin-left: 30px;
+    margin-top: 14px;
+}
+
+.airvista-mainpage-hot-toures-button{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    background-color: #116380;
+    border-radius: 12px;
+    padding: 15px 135px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.airvista-mainpage-hot-toures-button:hover{
+    background-color: #1d2742;
+}
+
+.airvista-mainpage-pets{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.airvista-mainpage-pet{
+    margin-left: 20px;
+    width: 460px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
+
+.airvista-mainpage-pet:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
+
+.airvista-mainpage-pet-background{
+    padding: 70px;
+    background-color: #F5F9FA;
+}
+
+.airvista-mainpage-pet-img{
+    margin-left: 23%;
+    
+}
+
+.airvista-mainpage-pet-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #2E2E2E;
+    padding: 20px 0 40px 20px;
+    margin: 0;
+}
+
+.airvista-mainpage-class{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    width: 1220px;
+    padding: 40px 110px 40px 110px;
+    margin-bottom: 30px;
+}
+
+.airvista-mainpage-class-type{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-left: -90px;
+    margin-top: 30px;
+    color: #2E2E2E;
+}
+
+.airvista-mainpage-class-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: -90px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #2E2E2E;
+}
+
+.airvista-mainpage-class-button{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin-left: 30%;
+    background-color: #116380;
+    border-radius: 12px;
+    padding: 15px 140px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.airvista-mainpage-class-button:hover{
+    background-color: #1d2742;
+}
+
+.airvista-mainpage-partners{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.airvista-mainpage-partner{
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+    width: 670px;
+    margin-right: 20px;
+}
+
+.airvista-mainpage-partner:hover{
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.airvista-mainpage-partner-block{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.airvista-mainpage-partner-name{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #116380;
+}
+
+.airvista-mainpage-partner-about{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}

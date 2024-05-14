@@ -1,0 +1,197 @@
+﻿
+@{
+    WDsite.Models.Bilet_table b1 = ViewData["b1"] as WDsite.Models.Bilet_table;
+    WDsite.Models.Bilet_table b2 = ViewData["b2"] as WDsite.Models.Bilet_table;
+    System.TimeSpan? d1 = b1.date_to - b1.date_from;
+    System.TimeSpan? d2 = b2.date_to - b2.date_from;
+    double t_price = Convert.ToDouble(Session["tariff_price"]);
+    double total_price = (double)(b1.price + b2.price) + t_price;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спосіб оплати</title>
+    <link rel="stylesheet" href="~/Content/style/payment_method/style.css">
+</head>
+<div class="page-payment-method">
+    <p>Виліт</p>
+    <img src="~/Content/img/payment_method/line.svg" style="padding-right: 20px;">
+    <p>Вибір тарифа</p>
+    <img src="~/Content/img/payment_method/line.svg" style="padding-right: 20px;">
+    <p>Ввести дані</p>
+    <img src="~/Content/img/payment_method/line.svg" style="padding-right: 20px;">
+    <p>Обрати місце</p>
+    <img src="~/Content/img/payment_method/line.svg" style="padding-right: 20px;">
+    <p><b>Додати спосіб оплати</b></p>
+</div>
+
+<div class="container-payment">
+    <div class="payment-method">
+        <p>Спосіб оплати</p>
+        <div class="payment-method-card">
+            <div class="card-container">
+                <div class="card">
+                    <img src="~/Content/img/payment_method/visa.svg">
+                </div>
+                <p>
+                    <button id="card-btn" class="button active"></button>
+                    Онлайн банк/<br>&nbsp;&nbsp;&nbsp;&nbsp;Кредитні картки
+                </p>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="~/Content/img/payment_method/paypal.svg">
+                </div>
+                <p> <button id="paypal-btn" class="button"></button> Онлайн сервіс PayPal</p>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="~/Content/img/payment_method/privat.svg">
+                </div>
+                <p> <button id="privat-btn" class="button"></button> Через ПриватБанк</p>
+            </div>
+        </div>
+        <p>У вас є промокод? Введіть його зараз!</p>
+        <input type="promo" placeholder="Введіть промокод" class="payment-method-promo">
+    </div>
+
+    <div class="payment-processing">
+        <p class="payment-processing-title">Оформлення оплати:</p>
+        <div class="fly-method-info">
+            <div class="fly-method-info-text">
+                <img src="~/Content/img/payment_method/user_icon.svg">
+                <p>@Session["fname"] @Session["sname"]</p>
+            </div>
+            <div class="fly-method-info-text">
+                <img src="~/Content/img/payment_method/bag-fil.svg">
+                <p>@Session["tariff"]</p>
+            </div>
+            <div class="fly-method-info-text">
+                <img src="~/Content/img/payment_method/hug.svg">
+                <p>@Session["place1"], @Session["place2"]</p>
+            </div>
+        </div>
+
+        <p class="payment-processing-info">Виліт з @ViewData["from"] до @ViewData["to"]</p>
+        <p class="payment-processing-info">@ViewData["date1"]</p>
+
+        <div class="successful-reservation-info">
+            <div class="successful-reservation-info-details">
+                <div class="successful-reservation-info-details-column">
+                    <div class="successful-reservation-info-details-column-ticket" style="display: flex;">
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-time">@b1.date_from.Value.ToString("t")</p>
+                            <p class="successful-reservation-info-details-column-ticket-airport">@b1.Countries_table.Country @b1.Countries_table.Redu</p>
+                        </div>
+
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-flighttime">
+                                @d1
+                            </p>
+                            <img src="~/Content/img/payment_method/one-plane-right.svg"
+                                 class="successful-reservation-info-details-column-ticket-img">
+                            <p class="successful-reservation-info-details-column-ticket-type">@b1.type</p>
+                        </div>
+
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-time">@b1.date_to.Value.ToString("t")</p>
+                            <p class="successful-reservation-info-details-column-ticket-airport">
+                                @b1.Countries_table1.Country @b1.Countries_table1.Redu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="payment-processing-info">Виліт з @b2.Countries_table.Country до @b2.Countries_table1.Country</p>
+        <p class="payment-processing-info">@ViewData["date2"]</p>
+
+        <div class="successful-reservation-info">
+            <div class="successful-reservation-info-details">
+                <div class="successful-reservation-info-details-column">
+                    <div class="successful-reservation-info-details-column-ticket" style="display: flex;">
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-time">@b2.date_from.Value.ToString("t")</p>
+                            <p class="successful-reservation-info-details-column-ticket-airport">
+                                @b2.Countries_table.Country @b2.Countries_table.Redu
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-flighttime">
+                                @d2
+                            </p>
+                            <img src="~/Content/img/payment_method/one-plane-right.svg"
+                                 class="successful-reservation-info-details-column-ticket-img">
+                            <p class="successful-reservation-info-details-column-ticket-type">@b2.type</p>
+                        </div>
+
+                        <div>
+                            <p class="successful-reservation-info-details-column-ticket-time">@b2.date_to.Value.ToString("t")</p>
+                            <p class="successful-reservation-info-details-column-ticket-airport">
+                                @b2.Countries_table1.Country @b2.Countries_table1.Redu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price">
+            <b class="price-text">₴ @total_price.ToString("#,##0.00")</b>
+            <p class="price-text-info">З усіма податковими зборами</p>
+        </div>
+        <form method="get" action="/home/successful_reservation">
+            <button type="submit" class="btn-pay">Оплатити зараз</button>
+        </form>
+    </div>
+</div>
+
+<div class="flight-promo">
+    <div class="flight-promo-column">
+        <p class="flight-promo-title">
+            Не проґавте <span style="color: #F8AB12">акційні квитки</span> від AirVista.*
+        </p>
+        <p class="flight-promo-subtitle">*Ви можете скасувати підписку будь-коли.</p>
+    </div>
+
+    <div class="flight-promo-column" style="margin-top: 30px; margin-left: 0;">
+        <div class="flight-promo-block">
+            <img src="~/Content/img/payment_method/Check-blue.svg">
+            <p class="flight-promo-possibilities">Першими дізнавайтесь про розпродаж місць.</p>
+        </div>
+
+        <div class="flight-promo-block">
+            <img src="~/Content/img/payment_method/Check-blue.svg">
+            <p class="flight-promo-possibilities">
+                Отримуйте розродажі авіаквитків та акції прямо у свою почтову
+                скриньку.
+            </p>
+        </div>
+
+        <div class="flight-promo-block">
+            <img src="~/Content/img/payment_method/Check-blue.svg">
+            <p class="flight-promo-possibilities">Дізнавайтеся про нові маршрути та напрямки.</p>
+        </div>
+    </div>
+
+    <div class="flight-promo-column" style="margin-bottom: 50px;">
+        <div class="flight-promo-block" style="margin-bottom: -20px;">
+            <input type="email" placeholder="Електронна пошта" class="flight-promo-email">
+            <p class="flight-promo-register">Реєстрація</p>
+        </div>
+
+        <div class="flight-promo-block">
+            <label class="orange-checkbox-container">
+                <input type="checkbox" style="margin-top: 15px;"><span class="checkmark"></span>
+            </label>
+            <p class="flight-promo-possibilities" style="margin-top: 15px;">
+                Реєструючись, ви підтверджуєте, що
+                приймаєте нашу
+            </p>
+        </div>
+
+        <p class="flight-promo-politics">Політику конфіденційності</p>
+    </div>
+</div>
+<script src="~/Scripts/payment-method.js"></script>

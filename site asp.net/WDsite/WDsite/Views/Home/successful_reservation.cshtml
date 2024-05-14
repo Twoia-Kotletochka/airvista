@@ -1,0 +1,179 @@
+﻿
+@{
+    WDsite.Models.Bilet_table b1 = ViewData["b1"] as WDsite.Models.Bilet_table;
+    WDsite.Models.Bilet_table b2 = ViewData["b2"] as WDsite.Models.Bilet_table;
+    System.TimeSpan? d1 = b1.date_to - b1.date_from;
+    System.TimeSpan? d2 = b2.date_to - b2.date_from;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/style/successful_reservation.css">
+</head>
+
+
+<div class="successful-reservation">
+    <div class="successful-reservation-notification">
+        <p style="text-align: center;"><img src="~/Content/img/successful_reservation/success.svg" class="successful-reservation-notification-img"></p>
+        <p class="successful-reservation-notification-title">Ваше бронювання успішно завершено</p>
+        <div style="padding-bottom: 50px;">
+            <p class="successful-reservation-notification-item">Номер Вашого бронювання <span style="font-weight: 600;">OU5IM5</span></p>
+            <p class="successful-reservation-notification-item">Вся інформація також прийде на E-mail <span>@Session["email"]</span></p>
+        </div>
+    </div>
+
+    <div class="successful-reservation-info">
+        <div class="successful-reservation-info-flight">
+            <img src="~/Content/img/successful_reservation/plane-right.svg" class="successful-reservation-info-flight-img">
+            <p class="successful-reservation-info-flight-data">Виліт з <span>@b1.Countries_table.Country</span> до <span>@b1.Countries_table1.Country</span>, <span>@b1.date_from.Value.ToString("dd.MM.yyyy")</span></p>
+        </div>
+
+        <p class="successful-reservation-info-title">Квитанція</p>
+        <div class="successful-reservation-info-columns">
+            <div class="successful-reservation-info-column">
+                <div class="successful-reservation-info-column-columns">
+                    <div style="text-align: left;">
+                        <p class="successful-reservation-info-column-title">Дата бронювання:</p>
+                        <p class="successful-reservation-info-column-title">Номер квитка:</p>
+                        <p class="successful-reservation-info-column-title">Номер бронювання:</p>
+                        <p class="successful-reservation-info-column-title">Страхування:</p>
+                    </div>
+
+                    <div style="margin-left: 110px;">
+                        <p class="successful-reservation-info-column-value">@DateTime.Now.ToString("dd.MM.yyyy")</p>
+                        <p class="successful-reservation-info-column-value">@b1.id</p>
+                        <p class="successful-reservation-info-column-value">OU5IM5</p>
+                        <p class="successful-reservation-info-column-value">DN213365</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="successful-reservation-info-column" style="margin-left: 600px;">
+                <div class="successful-reservation-info-column-columns">
+                    <div style="margin-right: 110px;">
+                        <p class="successful-reservation-info-column-title">Пасажир:</p>
+                        <p class="successful-reservation-info-column-title">Benefit Club:</p>
+                    </div>
+                    <div>
+                        <p class="successful-reservation-info-column-value">@Session["fname"] @Session["sname"]</p>
+                        <p class="successful-reservation-info-column-value">3004524567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="successful-reservation-info-title">Деталі польоту</p>
+
+        <div class="successful-reservation-info-details">
+            <div class="successful-reservation-info-details-column">
+                <div class="successful-reservation-info-details-column-ticket" style="display: flex;">
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-time">@b1.date_from.Value.ToString("t")</p>
+                        <p class="successful-reservation-info-details-column-ticket-airport">@b1.Countries_table.Country @b1.Countries_table.Redu</p>
+                    </div>
+
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-flighttime">@d1</p>
+                        <img src="~/Content/img/successful_reservation/one-plane-right.svg" class="successful-reservation-info-details-column-ticket-img">
+                        <p class="successful-reservation-info-details-column-ticket-type">@b1.type</p>
+                    </div>
+
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-time">@b1.date_to.Value.ToString("t")</p>
+                        <p class="successful-reservation-info-details-column-ticket-airport">@b1.Countries_table1.Country<br>@b1.Countries_table1.Redu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="successful-reservation-info-details-column" style="margin-left: 510px;">
+                <div style="display: flex; margin-bottom: 0px;">
+                    <img src="~/Content/img/successful_reservation/bag.svg" style="margin-bottom: 10px; margin-right: 10px;">
+                    <p class="successful-reservation-info-details-column-item">@Session["tariff"]</p>
+                </div>
+                <div style="display: flex;">
+                    <img src="~/Content/img/successful_reservation/place.svg" style="margin-bottom: 10px; margin-right: 10px;">
+                    <p class="successful-reservation-info-details-column-item">@Session["place1"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="successful-reservation-info">
+        <div class="successful-reservation-info-flight">
+            <img src="~/Content/img/successful_reservation/plane-left.svg" class="successful-reservation-info-flight-img">
+            <p class="successful-reservation-info-flight-data">Виліт з <span>@b2.Countries_table.Country</span> до <span>@b2.Countries_table1.Country</span>, <span>@b2.date_from.Value.ToString("dd.MM.yyyy")</span></p>
+        </div>
+
+        <p class="successful-reservation-info-title">Квитанція</p>
+        <div class="successful-reservation-info-columns">
+            <div class="successful-reservation-info-column">
+                <div class="successful-reservation-info-column-columns">
+                    <div style="text-align: left;">
+                        <p class="successful-reservation-info-column-title">Дата бронювання:</p>
+                        <p class="successful-reservation-info-column-title">Номер квитка:</p>
+                        <p class="successful-reservation-info-column-title">Номер бронювання:</p>
+                        <p class="successful-reservation-info-column-title">Страхування:</p>
+                    </div>
+
+                    <div style="margin-left: 110px;">
+                        <p class="successful-reservation-info-column-value">@DateTime.Now.ToString("dd.MM.yyyy")</p>
+                        <p class="successful-reservation-info-column-value">@b2.id</p>
+                        <p class="successful-reservation-info-column-value">OU5IM5</p>
+                        <p class="successful-reservation-info-column-value">DN213365</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="successful-reservation-info-column" style="margin-left: 600px;">
+                <div class="successful-reservation-info-column-columns">
+                    <div style="margin-right: 110px;">
+                        <p class="successful-reservation-info-column-title">Пасажир:</p>
+                        <p class="successful-reservation-info-column-title">Benefit Club:</p>
+                    </div>
+                    <div>
+                        <p class="successful-reservation-info-column-value">@Session["fname"] @Session["sname"]</p>
+                        <p class="successful-reservation-info-column-value">3004524567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="successful-reservation-info-title">Деталі польоту</p>
+
+        <div class="successful-reservation-info-details">
+            <div class="successful-reservation-info-details-column">
+                <div class="successful-reservation-info-details-column-ticket" style="display: flex;">
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-time">@b2.date_from.Value.ToString("t")</p>
+                        <p class="successful-reservation-info-details-column-ticket-airport">@b2.Countries_table.Country<br>@b2.Countries_table.Redu</p>
+                    </div>
+
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-flighttime" style="margin-left: 30px;">@d2</p>
+                        <img src="~/Content/img/successful_reservation/one-plane-right.svg" class="successful-reservation-info-details-column-ticket-img">
+                        <p class="successful-reservation-info-details-column-ticket-type">@b2.type</p>
+                    </div>
+
+                    <div style="display: block;">
+                        <p class="successful-reservation-info-details-column-ticket-time">@b2.date_to.Value.ToString("t")</p>
+                        <p class="successful-reservation-info-details-column-ticket-airport">@b2.Countries_table1.Country @b2.Countries_table1.Redu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="successful-reservation-info-details-column" style="margin-left: 485px; margin-bottom: 90px;">
+                <div style="display: flex; margin-bottom: 0px;">
+                    <img src="~/Content/img/successful_reservation/bag.svg" style="margin-bottom: 10px; margin-right: 10px;">
+                    <p class="successful-reservation-info-details-column-item">@Session["tariff"]</p>
+                </div>
+                <div style="display: flex;">
+                    <img src="~/Content/img/successful_reservation/place.svg" style="margin-bottom: 10px; margin-right: 10px;">
+                    <p class="successful-reservation-info-details-column-item">@Session["place2"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

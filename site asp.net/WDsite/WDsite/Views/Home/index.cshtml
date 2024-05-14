@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/main_s_layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/style/index.css">
+    
+</head>
+<body>
+    <div class="airvista-mainpage">
+        <p class="airvista-mainpage-title" style="margin-top: 140px;">Гарячі пропозиції</p>
+        <div class="airvista-mainpage-hot-toures">
+            <div class="airvista-mainpage-hot-toure">
+                <a href="main/flight/flight.html">
+                    <img src="~/Content/img/index/toure1.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Берлін (BER) - Афіни (ATH)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">14.03.2024-16.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">11,699.99</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 9,199.00</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="airvista-mainpage-hot-toure">
+                <a href="#">
+                    <img src="~/Content/img/index/toure2.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Кельн (CGN) - Роттердам (RTM)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">12.03.2024-15.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">14,337.00</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 12,999.00</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="airvista-mainpage-hot-toure">
+                <a href="#">
+                    <img src="~/Content/img/index/toure3.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Париж (CDG) - Рим (FCO)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">12.03.2024-15.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">10,144.05</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 9,799.00</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="airvista-mainpage-hot-toure" id="toure4" style="display: none;">
+                <a href="#">
+                    <img src="~/Content/img/index/toure4.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Цюрих (ZRH) - Відень (VIE)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">13.03.2024-17.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">13,711.93</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 11,369.55</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="airvista-mainpage-hot-toure" id="toure5" style="display: none;">
+                <a href="#">
+                    <img src="~/Content/img/index/toure5.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Амстердам (AMS) - Мілан (MXP)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">20.03.2024-23.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">9,043.56</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 7,375.49</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="airvista-mainpage-hot-toure" id="toure6" style="display: none;">
+                <a href="#">
+                    <img src="~/Content/img/index/toure6.svg" width="460px" height="300px">
+                    <div class="airvista-mainpage-hot-toure-textbox">
+                        <p class="airvista-mainpage-hot-toure-title">Варшава (WAW) -  Париж (CDG)</p>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/img/solar_calendar-line-duotone.svg">
+                            <p class="airvista-mainpage-hot-toure-about">15.03.2024-18.03.2024</p>
+                        </div>
+                        <div class="airvista-mainpage-hot-toure-about-block">
+                            <img src="~/Content/img/index/material-symbols-light_compare-arrows.svg">
+                            <p class="airvista-mainpage-hot-toure-about">В обидві сторони</p>
+                        </div>
+                        <p class="airvista-mainpage-hot-toure-company">AirVista Economy Class</p>
+                        <div class="airvista-mainpage-hot-toure-prices">
+                            <p class="airvista-mainpage-hot-toure-price">₴ <span style="text-decoration: line-through;">15,189.56</span></p>
+                            <p class="airvista-mainpage-hot-toure-hotprice">₴ 13,129.00</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <p style="margin-bottom: 150px; margin-left: 30%;"> <a class="airvista-mainpage-hot-toures-button" id="airvista-toures-show-btn">Бiльше пропозицій</a></p>
+        <p class="airvista-mainpage-title">Подорож з домашніми улюбленцями</p>
+
+        <div class="airvista-mainpage-pets">
+            <div class="airvista-mainpage-pet">
+                <a href="/help/animal_transportation">
+                    <div class="airvista-mainpage-pet-background">
+                        <img class="airvista-mainpage-pet-img" height="120" src="~/Content/img/index/pets1.svg">
+                    </div>
+                    <p class="airvista-mainpage-pet-about">Перевіз тварини на борту</p>
+                </a>
+            </div>
+            <div class="airvista-mainpage-pet">
+                <a href="/help/animals_in_baggage">
+                    <div class="airvista-mainpage-pet-background">
+                        <img class="airvista-mainpage-pet-img" style="margin-left: 100px;" height="120" src="~/Content/img/index/pets2.svg">
+                    </div>
+                    <p class="airvista-mainpage-pet-about">Перевіз тварини в багажному відділенні</p>
+                </a>
+            </div>
+            <div class="airvista-mainpage-pet">
+                <a href="/help/guide_dog">
+                    <div class="airvista-mainpage-pet-background">
+                        <img class="airvista-mainpage-pet-img" height="120" src="~/Content/img/index/pets3.svg">
+                    </div>
+                    <p class="airvista-mainpage-pet-about">Собака-повадир</p>
+                </a>
+            </div></a>
+        </div>
+
+        <p class="airvista-mainpage-title">Ваш комфорт — наш клопіт</p>
+
+        <div class="airvista-mainpage-classes">
+            <div class="airvista-mainpage-class">
+                <img src="~/Content/img/index/class1.svg">
+                <p class="airvista-mainpage-class-type">AirVista Business Class</p>
+                <p class="airvista-mainpage-class-about">З думкою про вас ми створили AirVista Business Class – це не лише подорож, але і вищий стандарт розкоші та комфорту.</p>
+                <p><a class="airvista-mainpage-class-button" href="/home/business">Переваги класу</a></p>
+            </div>
+            <div class="airvista-mainpage-class">
+                <img src="~/Content/img/index/class2.svg">
+                <p class="airvista-mainpage-class-type">AirVista Premium Economy Class</p>
+                <p class="airvista-mainpage-class-about">Сучасний клас обслуговування, який пропонує більше зручностей та комфорту за помірну ціну.</p>
+                <p><a class="airvista-mainpage-class-button" href="/home/premium">Переваги класу</a></p>
+            </div>
+            <div class="airvista-mainpage-class" style="margin-bottom: 100px;">
+                <img src="~/Content/img/index/class3.svg">
+                <p class="airvista-mainpage-class-type">AirVista Economy Class</p>
+                <p class="airvista-mainpage-class-about">Доступний і зручний спосіб подорожувати, особливо для тих, хто цінує економію. На вас чекає комфортне місце в літаку компанії AirVista.</p>
+                <p><a class="airvista-mainpage-class-button" href="/home/econom_class">Переваги класу</a></p>
+            </div>
+        </div>
+
+        <p class="airvista-mainpage-title">Наші партнери</p>
+
+        <div class="airvista-mainpage-partners" style="margin-bottom: 200px;">
+            <div class="airvista-mainpage-partner">
+                <a href="https://www.rentalcars.com/uk">
+                    <div class="airvista-mainpage-partner-block">
+                        <img src="~/Content/img/index/taxi.svg" style="margin-right: 10px;">
+                        <p class="airvista-mainpage-partner-name">Оренда автомобілю</p>
+                    </div>
+                    <p class="airvista-mainpage-partner-about">Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно, отримуючи при цьому ексклюзивні пропозиції.</p>
+                </a>
+            </div>
+
+            <div class="airvista-mainpage-partner">
+                <a href="https://www.booking.com/uk">
+                    <div class="airvista-mainpage-partner-block">
+                        <img src="~/Content/img/index/hotel.svg" style="margin-right: 10px;">
+                        <p class="airvista-mainpage-partner-name">Вибір помешкання</p>
+                    </div>
+                    <p class="airvista-mainpage-partner-about">Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно до ваших побажань за кращими цінами.</p>
+                </a>
+            </div>
+        </div>
+    </div>    
+    <script src="~/Scripts/index.js"></script>
+</body>

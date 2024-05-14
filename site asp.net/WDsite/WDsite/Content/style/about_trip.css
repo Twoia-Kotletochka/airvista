@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.services-section {
+    text-align: left;
+    padding-top: 50px;
+    margin-left: 157px;
+    margin-right: 157px;
+}
+
+.services-section h2 {
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.service-item {
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+
+.service-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}

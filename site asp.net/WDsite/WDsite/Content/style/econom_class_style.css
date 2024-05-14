@@ -1,0 +1,83 @@
+.AirBody {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+}
+.busin-main-con{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+.busin-m-con{
+width:1420px;
+}
+.busin-m-con img{
+width: 100%;
+}
+.busin-m-con h1{
+font-size: 32px;
+color: #0E3049;
+}
+.busin-m-con h2{
+margin-top: 55px;
+font-size: 24px;
+color: #0E3049;
+}
+.busin-m-con p{
+  font-size: 18px;
+}
+.busin-m-con-mini-img{
+  float: left;
+  
+}
+.busin-m-con-mini-img-con{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+
+}
+.img-size-wrap{
+  max-width: 700px;
+  margin-top: 15px;
+}
+.Main-partn-h{
+  margin-top: 120px;
+}
+.Main-partn-h h1{
+  font-size: 32px;
+}
+.Main-partn-con{
+  
+  /* display: flex; 
+  flex-wrap: wrap;
+  margin-bottom: 170px; */
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  max-width:1445px;
+}
+.Main-partn-con-m{
+  float: left;
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  padding-left: 15px;
+  
+}
+.Main-partn-con-m-h{
+  height: 35px;
+}
+.Main-partn-con-m-h h1{
+  font-size: 24px;
+}
+.Main-partn-con-m-h img{
+float: left;
+margin-right: 8px;
+}
+.Main-partn-con-m p{
+  font-size: 16px;
+}
+.Main-partn-center{
+  margin-left: 11%;
+}

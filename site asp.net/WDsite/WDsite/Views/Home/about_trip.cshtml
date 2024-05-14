@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "about_trip";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirVista Header</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/style/about_trip.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style/header_footer.css">
+</head>
+
+<header class="header">
+    <div class="search-form">
+        <div>
+            <h1 style="font-size: 32px;">Про подорожування</h1>
+            <p style="font-size: 20px;">
+                Введіть дані про рейс нижче, щоб слідкувати за рейсом і
+                його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
+                ви отримаєте від AirVista електронне та SMS-повідомлення.
+            </p>
+            <div class="button-container">
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <button id="location-btn" class="button active"></button>
+                    <p style="margin-left: 10px; margin-right: 10px;">Місце призначення</p>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <button id="ticket-number-btn" class="button"></button>
+                    <p style="margin-left: 10px; margin-right: 10px;">Номер рейсу</p>
+                </div>
+            </div>
+        </div>
+        <div">
+            <input type="text" class="input-field" placeholder="Номер рейсу">
+            <input type="date" class="date-picker" placeholder="Дата">
+            <button class="search-button">Пошук</button>
+    </div>
+</header>
+<script src="~/Scripts/header.js"></script>
+
+<div class="services-section">
+    <h2>Знайдіть корисну для Вас інформацію</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <img src="~/Content/img/about_trip/luggage.svg" alt="Baggage info">
+            <p>Інформація щодо багажу</p>
+        </div>
+        <div class="service-item">
+            <img src="~/Content/img/about_trip/check_in.svg" alt="Registration info">
+            <p>Інформація про реєстрацію</p>
+        </div>
+        <div class="service-item">
+            <img src="~/Content/img/about_trip/on_board.svg" alt="On board">
+            <p>На борту</p>
+        </div>
+        <div class="service-item">
+            <img src="~/Content/img/about_trip/additional_services.svg" alt="Additional services">
+            <p>Додаткові послуги</p>
+        </div>
+        <div class="service-item">
+            <img src="~/Content/img/about_trip/special_needs.svg" alt="Special needs">
+            <p>Особливі вимоги</p>
+        </div>
+    </div>
+</div>
+

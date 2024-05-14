@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{632BA57D-5D16-4995-BDD0-2A6E72FD5752}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WDsite</RootNamespace>
+    <AssemblyName>WDsite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\about_travelController.cs" />
+    <Compile Include="Controllers\Bilet_tableController.cs" />
+    <Compile Include="Controllers\helpController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\persons_tableController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bilet_table.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Countries_table.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\persons_table.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\about-travel\aboard\card1.svg" />
+    <Content Include="Content\img\about-travel\aboard\card2.svg" />
+    <Content Include="Content\img\about-travel\aboard\card3.svg" />
+    <Content Include="Content\img\about-travel\aboard\card4.svg" />
+    <Content Include="Content\img\about-travel\aboard\header-background.svg" />
+    <Content Include="Content\img\about-travel\about-main\bild.svg" />
+    <Content Include="Content\img\about-travel\about-main\board.svg" />
+    <Content Include="Content\img\about-travel\about-main\car.svg" />
+    <Content Include="Content\img\about-travel\about-main\chest-left.svg" />
+    <Content Include="Content\img\about-travel\about-main\chest-right.svg" />
+    <Content Include="Content\img\about-travel\about-main\cities.svg" />
+    <Content Include="Content\img\about-travel\about-main\family.svg" />
+    <Content Include="Content\img\about-travel\about-main\human-board.svg" />
+    <Content Include="Content\img\about-travel\about-main\human.svg" />
+    <Content Include="Content\img\about-travel\about-main\plane1.svg" />
+    <Content Include="Content\img\about-travel\about-main\plane2.svg" />
+    <Content Include="Content\img\about-travel\about-main\plane3.svg" />
+    <Content Include="Content\img\about-travel\about-main\registration.svg" />
+    <Content Include="Content\img\about-travel\about-main\yellow-baggage.svg" />
+    <Content Include="Content\img\about-travel\additional_services\car.svg" />
+    <Content Include="Content\img\about-travel\additional_services\castle.svg" />
+    <Content Include="Content\img\about-travel\additional_services\e-sim.svg" />
+    <Content Include="Content\img\about-travel\additional_services\header-background.svg" />
+    <Content Include="Content\img\about-travel\additional_services\hotel.svg" />
+    <Content Include="Content\img\about-travel\additional_services\taxi.svg" />
+    <Content Include="Content\img\about-travel\additional_services\visa.svg" />
+    <Content Include="Content\img\about-travel\i-registr\1.svg" />
+    <Content Include="Content\img\about-travel\i-registr\2.svg" />
+    <Content Include="Content\img\about-travel\i-registr\3.svg" />
+    <Content Include="Content\img\about-travel\i-registr\4.svg" />
+    <Content Include="Content\img\about-travel\i-registr\5.svg" />
+    <Content Include="Content\img\about-travel\i-registr\6.svg" />
+    <Content Include="Content\img\about-travel\special_requirements\header-background.svg" />
+    <Content Include="Content\img\about-travel\special_requirements\img1.svg" />
+    <Content Include="Content\img\about-travel\special_requirements\img2.svg" />
+    <Content Include="Content\img\about-travel\special_requirements\img3.svg" />
+    <Content Include="Content\img\about-travel\special_requirements\img4.svg" />
+    <Content Include="Content\img\about_trip\additional_services.svg" />
+    <Content Include="Content\img\about_trip\check_in.svg" />
+    <Content Include="Content\img\about_trip\luggage.svg" />
+    <Content Include="Content\img\about_trip\on_board.svg" />
+    <Content Include="Content\img\about_trip\special_needs.svg" />
+    <Content Include="Content\img\additional_services\car.svg" />
+    <Content Include="Content\img\additional_services\castle.svg" />
+    <Content Include="Content\img\additional_services\e-sim.svg" />
+    <Content Include="Content\img\additional_services\header-background.svg" />
+    <Content Include="Content\img\additional_services\hotel.svg" />
+    <Content Include="Content\img\additional_services\taxi.svg" />
+    <Content Include="Content\img\additional_services\visa.svg" />
+    <Content Include="Content\img\air-upgrade\1.svg" />
+    <Content Include="Content\img\air-upgrade\2.svg" />
+    <Content Include="Content\img\air-upgrade\3.svg" />
+    <Content Include="Content\img\air-upgrade\4.svg" />
+    <Content Include="Content\img\animals_in_baggage\animals.svg" />
+    <Content Include="Content\img\animals_in_baggage\dog-cat.svg" />
+    <Content Include="Content\img\animals_in_baggage\guide-dog.svg" />
+    <Content Include="Content\img\animal_transportation\cage.svg" />
+    <Content Include="Content\img\animal_transportation\dog-cat.svg" />
+    <Content Include="Content\img\animal_transportation\dog.svg" />
+    <Content Include="Content\img\animal_transportation\guide-dog.svg" />
+    <Content Include="Content\img\authorization\apple.svg" />
+    <Content Include="Content\img\authorization\cencel.svg" />
+    <Content Include="Content\img\authorization\google.svg" />
+    <Content Include="Content\img\authorization\line.svg" />
+    <Content Include="Content\img\bagaj\images\1.svg" />
+    <Content Include="Content\img\bagaj\images\2.svg" />
+    <Content Include="Content\img\bagaj\images\3.svg" />
+    <Content Include="Content\img\bagaj\images\4.svg" />
+    <Content Include="Content\img\bagaj\images\5.svg" />
+    <Content Include="Content\img\bagaj\images\6.svg" />
+    <Content Include="Content\img\bagaj\images\7.svg" />
+    <Content Include="Content\img\baggage\arrow_right.svg" />
+    <Content Include="Content\img\baggage\card1.svg" />
+    <Content Include="Content\img\baggage\card2.svg" />
+    <Content Include="Content\img\baggage\card3.svg" />
+    <Content Include="Content\img\baggage\card4.svg" />
+    <Content Include="Content\img\baggage\card5.svg" />
+    <Content Include="Content\img\baggage_requirements\baggage.svg" />
+    <Content Include="Content\img\choose_place\blue-ticket.svg" />
+    <Content Include="Content\img\choose_place\flight-img\Arrows-yellow.svg" />
+    <Content Include="Content\img\choose_place\flight-img\Check-blue.svg" />
+    <Content Include="Content\img\choose_place\flight-img\Ellipse-yellow.svg" />
+    <Content Include="Content\img\choose_place\flight-img\hug.svg" />
+    <Content Include="Content\img\choose_place\flight-img\line copy.svg" />
+    <Content Include="Content\img\choose_place\flight-img\line.svg" />
+    <Content Include="Content\img\choose_place\flight-img\User-filled.svg" />
+    <Content Include="Content\img\choose_place\gray-ticket.svg" />
+    <Content Include="Content\img\choose_place\opacity-yellow.svg" />
+    <Content Include="Content\img\choose_place\plane-left.svg" />
+    <Content Include="Content\img\choose_place\plane-right.svg" />
+    <Content Include="Content\img\choose_place\rectangle-left.svg" />
+    <Content Include="Content\img\choose_place\right-rectangle.svg" />
+    <Content Include="Content\img\choose_place\user-icon.svg" />
+    <Content Include="Content\img\choose_place\white-blue-ticket.svg" />
+    <Content Include="Content\img\choose_place\yellow-ticket.svg" />
+    <Content Include="Content\img\choose_tariff\1.svg" />
+    <Content Include="Content\img\choose_tariff\2.svg" />
+    <Content Include="Content\img\choose_tariff\3.svg" />
+    <Content Include="Content\img\choose_tariff\4.svg" />
+    <Content Include="Content\img\dodatk\1.svg" />
+    <Content Include="Content\img\dodatk\2.svg" />
+    <Content Include="Content\img\dodatk\3.svg" />
+    <Content Include="Content\img\econom_class\1.svg" />
+    <Content Include="Content\img\econom_class\10.svg" />
+    <Content Include="Content\img\econom_class\11.svg" />
+    <Content Include="Content\img\econom_class\12.svg" />
+    <Content Include="Content\img\econom_class\13.svg" />
+    <Content Include="Content\img\econom_class\2.svg" />
+    <Content Include="Content\img\econom_class\3.svg" />
+    <Content Include="Content\img\econom_class\4.svg" />
+    <Content Include="Content\img\econom_class\5.svg" />
+    <Content Include="Content\img\econom_class\6.svg" />
+    <Content Include="Content\img\econom_class\7.svg" />
+    <Content Include="Content\img\econom_class\8.svg" />
+    <Content Include="Content\img\econom_class\9.svg" />
+    <Content Include="Content\img\econom_class\Rectangle 161.svg" />
+    <Content Include="Content\img\feedback\2.svg" />
+    <Content Include="Content\img\feedback\3.svg" />
+    <Content Include="Content\img\feedback\4.svg" />
+    <Content Include="Content\img\feedback\5.svg" />
+    <Content Include="Content\img\flight\AirVista-logo.svg" />
+    <Content Include="Content\img\flight\Arrows-yellow.svg" />
+    <Content Include="Content\img\flight\Check-blue.svg" />
+    <Content Include="Content\img\flight\Ellipse-yellow.svg" />
+    <Content Include="Content\img\flight\Info-blue.svg" />
+    <Content Include="Content\img\flight\One-plane-middle.svg" />
+    <Content Include="Content\img\flight\One-plane-right.svg" />
+    <Content Include="Content\img\flight\User-filled.svg" />
+    <Content Include="Content\img\food_and_drinks\arrow_right.svg" />
+    <Content Include="Content\img\food_and_drinks\card1.svg" />
+    <Content Include="Content\img\food_and_drinks\card2.svg" />
+    <Content Include="Content\img\food_and_drinks\card3.svg" />
+    <Content Include="Content\img\food_and_drinks\card4.svg" />
+    <Content Include="Content\img\food_and_drinks\card5.svg" />
+    <Content Include="Content\img\food_and_drinks\card6.svg" />
+    <Content Include="Content\img\Group 38.svg" />
+    <Content Include="Content\img\Group.svg" />
+    <Content Include="Content\img\guide_dog\dog-cat.svg" />
+    <Content Include="Content\img\guide_dog\dog.svg" />
+    <Content Include="Content\img\guide_dog\guide-dog.svg" />
+    <Content Include="Content\img\guide_dog\passport-chek.svg" />
+    <Content Include="Content\img\help\1.svg" />
+    <Content Include="Content\img\help\10.svg" />
+    <Content Include="Content\img\help\11.svg" />
+    <Content Include="Content\img\help\12.svg" />
+    <Content Include="Content\img\help\2.svg" />
+    <Content Include="Content\img\help\3.svg" />
+    <Content Include="Content\img\help\4.svg" />
+    <Content Include="Content\img\help\5.svg" />
+    <Content Include="Content\img\help\6.svg" />
+    <Content Include="Content\img\help\7.svg" />
+    <Content Include="Content\img\help\8.svg" />
+    <Content Include="Content\img\help\9.svg" />
+    <Content Include="Content\img\help\Rectangle 161.svg" />
+    <Content Include="Content\img\img_header_footer\airvista.svg" />
+    <Content Include="Content\img\img_header_footer\airvista_mini.svg" />
+    <Content Include="Content\img\img_header_footer\App_Store.svg" />
+    <Content Include="Content\img\img_header_footer\chat.svg" />
+    <Content Include="Content\img\img_header_footer\flag.svg" />
+    <Content Include="Content\img\img_header_footer\fly.svg" />
+    <Content Include="Content\img\img_header_footer\Google_Play.svg" />
+    <Content Include="Content\img\img_header_footer\pay\jcb.svg" />
+    <Content Include="Content\img\img_header_footer\pay\maestro.svg" />
+    <Content Include="Content\img\img_header_footer\pay\masctercard.svg" />
+    <Content Include="Content\img\img_header_footer\pay\paypal.svg" />
+    <Content Include="Content\img\img_header_footer\pay\visa.svg" />
+    <Content Include="Content\img\img_header_footer\social\facebook.svg" />
+    <Content Include="Content\img\img_header_footer\social\instagram.svg" />
+    <Content Include="Content\img\img_header_footer\social\x.svg" />
+    <Content Include="Content\img\img_header_footer\social\youtube.svg" />
+    <Content Include="Content\img\index\class1.svg" />
+    <Content Include="Content\img\index\class2.svg" />
+    <Content Include="Content\img\index\class3.svg" />
+    <Content Include="Content\img\index\hotel.svg" />
+    <Content Include="Content\img\index\material-symbols-light_compare-arrows.svg" />
+    <Content Include="Content\img\index\pets1.svg" />
+    <Content Include="Content\img\index\pets2.svg" />
+    <Content Include="Content\img\index\pets3.svg" />
+    <Content Include="Content\img\index\solar_calendar-line-duotone.svg" />
+    <Content Include="Content\img\index\str.png" />
+    <Content Include="Content\img\index\taxi.svg" />
+    <Content Include="Content\img\index\toure1.svg" />
+    <Content Include="Content\img\index\toure2.svg" />
+    <Content Include="Content\img\index\toure3.svg" />
+    <Content Include="Content\img\index\toure4.svg" />
+    <Content Include="Content\img\index\toure5.svg" />
+    <Content Include="Content\img\index\toure6.svg" />
+    <Content Include="Content\img\index\two-arrows.svg" />
+    <Content Include="Content\img\input_data\1.svg" />
+    <Content Include="Content\img\input_data\2.svg" />
+    <Content Include="Content\img\input_data\3.svg" />
+    <Content Include="Content\img\input_data\4.svg" />
+    <Content Include="Content\img\input_data\5.svg" />
+    <Content Include="Content\img\payment_method\Arrows-yellow.svg" />
+    <Content Include="Content\img\payment_method\bag-fil.svg" />
+    <Content Include="Content\img\payment_method\Check-blue.svg" />
+    <Content Include="Content\img\payment_method\elips.svg" />
+    <Content Include="Content\img\payment_method\Ellipse-yellow.svg" />
+    <Content Include="Content\img\payment_method\hug.svg" />
+    <Content Include="Content\img\payment_method\line.svg" />
+    <Content Include="Content\img\payment_method\one-plane-middle.svg" />
+    <Content Include="Content\img\payment_method\one-plane-right.svg" />
+    <Content Include="Content\img\payment_method\paypal.svg" />
+    <Content Include="Content\img\payment_method\privat.svg" />
+    <Content Include="Content\img\payment_method\User-filled.svg" />
+    <Content Include="Content\img\payment_method\user_icon.svg" />
+    <Content Include="Content\img\payment_method\visa.svg" />
+    <Content Include="Content\img\Rectangle 124.svg" />
+    <Content Include="Content\img\Rectangle 1241.svg" />
+    <Content Include="Content\img\Rectangle 164.svg" />
+    <Content Include="Content\img\Rectangle 165.svg" />
+    <Content Include="Content\img\Rectangle 183.svg" />
+    <Content Include="Content\img\Rectangle 1831.svg" />
+    <Content Include="Content\img\Rectangle 184.svg" />
+    <Content Include="Content\img\Rectangle 185.svg" />
+    <Content Include="Content\img\Rectangle 186.svg" />
+    <Content Include="Content\img\Rectangle 188.svg" />
+    <Content Include="Content\img\Rectangle 189.svg" />
+    <Content Include="Content\img\Rectangle 190.svg" />
+    <Content Include="Content\img\Rectangle 191.svg" />
+    <Content Include="Content\img\Rectangle 221.svg" />
+    <Content Include="Content\img\Rectangle 222.svg" />
+    <Content Include="Content\img\Rectangle 224.svg" />
+    <Content Include="Content\img\Rectangle 225.svg" />
+    <Content Include="Content\img\refounds\arrow-right.svg" />
+    <Content Include="Content\img\special-requirements\header-background.svg" />
+    <Content Include="Content\img\special-requirements\img1.svg" />
+    <Content Include="Content\img\special-requirements\img2.svg" />
+    <Content Include="Content\img\special-requirements\img3.svg" />
+    <Content Include="Content\img\special-requirements\img4.svg" />
+    <Content Include="Content\img\successful_reservation\bag.svg" />
+    <Content Include="Content\img\successful_reservation\one-plane-middle.svg" />
+    <Content Include="Content\img\successful_reservation\one-plane-right.svg" />
+    <Content Include="Content\img\successful_reservation\place.svg" />
+    <Content Include="Content\img\successful_reservation\plane-left.svg" />
+    <Content Include="Content\img\successful_reservation\plane-right.svg" />
+    <Content Include="Content\img\successful_reservation\success.svg" />
+    <Content Include="Content\img\travel_requirements_img\Rectangle235.svg" />
+    <Content Include="Content\img\travel_requirements_img\Vector6.svg" />
+    <Content Include="Content\style\about-travel\aboard\aboard.css" />
+    <Content Include="Content\style\about-travel\about-main\style1.css" />
+    <Content Include="Content\style\about-travel\additional-services.css" />
+    <Content Include="Content\style\about-travel\inf_registr.css" />
+    <Content Include="Content\style\about-travel\special_requirements.css" />
+    <Content Include="Content\style\additional-services.css" />
+    <Content Include="Content\style\air-upgrade.css" />
+    <Content Include="Content\style\animals_in_baggage\style.css" />
+    <Content Include="Content\style\animal_transportation\style.css" />
+    <Content Include="Content\style\baggage-requirements.css" />
+    <Content Include="Content\style\baggage.css" />
+    <Content Include="Content\style\business-class.css" />
+    <Content Include="Content\style\choose_place.css" />
+    <Content Include="Content\style\dodatk.css" />
+    <Content Include="Content\style\drop-down.css" />
+    <Content Include="Content\style\econom_class_style.css" />
+    <Content Include="Content\style\about_trip.css" />
+    <Content Include="Content\style\feedback\zv-zvyazok.css" />
+    <Content Include="Content\style\flight2.css" />
+    <Content Include="Content\style\food_and_drinks.css" />
+    <Content Include="Content\style\guide_dog\style.css" />
+    <Content Include="Content\style\header_dropdown1.css" />
+    <Content Include="Content\style\header_footer.css" />
+    <Content Include="Content\style\help_style.css" />
+    <Content Include="Content\style\h_f.css" />
+    <Content Include="Content\style\index.css" />
+    <Content Include="Content\style\inf_bagaj.css" />
+    <Content Include="Content\style\login.css" />
+    <Content Include="Content\style\obr-tarif.css" />
+    <Content Include="Content\style\partners.css" />
+    <Content Include="Content\style\payment_method\style.css" />
+    <Content Include="Content\style\popup.css" />
+    <Content Include="Content\style\refounds\refound.css" />
+    <Content Include="Content\style\special-requirements.css" />
+    <Content Include="Content\style\special\special.css" />
+    <Content Include="Content\style\successful_reservation.css" />
+    <Content Include="Content\style\travel_requirements.css" />
+    <Content Include="Content\style\view_airvista1.css" />
+    <Content Include="Content\style\vvesu-dani.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\about_travel_header.js" />
+    <Content Include="Scripts\animal-transportation.js" />
+    <Content Include="Scripts\authorization.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\header.js" />
+    <Content Include="Scripts\header_dropdown_jquery.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main_header.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\payment-method.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\MAirVista.cshtml" />
+    <Content Include="Views\Home\business.cshtml" />
+    <Content Include="Views\Home\premium.cshtml" />
+    <Content Include="Views\Bilet_table\Create.cshtml" />
+    <Content Include="Views\Bilet_table\Delete.cshtml" />
+    <Content Include="Views\Bilet_table\Details.cshtml" />
+    <Content Include="Views\Bilet_table\Edit.cshtml" />
+    <Content Include="Views\Bilet_table\Index.cshtml" />
+    <Content Include="Views\Home\bilet_search_test.cshtml" />
+    <Content Include="Views\Home\bilet_search_post.cshtml" />
+    <Content Include="Views\Home\econom_class.cshtml" />
+    <Content Include="Views\help\help.cshtml" />
+    <Content Include="Views\Home\about_trip.cshtml" />
+    <Content Include="Views\about_travel\Bagaj.cshtml" />
+    <Content Include="Views\Home\additional_services.cshtml" />
+    <Content Include="Views\Home\special_requirements.cshtml" />
+    <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\help\baggage_requirements.cshtml" />
+    <Content Include="Views\Shared\main_h_f_layout.cshtml" />
+    <Content Include="Views\help\travel_requirements.cshtml" />
+    <Content Include="Views\about_travel\index.cshtml" />
+    <Content Include="Views\about_travel\aboard.cshtml" />
+    <Content Include="Views\about_travel\special_requirements.cshtml" />
+    <Content Include="Views\about_travel\additional_services.cshtml" />
+    <Content Include="Views\about_travel\inf_reg.cshtml" />
+    <Content Include="Views\help\animal_transportation.cshtml" />
+    <Content Include="Views\help\animals_in_baggage.cshtml" />
+    <Content Include="Views\help\guide_dog.cshtml" />
+    <Content Include="Views\help\refound.cshtml" />
+    <Content Include="Views\help\feedback.cshtml" />
+    <Content Include="Views\help\special.cshtml" />
+    <Content Include="Views\Shared\main_s_layout.cshtml" />
+    <Content Include="Views\persons_table\Create.cshtml" />
+    <Content Include="Views\persons_table\Delete.cshtml" />
+    <Content Include="Views\persons_table\Details.cshtml" />
+    <Content Include="Views\persons_table\Edit.cshtml" />
+    <Content Include="Views\persons_table\Index.cshtml" />
+    <Content Include="Views\Home\choose_tariff.cshtml" />
+    <Content Include="Views\Home\food_and_drinks.cshtml" />
+    <Content Include="Views\Home\baggage.cshtml" />
+    <Content Include="Views\Home\airvista_upgrade.cshtml" />
+    <Content Include="Views\Home\choose_place.cshtml" />
+    <Content Include="Views\Home\payment_method.cshtml" />
+    <Content Include="Views\Home\input_data.cshtml" />
+    <Content Include="Views\Home\successful_reservation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56003</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44330/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,147 @@
+﻿.AirBody {
+    font-family: inter;
+    margin: 0;
+    background-color: #F5F9FA;
+}
+
+.AirImage {
+    background-image: url("../img/Rectangle 164.svg");
+    height: 340px;
+    width: 100%;
+    display: grid;
+    align-items: end;
+}
+
+    .AirImage h1 {
+        color: white;
+        padding-left: 250px;
+        font-size: 48px;
+        padding-bottom: 15px;
+    }
+
+.MAir-main-con {
+    margin-top: 170px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 200px;
+    margin-bottom: 170px;
+}
+
+.block-con {
+    float: left;
+    width: 700px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 8px;
+    padding-bottom: 15px
+}
+
+.font-color {
+    color: #0E3049;
+}
+
+.block-con-text {
+    color: #0E3049;
+    margin-left: 15px;
+}
+
+    .block-con-text h1 {
+        font-size: 24px;
+    }
+
+    .block-con-text p {
+        font-size: 20px;
+    }
+
+.block-con-img img {
+    width: 100%;
+}
+
+.block-con:hover {
+    box-shadow: 0 0 50px lightgrey;
+}
+
+.Main-news-h {
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* .MAir-news-h{
+    margin-left: 80px;
+} */
+.Mair-news-main {
+    margin-left: 80px;
+    inline-size: fit-content;
+    margin-left: 10%;
+}
+
+    .Mair-news-main hr {
+        color: #B5B5B5;
+        margin-bottom: 60px;
+    }
+
+.Mair-news-main-con {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Mair-news-main-con-big {
+    float: left;
+}
+
+    .Mair-news-main-con-big h1 {
+        font-size: 32px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .Mair-news-main-con-big p {
+        font-size: 24px;
+    }
+
+.Mair-news-main-con-big {
+    width: 960px;
+}
+
+.Mair-news-main-con-li ul {
+    list-style-type: none;
+    margin: 0px;
+}
+
+    .Mair-news-main-con-li ul li p {
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+.Mair-news-main-con-li img {
+    width: 100%;
+}
+
+.Mair-news-main-con-li {
+    width: 500px;
+}
+
+.MNMCBDate p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.Mair-news-more-href {
+    font-size: 24px;
+    text-align: center;
+}
+
+.Mair-news-more-href {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+    .Mair-news-more-href a {
+        color: #116380;
+    }

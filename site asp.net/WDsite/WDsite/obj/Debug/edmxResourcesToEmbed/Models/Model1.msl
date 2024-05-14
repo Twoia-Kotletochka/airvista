@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AirWModelContainer" CdmEntityContainer="AirWEntities">
+    <EntitySetMapping Name="Bilet_table">
+      <EntityTypeMapping TypeName="AirWModel.Bilet_table">
+        <MappingFragment StoreEntitySet="Bilet_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="form_id" ColumnName="form_id" />
+          <ScalarProperty Name="to_id" ColumnName="to_id" />
+          <ScalarProperty Name="date_from" ColumnName="date_from" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries_table">
+      <EntityTypeMapping TypeName="AirWModel.Countries_table">
+        <MappingFragment StoreEntitySet="Countries_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Redu" ColumnName="Redu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="persons_table">
+      <EntityTypeMapping TypeName="AirWModel.persons_table">
+        <MappingFragment StoreEntitySet="persons_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="phone_namber" ColumnName="phone_namber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

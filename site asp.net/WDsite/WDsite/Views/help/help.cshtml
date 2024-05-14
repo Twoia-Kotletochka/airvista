@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "help";
+    Layout = "~/Views/Shared/main_s_layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website Title</title>
+    <link rel="stylesheet" href="~/Content/style/help_style.css">
+    <link rel="stylesheet" href="~/Content/style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    .question:hover {
+        box-shadow: 0 0 50px lightgrey;
+    }
+    .over-butn-1:hover {
+        
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .over-butn-2:hover {
+        background-color: #80BECE;
+    }
+</style>
+<body>
+    <div style="margin-top:60px" class="main-cont">
+        <h1 class="main-text">Ваші питання — наші відповіді</h1>
+        <div class="container-questions">
+            <a style="color: #116380;" href="/help/travel_requirements">
+                <div class="question">
+
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/1.svg"> Вимоги щодо подорожі</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="/help/baggage_requirements">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/2.svg"> Вимоги до багажу</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="#">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/3.svg"> Зміна рейсу</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="container-questions">
+            <a style="color: #116380;" href="#">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/4.svg"> Виправлення імені у бронюванні</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="/help/animal_transportation">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/5.svg"> Перевезення тварини</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="/help/refound">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/7.svg"> Повернення коштів</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="container-questions">
+            <a style="color: #116380;" href="/help/feedback">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/6.svg"> Зворотній зв’язок</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="/help/special">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/8.svg"> Спеціальна допомога</p>
+                </div>
+            </a>
+            <a style="color: #116380;" href="#">
+                <div class="question">
+                    <p class="question-text"><img class="que-img" src="~/Content/img/help/9.svg"> Супутні послуги</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-img-container">
+            <img class="text-img" src="~/Content/img/help/Rectangle 161.svg">
+            <div class="overlay1">
+                <h2>Ви є учасником Benefit Club?</h2>
+                <p>Отримайте доступ до ексклюзивної цілодобової підтримки, де вам буде надана вся необхідна інформація.</p>
+                <button id="login" class="over-butn-1">Увійти</button>
+                <button id="regis" class="over-butn-2">Реєстрація</button>
+            </div>
+        </div>
+        @*<div class="Main-partn-h">
+            <h1>Інші питання</h1>
+        </div>
+
+        <div class="Main-partn-con-another">
+            <div class="Main-partn-con-m-another">
+                <p>Надіслати запит щодо доступу до персональних даних </p><img class="anoter-img" src="~/Content/img/help/12.svg" />
+            </div>
+            <div class="Main-partn-con-m-another">
+                <p>Повідомити про шахрайство</p><img class="anoter-img" src="~/Content/img/help/12.svg" />
+            </div>
+        </div>*@
+
+
+    </div>
+    <div style="margin-top:150px;" class="airvista-mainpage">
+        <p class="airvista-mainpage-title">Наші партнери</p>
+
+        <div class="airvista-mainpage-partners" style="margin-bottom: 200px;">
+            <div class="airvista-mainpage-partner">
+                <a href="https://www.rentalcars.com/uk">
+                    <div class="airvista-mainpage-partner-block">
+                        <img src="~/Content/img/index/taxi.svg" style="margin-right: 10px;">
+                        <p class="airvista-mainpage-partner-name">Оренда автомобілю</p>
+                    </div>
+                    <p class="airvista-mainpage-partner-about">Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно, отримуючи при цьому ексклюзивні пропозиції.</p>
+                </a>
+            </div>
+
+            <div class="airvista-mainpage-partner">
+                <a href="https://www.booking.com/uk">
+                    <div class="airvista-mainpage-partner-block">
+                        <img src="~/Content/img/index/hotel.svg" style="margin-right: 10px;">
+                        <p class="airvista-mainpage-partner-name">Вибір помешкання</p>
+                    </div>
+                    <p class="airvista-mainpage-partner-about">Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно до ваших побажань за кращими цінами.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    document.getElementById("login").addEventListener("click", function () {
+        var showFormButton = document.getElementById("showForm");
+        if (showFormButton) {
+            var clickEvent = new Event('click');
+            showFormButton.dispatchEvent(clickEvent);
+        }
+
+    });
+    document.getElementById("regis").addEventListener("click", function () {
+        var showFormButton = document.getElementById("showForm");
+        if (showFormButton) {
+            var clickEvent = new Event('click');
+            showFormButton.dispatchEvent(clickEvent);
+        }
+        var showFormButton = document.getElementById("link-registration");
+        if (showFormButton) {
+            var clickEvent = new Event('click');
+            showFormButton.dispatchEvent(clickEvent);
+        }
+    });
+</script>
+

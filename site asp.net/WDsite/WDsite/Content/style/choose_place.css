@@ -1,0 +1,530 @@
+﻿body {
+    background-color: #F5F9FA;
+    font-family: "Inter", sans-serif;
+}
+
+.flight {
+    cursor: default;
+    margin-right: -8px;
+}
+
+.flight-search {
+    display: flex;
+    background-color: #fff;
+    margin-top: 10px;
+    padding-left: 13%;
+}
+
+.flight-search-column {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.flight-search-block {
+    display: flex;
+}
+
+.flight-search-city {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #116380;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.flight-search-type {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 0;
+}
+
+.flight-search-edit {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border: 1px solid #116380;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-left: 30px;
+    margin-top: 5px;
+    color: #116380;
+    transition: all 0.5s ease;
+}
+
+    .flight-search-edit:hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid #114140;
+        color: #114140;
+    }
+
+.flight-promo {
+    display: flex;
+    background-color: #F2F2F2;
+    padding-left: 13%;
+    padding-right: 13%;
+    margin-bottom: 100px;
+}
+
+.flight-promo-column {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.flight-promo-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #0E3049;
+    margin: 20px 0 10px 0;
+}
+
+.flight-promo-subtitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0E3049;
+    margin: 0;
+}
+
+.flight-promo-possibilities {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+    margin: 10px;
+}
+
+.flight-promo-block {
+    display: flex;
+}
+
+.flight-promo-email {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 15px;
+    border: 1px solid #B5B5B5;
+    border-radius: 12px;
+    height: 52px;
+    width: 290px;
+    margin: 0;
+}
+
+.flight-promo-register {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
+    padding: 15px 30px;
+    color: #0E3049;
+    border: 1px solid #0E3049;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+}
+
+    .flight-promo-register:hover {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid #60a9c4;
+        background-color: #60a9c4;
+    }
+
+.orange-checkbox-container {
+    margin-top: 15px;
+    margin-right: 25px;
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+    /* Hide the browser's default checkbox */
+    .orange-checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #F8AB12;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+}
+
+
+/* When the checkbox is checked, add a orange background */
+.orange-checkbox-container input:checked ~ .checkmark {
+    transition: all 0.8s ease;
+    background-color: #F8AB12;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.orange-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.orange-checkbox-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.flight-promo-politics {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #116380;
+    margin: 0 35px;
+    cursor: pointer;
+}
+
+    .flight-promo-politics:hover {
+        text-decoration: underline
+    }
+
+.page-payment-method {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 13%;
+}
+
+    .page-payment-method p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.78px;
+        text-align: left;
+        color: #0E3049;
+        padding-right: 20px;
+    }
+
+.seat-selection {
+    background-color: #F2F2F2;
+    width: 516px;
+    max-height: 655px;
+    border-radius: 12px;
+    margin-right: 50px;
+}
+
+.seat-selection-minitext {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #000000;
+}
+
+.seat-selection-choice {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.seat-selection-passenger {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.img-user {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .img-user p {
+        position: absolute;
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 33.89px;
+    }
+
+.user-info-username {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.choose-place {
+    background-color: white;
+    width: 516px;
+    height: 200px;
+}
+
+.choose-place-plane {
+    display: flex;
+    justify-content: space-around;
+}
+
+.choose-place-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+
+.seat-selection-down {
+    height: 50px;
+    width: 516px;
+    background-color: #F2F2F2;
+    border-radius: 12px;
+}
+
+.choose-place-miniside {
+    color: #116380;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.ticket-text {
+    position: absolute;
+    pointer-events: none;
+}
+
+.choose-place-ticket {
+    width: 258px;
+    height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding-top: 2px;
+}
+
+.active {
+    border-top: 2px solid #F8AB12;
+    background-color: #80BECE33;
+    padding-top: 0px;
+}
+
+.choose-place-ticket-price {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    color: #2E2E2E;
+    margin-top: 10px;
+}
+
+.container-choose-place {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container-place {
+    border-left: 5px solid #80BECE;
+    border-right: 5px solid #80BECE;
+}
+
+.first-rectangle-left {
+    margin-top: 10px;
+}
+
+.first-rectangle-right {
+    margin-left: 610px;
+}
+
+.second-rectangle-left {
+    margin-top: 10px;
+}
+
+.second-rectangle-right {
+    margin-left: 610px;
+}
+
+.container-place-price-info {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+    color: #2E2E2E;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.grid-container30-1 {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    /* 6 столбцов шириной 80px каждый */
+    /* Расстояние между ячейками */
+    gap: 10px;
+    border-top: 1px solid #116380;
+    border-left: 1px solid #116380;
+    border-right: 1px solid #116380;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-container19-2 {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    /* 6 столбцов шириной 80px каждый */
+    gap: 10px;
+    border-top: 1px solid #116380;
+    border-left: 1px solid #116380;
+    border-right: 1px solid #116380;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-container19-3 {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    /* 6 столбцов шириной 80px каждый */
+    gap: 10px;
+    border-left: 1px solid #116380;
+    border-right: 1px solid #116380;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-container19-4 {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    /* 6 столбцов шириной 80px каждый */
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid-item {
+    cursor: pointer;
+}
+
+.grid-item-number {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #B5B5B5;
+}
+
+.grid-item-containet-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-place-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    height: 135px;
+    width: 164px;
+}
+
+    .container-place-info div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    .container-place-info p {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        text-align: center;
+        color: #000000;
+    }
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 150px;
+}
+
+.btn-next {
+    cursor: pointer;
+    background-color: #F8AB12;
+    color: white;
+    width: 300px;
+    height: 52px;
+    border-radius: 12px;
+    border-color: #F5F9FA;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.78px;
+}
+
+.ticket-group {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+}
+
+
+
+.visible {
+    transition: opacity 0.5s;
+    /* Добавляем плавный переход для прозрачности */
+}

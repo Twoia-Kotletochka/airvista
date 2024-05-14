@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище AirWModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bilet_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="form_id" Type="int" />
+          <Property Name="to_id" Type="int" />
+          <Property Name="date_from" Type="datetime" />
+          <Property Name="price" Type="float" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="date_to" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Countries_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Redu" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="persons_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="30" />
+          <Property Name="phone_namber" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Bilet_table_Countries_table">
+          <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Bilet_table">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_table_Countries_table1">
+          <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Bilet_table">
+              <PropertyRef Name="to_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище AirWModelContainer">
+          <EntitySet Name="Bilet_table" EntityType="Self.Bilet_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries_table" EntityType="Self.Countries_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="persons_table" EntityType="Self.persons_table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bilet_table_Countries_table" Association="Self.FK_Bilet_table_Countries_table">
+            <End Role="Countries_table" EntitySet="Countries_table" />
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_table_Countries_table1" Association="Self.FK_Bilet_table_Countries_table1">
+            <End Role="Countries_table" EntitySet="Countries_table" />
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AirWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bilet_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="form_id" Type="Int32" />
+          <Property Name="to_id" Type="Int32" />
+          <Property Name="date_from" Type="DateTime" Precision="3" />
+          <Property Name="price" Type="Double" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date_to" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Countries_table" Relationship="Self.FK_Bilet_table_Countries_table" FromRole="Bilet_table" ToRole="Countries_table" />
+          <NavigationProperty Name="Countries_table1" Relationship="Self.FK_Bilet_table_Countries_table1" FromRole="Bilet_table" ToRole="Countries_table" />
+        </EntityType>
+        <EntityType Name="Countries_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Redu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bilet_table" Relationship="Self.FK_Bilet_table_Countries_table" FromRole="Countries_table" ToRole="Bilet_table" />
+          <NavigationProperty Name="Bilet_table1" Relationship="Self.FK_Bilet_table_Countries_table1" FromRole="Countries_table" ToRole="Bilet_table" />
+        </EntityType>
+        <EntityType Name="persons_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="phone_namber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Bilet_table_Countries_table">
+          <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Bilet_table">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_table_Countries_table1">
+          <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Bilet_table">
+              <PropertyRef Name="to_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AirWEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bilet_table" EntityType="Self.Bilet_table" />
+          <EntitySet Name="Countries_table" EntityType="Self.Countries_table" />
+          <EntitySet Name="persons_table" EntityType="Self.persons_table" />
+          <AssociationSet Name="FK_Bilet_table_Countries_table" Association="Self.FK_Bilet_table_Countries_table">
+            <End Role="Countries_table" EntitySet="Countries_table" />
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_table_Countries_table1" Association="Self.FK_Bilet_table_Countries_table1">
+            <End Role="Countries_table" EntitySet="Countries_table" />
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AirWModelContainer" CdmEntityContainer="AirWEntities">
+          <EntitySetMapping Name="Bilet_table">
+            <EntityTypeMapping TypeName="AirWModel.Bilet_table">
+              <MappingFragment StoreEntitySet="Bilet_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="to_id" ColumnName="to_id" />
+                <ScalarProperty Name="date_from" ColumnName="date_from" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="date_to" ColumnName="date_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries_table">
+            <EntityTypeMapping TypeName="AirWModel.Countries_table">
+              <MappingFragment StoreEntitySet="Countries_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Redu" ColumnName="Redu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="persons_table">
+            <EntityTypeMapping TypeName="AirWModel.persons_table">
+              <MappingFragment StoreEntitySet="persons_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="phone_namber" ColumnName="phone_namber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
