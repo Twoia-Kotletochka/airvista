@@ -9,21 +9,17 @@
     <title>Website Title</title>
     <link rel="stylesheet" href="~/Content/style/help_style.css">
     <link rel="stylesheet" href="~/Content/style/index.css">
+    <link rel="stylesheet" href="~/Content/style/help_style_popup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <style>
-    .question:hover {
-        box-shadow: 0 0 50px lightgrey;
+    
+    .options, .options2 {
+        font-weight: normal;
     }
-    .over-butn-1:hover {
-        
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .over-butn-2:hover {
-        background-color: #80BECE;
-    }
+
 </style>
 <body>
     <div style="margin-top:60px" class="main-cont">
@@ -40,19 +36,53 @@
                     <p class="question-text"><img class="que-img" src="~/Content/img/help/2.svg"> Вимоги до багажу</p>
                 </div>
             </a>
-            <a style="color: #116380;" href="#">
-                <div class="question">
+            <a style="color: #116380;">
+                <div class="question" id="change-flight-question">
                     <p class="question-text"><img class="que-img" src="~/Content/img/help/3.svg"> Зміна рейсу</p>
                 </div>
             </a>
         </div>
+        <div class="popup" id="change-flight-popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2 class="zagl">Зміна рейсу</h2>
+                <hr class="liniya"></hr>
+                <p>Будь ласка, введіть код бронювання та прізвище, щоб вибрати інші рейси.</p>
+                <input type="text" placeholder="Новий рейс" id="new-flight-input"><br>
+                <input type="text" placeholder="Підтвердження номеру бронювання" id="booking-number-input"><br>
+                <button class="btn_popup" onclick="confirmChange()">Отримати бронювання</button>
+            </div>
+        </div>
 
         <div class="container-questions">
-            <a style="color: #116380;" href="#">
-                <div class="question">
+            <a style="color: #116380;">
+                <div class="question" id="name-correction-question">
                     <p class="question-text"><img class="que-img" src="~/Content/img/help/4.svg"> Виправлення імені у бронюванні</p>
                 </div>
             </a>
+
+            <div class="popup" id="name-correction-popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeNameCorrectionPopup()">&times;</span>
+                    <h2 class="zagl">Виправлення імені у бронюванні</h2>
+                    <hr class="liniya"></hr>
+                    <p>
+                        Спочатку введіть номер бронювання, який містить ім’я, яке потрібно
+                        виправити.
+                    </p>
+                    <input type="text" placeholder="Номер бронювання" id="new-name-input"><br>
+                    <input type="text" placeholder="Прізвище" id="booking-number-input"><br>
+                    
+                    <p>
+                        <img src="~/Content/img/help/GroupV.svg"/>
+                        Спочатку введіть номер бронювання, який містить ім’я, яке потрібно
+                        виправити.
+                    </p>
+                    @*<div><img src="~/Content/img/help/Vector.svg /></div>
+                    <div><p> Спочатку введіть номер бронювання, який містить ім’я, яке потрібно виправити.</p> </div>*@
+                    <button style="margin-top: 222px;"  class="btn_popup" onclick="confirmNameCorrection()">Виправити ім'я</button>
+                </div>
+            </div>
             <a style="color: #116380;" href="/help/animal_transportation">
                 <div class="question">
                     <p class="question-text"><img class="que-img" src="~/Content/img/help/5.svg"> Перевезення тварини</p>
@@ -155,5 +185,41 @@
             showFormButton.dispatchEvent(clickEvent);
         }
     });
+
+
+        function openPopup() {
+            document.getElementById("change-flight-popup").style.display = "block";
+}
+
+        function closePopup() {
+            document.getElementById("change-flight-popup").style.display = "none";
+}
+
+        function confirmChange() {
+            
+            alert("Бронювання змінено!");
+        closePopup();
+}
+
+        document.getElementById("change-flight-question").addEventListener("click", openPopup);
+
+
+
+    function openNameCorrectionPopup() {
+        document.getElementById("name-correction-popup").style.display = "block";
+    }
+
+    function closeNameCorrectionPopup() {
+        document.getElementById("name-correction-popup").style.display = "none";
+    }
+
+    function confirmNameCorrection() {
+       
+        alert("Ім'я виправлено у бронюванні!");
+        closeNameCorrectionPopup();
+    }
+
+    document.getElementById("name-correction-question").addEventListener("click", openNameCorrectionPopup);
+
 </script>
 

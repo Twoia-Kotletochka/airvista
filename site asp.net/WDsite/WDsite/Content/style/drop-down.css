@@ -42,7 +42,7 @@
     float: right;
     margin-top: 7%;
   }
-  .options {
+.options {
     position: absolute;
     top: 100%;
     left: 0;
@@ -55,7 +55,9 @@
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 10px;
-  }
+    z-index: 999;
+    font-weight: normal
+}
   
   .options li {
     padding: 10px;
@@ -171,4 +173,16 @@
 }
 .promo p{
   width: 300px
+}
+
+.num_input {
+    width: 330px;
+    height: 59px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600
+}
+
+.inp input[type="text"] {
+    padding-left: 20px;
+    font-size: 16px;
 }

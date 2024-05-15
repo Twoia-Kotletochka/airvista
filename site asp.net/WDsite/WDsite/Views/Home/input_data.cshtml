@@ -51,14 +51,21 @@
         </div>
 
         <div class="container3">
+            @if (Session["ErrorMessage"] == null)
+            {
+
             <p>* Напишіть Ім’я та Прізвище так, як в паспорті. Латинськими літерами.</p>
-        </div>
+             }else 
+            { 
+           <p style="color:red">*@Session["ErrorMessage"]</p>
+            }
+</div>
         <div class="container">
             <div class="container2">
                 <div class="input-group">
                     <label for="field1">Стать</label>
                     <div class="dropdown">
-                        <div style="padding-top: 15px; height: 38px;" class="dropdown-toggle"></div>
+                        <div style="padding-top: 15px; height: 38px;" class="dropdown-toggle">Чоловіча</div>
                         <div class="dropdown-menu">
                             <a href="#">Жіноча</a>
                             <a href="#">Чоловіча</a>
@@ -66,7 +73,7 @@
                     </div>
 
                 </div>
-                <input type="hidden" name="gender" />
+                <input type="hidden" name="gender" value="Чоловіча"/>
                 <div class="input-group2">
                     <label for="field2">E-mail</label>
                     <input name="email" type="text" id="field2">
@@ -84,7 +91,7 @@
                     <p>+380</p>
                 </div>
                 <div class="input-group2">
-                    <input name="namber" type="text" id="field2">
+                    <input name="namber" type="number" id="field2">
                 </div>
             </div>
         </div>
@@ -108,17 +115,17 @@
     </form>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var dropdownToggle = document.querySelector('.dropdown-toggle');
-            var dropdownMenu = document.querySelector('.dropdown-menu');
-            var hiddenInput = document.querySelector('input[type="hidden"]');
+                        var dropdownToggle = document.querySelector('.dropdown-toggle');
+                        var dropdownMenu = document.querySelector('.dropdown-menu');
+                        var hiddenInput = document.querySelector('input[type="hidden"]');
 
-            dropdownToggle.addEventListener('click', function () {
-                dropdownMenu.classList.toggle('show');
-            });
+                        dropdownToggle.addEventListener('click', function () {
+                            dropdownMenu.classList.toggle('show');
+                        });
 
-            dropdownMenu.addEventListener('click', function (event) {
-                if (event.target.tagName === 'A') {
-                    var selectedValue = event.target.textContent.trim(); 
+                        dropdownMenu.addEventListener('click', function (event) {
+                        if (event.target.tagName === 'A') {
+                        var selectedValue = event.target.textContent.trim(); 
                     dropdownToggle.textContent = selectedValue; 
                     dropdownMenu.classList.remove('show');
                     hiddenInput.value = selectedValue;

@@ -321,7 +321,9 @@
     <Content Include="Content\img\help\7.svg" />
     <Content Include="Content\img\help\8.svg" />
     <Content Include="Content\img\help\9.svg" />
+    <Content Include="Content\img\help\GroupV.svg" />
     <Content Include="Content\img\help\Rectangle 161.svg" />
+    <Content Include="Content\img\help\Vector.svg" />
     <Content Include="Content\img\img_header_footer\airvista.svg" />
     <Content Include="Content\img\img_header_footer\airvista_mini.svg" />
     <Content Include="Content\img\img_header_footer\App_Store.svg" />
@@ -431,6 +433,7 @@
     <Content Include="Content\style\header_dropdown1.css" />
     <Content Include="Content\style\header_footer.css" />
     <Content Include="Content\style\help_style.css" />
+    <Content Include="Content\style\help_style_popup.css" />
     <Content Include="Content\style\h_f.css" />
     <Content Include="Content\style\index.css" />
     <Content Include="Content\style\inf_bagaj.css" />
@@ -488,6 +491,7 @@
     <Content Include="Scripts\main_header.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\payment-method.js" />
+    <Content Include="Scripts\sc_dropdown_countries_on_header.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

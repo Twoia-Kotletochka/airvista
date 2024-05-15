@@ -116,23 +116,33 @@ namespace WDsite.Controllers
             {
                 Session["tariff"] = "Basic";
                 Session["tariff_price"] = 0;
+                Session["id_tariff"] = 1;
             }
             else if (id == 2)
             {
                 Session["tariff"] = "Regular";
                 Session["tariff_price"] = 650;
+                Session["id_tariff"] = 2;
             }
             else if (id == 3)
             {
                 Session["tariff"] = "PLUS";
                 Session["tariff_price"] = 837;
+                Session["id_tariff"] = 3;
             }
+            
             return View();
         }
         [HttpPost]
         public ActionResult input_data(string fname, string sname, string email, string namber, string gender)
         {
+            if (fname.IsEmpty() || sname.IsEmpty() || email.IsEmpty() || namber.IsEmpty() || gender.IsEmpty())
+            {
+                Session["ErrorMessage"] = "Усі поля повинні бути заповненні";
+                return RedirectToAction("input_data", new { id = Session["id_tariff"] });
+            }
 
+            Session["ErrorMessage"] = null;
             Session["fname"] = fname;
             Session["sname"] = sname;
             Session["email"] = email;

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WDsite.Models.Countries_table>
 @{
     ViewBag.Title = "index";
 }
@@ -9,126 +9,313 @@
 
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Про подорож</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="~/Content/style/about-travel/about-main/style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про подорож</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/style/about-travel/about-main/style1.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style/h_f.css">
+    @*<link rel="stylesheet" type="text/css" href="~/Content/style/header_dropdown1.css">*@
+    <link rel="stylesheet" type="text/css" href="~/Content/style/drop-down.css">
+    
+</head>
+<style>
+    .num_input {
+        width: 330px;
+        height: 59px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600
+    }
+    .inp input[type="text"] {
+        padding-left: 20px;
+        font-size: 16px;
 
-    </head>
-    <body>
-        <header class="header">
+    }
+</style>
+<body>
+    <header class="header">
+        <div class="search-form">
+            <div>
+                <h1 class="header-about-main">Про подорожування</h1>
+                <p class="header-about-current">
+                    Введіть дані про рейс нижче, щоб слідкувати за рейсом і
+                    його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
+                    ви отримаєте від AirVista електронне та SMS-повідомлення.
+                </p>
+                </div>
+                <div class="header-search" style="display:none">
+                    <p class="header-search-nav activeflights" id="header-flight-btn">Рейс</p>
+                    <p class="header-search-nav" id="header-reservation-btn">Мої бронювання</p>
+                    <p class="header-search-nav" id="header-registration-btn">Реєстрація</p>
+                    <p class="header-search-nav" id="header-status-btn">Статус рейсу</p>
+                </div>
+
+                <div style="padding-left:0px" class="header-flight" id="header-flight-div">
+                    <div class="header-flight-line" style="display: flex; margin-bottom: 20px;">
+                        <button id="radio-with-back" class="button-radio activeradio"></button>
+                        <p class="header-search-radiobutton-text">Місце призначення</p>
+                        <button id="radio-without-back" class="button-radio"></button>
+                        <p class="header-search-radiobutton-text">Номер рейсу</p>
+                        <button style="display:none" id="radio-multy" class="button-radio"></button>
+                        <p style="display:none" class="header-search-radiobutton-text">Мульти-сіті</p>
+
+                    </div>
+                    @*@using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()*@
 
 
-            <div class="search-form">
-                <div>
-                    <h1 class="header-about-main">Про подорожування</h1>
-                    <p class="header-about-current">
-                        Введіть дані про рейс нижче, щоб слідкувати за рейсом і
-                        його статусом. Якщо відправлення<br> вашого рейсу було перенесено,
-                        ви отримаєте від AirVista електронне та SMS-повідомлення.
-                    </p>
-                    <div class="button-container">
-                        <div style="display: flex; flex-direction: row; align-items: center;">
-                            <button id="location-btn" class="button"></button>
-                            <p class="header-about-properties">Місце призначення</p>
+                    <div class="header-flight-line" style="display: flex; flex-wrap: wrap;" id="with-back-div">
+                        <div style="width: 650px;display: -webkit-box;">
+                            <div class="custom-dropdown">
+                                <div id="div_country_from" class="selected-option">
+                                    <div class="start-text">З</div>
+
+                                </div>
+                                <input id="input_country_from" name="country_from" class="country_from" type="hidden" />
+                                <ul class="options">
+                                    @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+
+                            <div>
+                                <img src="~/Content/img/index/str.png" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
+                            </div>
+                            <div class="custom-dropdown">
+                                <div id="div_country_to" name="country_to" class="selected-option var2">
+                                    <div class="start-text">До</div>
+                                </div>
+                                <input id="input_country_to" name="country_to" type="hidden" />
+                                <ul class="options o-var2">
+                                    @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
                         </div>
-                        <div style="display: flex; flex-direction: row; align-items: center;">
-                            <button id="ticket-number-btn" class="button active1"></button>
-                            <p class="header-about-properties">Номер рейсу</p>
+
+
+                        <div class="header-flight-class" style="margin-left: 30px; width: 163px;">
+                            <div class="header-flight-from" style="width: 140px; margin-left: -10px;">
+                                <p class="header-flight-title">Дата подорожі</p>
+                                <input name="date_from" type="date" class="date-picker" placeholder="Дата">
+                            </div>
+
+                        </div>
+
+                        <div style="display: inline-flex;">
+
+
+                            <button style="background: none; border: 0; color:white" @*onclick="submitForm('f')" type="submit"*@ style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></button>
+                        </div>
+
+                        @*}*@
+
+
+                    </div>
+
+                    <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="without-back-div">
+                        <div style="width: 370px;display: -webkit-box;">
+                            <div class="inp">
+                                @*--------------------*@
+                                <input style="" type="text" class="input-field num_input" placeholder="Номер рейсу">
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="header-flight-class" style="margin-left: 30px; width: 163px;">
+                            <div class="header-flight-from" style="width: 140px; margin-left: -10px;">
+                                <p class="header-flight-title">Дата подорожі</p>
+                                <input name="date_from" type="date" class="date-picker" placeholder="Дата">
+                            </div>
+
+                        </div>
+                        <div class="">
+
+                            <div style="display: inline-flex;">
+
+
+                                <button style="background: none; border: 0; color:white" @*onclick="submitForm('f1')" type="submit"*@ style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></button>
+                            </div>
+
+
                         </div>
                     </div>
-                </div>
-                <div class="destination" id="destination">
-                    <input type="text" class="input-field21" placeholder="З">
-                    <input type="text" class="input-field22" placeholder="До">
-                    <input type="date" class="date-picker" placeholder="Дата">
-                    <button class="search-button">Пошук</button>
-                </div>
 
-                <div class="flight-number" id="flight-number" style="display: none;">
-                    <input type="text" class="input-field" placeholder="Номер рейсу">
-                    <input type="date" class="date-picker" placeholder="Дата">
-                    <button class="search-button">Пошук</button>
+                    <div style="display:none">
+                        <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="multy-div">
+                            <div style="display: block;">
+                                <div style="display: flex;">
+                                    <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                                    <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                                    <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                                    <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                                        <p class="header-flight-title">Дата подорожі</p>
+                                        <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; margin-top: 40px;">
+                                    <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                                    <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                                    <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                                    <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                                        <p class="header-flight-title">Дата подорожі</p>
+                                        <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                                    </div>
+                                    <div class="header-flight-class">
+                                        <p class="header-flight-title">Клас / Пасажири</p>
+                                        <div style="display: flex;">
+                                            <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                                            <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                                        </div>
+                                    </div>
+                                    <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                                </div>
+                                <div style="display: flex;">
+                                    <a href="#" style="color: #0E3049;"><p class="header-flight-addflight" style="margin-right: 150px;">Додати рейс</p></a>
+                                    <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="header-reservation" id="header-reservation-div">
+                            <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+                            <input type="text" placeholder="Прізвище" class="header-reservation-input">
+                            <a href="#" style="color: #fff;"><p class="header-reservation-btn">Знайти</p></a>
+                        </div>
+
+                        <div class="header-registration" id="header-registration-div">
+                            <p class="header-registration-title">Онлайн-реєстрація можлива за <span style="font-weight: 700;">36 годин</span> до планового вильоту рейсу.</p>
+                            <div class="header-registrarion-line" style="display: flex;">
+                                <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+                                <input type="text" placeholder="Прізвище" class="header-reservation-input">
+                                <a href="#" style="color: #fff;"><p class="header-reservation-btn">Далi</p></a>
+                            </div>
+                        </div>
+
+                        <div class="header-status" id="header-status-div">
+                            <p class="header-registration-title">Перевіряйте інформацію про рейси, затримки, скасування і зміни в розкладі рейсів.</p>
+                            <div style="display: flex;">
+                                <p class="header-status-nav activestatus" id="header-status-route-btn">Маршрут</p>
+                                <p class="header-status-nav" id="header-status-number-btn">Номер рейсу</p>
+                            </div>
+                            <div style="display: flex;" id="header-status-route-div">
+                                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                                <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                                    <p class="header-flight-title">Дата подорожі</p>
+                                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                                </div>
+                                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                            </div>
+                            <div style="display: none;" id="header-status-number-div">
+                                <input type="text" placeholder="Номер рейсу" class="header-number-input">
+                                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                                    <p class="header-flight-title">Дата подорожі</p>
+                                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                                </div>
+                                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                            </div>
+                        </div>
+                    </div>
+    </header>
+
+    <div class="services-section">
+        <h2>Знайдіть корисну для Вас інформацію</h2>
+        <div class="services-grid">
+            <a href="/about_travel/baggage" class="service-item">
+                <div class="container-baggage">
+                    <img class="chest-left" src="~/Content/img/about-travel/about-main/chest-left.svg">
+                    <img class="chest-right" src="~/Content/img/about-travel/about-main/chest-right.svg">
                 </div>
+                <p>Інформація щодо багажу</p>
+            </a>
+            <a href="/about_travel/inf_reg" class="service-item">
+                <div class="container-registration">
+                    <img class="registration-left" src="~/Content/img/about-travel/about-main/registration.svg">
+                    <img class="human-right" src="~/Content/img/about-travel/about-main/human.svg">
+                </div>
+                <p>Інформація про реєстрацію</p>
+            </a>
+            <a href="/about_travel/aboard" class="service-item">
+                <div class="container-on-board">
+                    <img class="board-left" src="~/Content/img/about-travel/about-main/board.svg">
+                    <img class="human-board-right" src="~/Content/img/about-travel/about-main/human-board.svg">
+                </div>
+                <p>На борту</p>
+            </a>
+            <a href="/about_travel/additional_services" class="service-item">
+                <div class="container-dditional-services">
+                    <img class="cities" src="~/Content/img/about-travel/about-main/cities.svg">
+                    <img class="plane1" src="~/Content/img/about-travel/about-main/plane1.svg">
+                    <img class="plane2" src="~/Content/img/about-travel/about-main/plane2.svg">
+                    <img class="plane3" src="~/Content/img/about-travel/about-main/plane3.svg">
+                </div>
+                <p>Додаткові послуги</p>
+            </a>
+            <a href="/about_travel/special_requirements" class="service-item">
+                <div class="container-special-needs">
+                    <img class="yellow-baggage" src="~/Content/img/about-travel/about-main/yellow-baggage.svg">
+                    <img class="family" src="~/Content/img/about-travel/about-main/family.svg">
+                </div>
+                <p>Особливі вимоги</p>
+            </a>
+        </div>
+
+
+        <div class="Main-partn-h font-color">
+            <h1>Наші партнери</h1>
+        </div>
+
+        <div class="Main-partn-con font-color">
+            <div class="Main-partn-con-m">
+                <div class="Main-partn-con-m-h">
+                    <img src="~/Content/img/about-travel/about-main/bild.svg" />
+                    <h1>Оренда автомобілю</h1>
+                </div>
+                <p>
+                    Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно,<br>
+                    отримуючи при цьому ексклюзивні пропозиції.
+                </p>
             </div>
-        </header>
-
-        <div class="services-section">
-            <h2>Знайдіть корисну для Вас інформацію</h2>
-            <div class="services-grid">
-                <a href="/about_travel/baggage" class="service-item">
-                    <div class="container-baggage">
-                        <img class="chest-left" src="~/Content/img/about-travel/about-main/chest-left.svg">
-                        <img class="chest-right" src="~/Content/img/about-travel/about-main/chest-right.svg">
-                    </div>
-                    <p>Інформація щодо багажу</p>
-                </a>
-                <a href="/about_travel/inf_reg" class="service-item">
-                    <div class="container-registration">
-                        <img class="registration-left" src="~/Content/img/about-travel/about-main/registration.svg">
-                        <img class="human-right" src="~/Content/img/about-travel/about-main/human.svg">
-                    </div>
-                    <p>Інформація про реєстрацію</p>
-                </a>
-                <a href="/about_travel/aboard" class="service-item">
-                    <div class="container-on-board">
-                        <img class="board-left" src="~/Content/img/about-travel/about-main/board.svg">
-                        <img class="human-board-right" src="~/Content/img/about-travel/about-main/human-board.svg">
-                    </div>
-                    <p>На борту</p>
-                </a>
-                <a href="/about_travel/additional_services" class="service-item">
-                    <div class="container-dditional-services">
-                        <img class="cities" src="~/Content/img/about-travel/about-main/cities.svg">
-                        <img class="plane1" src="~/Content/img/about-travel/about-main/plane1.svg">
-                        <img class="plane2" src="~/Content/img/about-travel/about-main/plane2.svg">
-                        <img class="plane3" src="~/Content/img/about-travel/about-main/plane3.svg">
-                    </div>
-                    <p>Додаткові послуги</p>
-                </a>
-                <a href="/about_travel/special_requirements" class="service-item">
-                    <div class="container-special-needs">
-                        <img class="yellow-baggage" src="~/Content/img/about-travel/about-main/yellow-baggage.svg">
-                        <img class="family" src="~/Content/img/about-travel/about-main/family.svg">
-                    </div>
-                    <p>Особливі вимоги</p>
-                </a>
-            </div>
-
-
-            <div class="Main-partn-h font-color">
-                <h1>Наші партнери</h1>
-            </div>
-
-            <div class="Main-partn-con font-color">
-                <div class="Main-partn-con-m">
-                    <div class="Main-partn-con-m-h">
-                        <img src="~/Content/img/about-travel/about-main/bild.svg" />
-                        <h1>Оренда автомобілю</h1>
-                    </div>
-                    <p>
-                        Плануйте подорож з партнерами AirVista з оренди автомобілів легко та зручно,<br>
-                        отримуючи при цьому ексклюзивні пропозиції.
-                    </p>
+            <div class="Main-partn-con-m">
+                <div class="Main-partn-con-m-h">
+                    <img src="~/Content/img/about-travel/about-main/car.svg" />
+                    <h1>Вибір помешкання</h1>
                 </div>
-                <div class="Main-partn-con-m">
-                    <div class="Main-partn-con-m-h">
-                        <img src="~/Content/img/about-travel/about-main/car.svg" />
-                        <h1>Вибір помешкання</h1>
-                    </div>
-                    <p>
-                        Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно<br>
-                        до ваших побажань за кращими цінами.
-                    </p>
-                </div>
+                <p>
+                    Наш партнер Booking.com допоможе підібрати варіанти проживання відповідно<br>
+                    до ваших побажань за кращими цінами.
+                </p>
             </div>
         </div>
-        <script src="~/Scripts/authorization.js"></script>
+    </div>
+    <script src="~/Scripts/authorization.js"></script>
 
-        <script src="~/Scripts/about_travel_header.js"></script>
-    </body>
+    <script src="~/Scripts/about_travel_header.js"></script>
+    <script src="~/Scripts/main_header.js" asp-append-version="true"></script>
+    <script src="~/Scripts/header_dropdown_jquery.js" asp-append-version="true"></script>
+    <script src="~/Scripts/sc_dropdown_countries_on_header.js" asp-append-version="true"></script>
+</body>
 
 
