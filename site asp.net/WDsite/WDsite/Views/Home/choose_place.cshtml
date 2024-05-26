@@ -1,15 +1,18 @@
 ﻿
 @{
     ViewBag.Title = "choose_place";
+    char[] w = { 'A', 'B', 'C', 'D', 'E', 'F' };
+    string[] place1 = (string[])ViewData["places1"];
+    string[] place2 = (string[])ViewData["places2"];
 }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Content/style/choose_place.css">
- 
+
 </head>
 
-<div class="page-payment-method">
+<div style="margin-top:60px" class="page-payment-method">
     <p>Виліт</p>
     <img src="~/Content/img/choose_place/flight-img/line.svg" style="padding-right: 20px;">
     <p>Вибір тарифа</p>
@@ -22,6 +25,628 @@
 </div>
 
 <div class="container-choose-place">
+    <div class="seat-selection">
+        <div style="padding-bottom: 40px; padding-left: 40px; padding-top: 20px;">
+            <p class="seat-selection-choice">Вибір сидіння</p>
+            <p class="seat-selection-passenger">Пасажири</p>
+
+            <div class="user-info">
+                <div class="img-user">
+                    <img src="~/Content/img/choose_place/user-icon.svg">
+                    <p>AM</p>
+                </div>
+                <p class="user-info-username">Alice Mcroyt</p>
+            </div>
+
+            <p class="seat-selection-minitext" style="padding-top: 20px;">
+                Наші сидіння з найкращим співвідношенням
+                ціни і якості.
+            </p>
+            <p class="seat-selection-minitext">
+                Зареєструйтесь за 60 днів до вильоту.
+            </p>
+        </div>
+
+        <div class="choose-place">
+            <div class="choose-place-plane">
+                <div>
+                    <div class="choose-place-img">
+                        <img src="~/Content/img/choose_place/plane-right.svg" style="width: 24px; height: 24px;">
+                        <p class="choose-place-miniside"><b>VIE</b> - <b>BRU</b></p>
+                    </div>
+
+                    <div id="area1" class="choose-place-ticket" onclick="toggleArea(1)">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticketName1"></p>
+                        </div>
+
+                        <p class="choose-place-ticket-price" id="ticketPrice1"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="choose-place-img">
+                        <img src="~/Content/img/choose_place/plane-left.svg" style="width: 24px; height: 24px;">
+                        <p class="choose-place-miniside"><b>BRU</b> - <b>VIE</b></p>
+                    </div>
+
+                    <div id="area2" class="choose-place-ticket" onclick="toggleArea(2)"
+                         onclick="toggleActive('right')">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticketName2"></p>
+                        </div>
+
+                        <p class="choose-place-ticket-price" id="ticketPrice2"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seat-selection-down"></div>
+    </div>
+
+    <div class="container-place" id="container-place-1">
+
+        <img src="~/Content/img/choose_place/rectangle-left.svg" class="first-rectangle-left">
+
+        <img src="~/Content/img/choose_place/right-rectangle.svg" class="first-rectangle-right">
+
+        <p class="container-place-price-info">Місця з додатковим простором для ніг <b>€ 30</b></p>
+
+        <div class="grid-container30-1">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("1" + w[i]).ToString();
+                string[] place = place1;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">1</p>
+                    </div>
+                }
+            }
+
+
+        </div>
+
+        <p class="container-place-price-info" style="margin-top: 80px;">
+            Місця з додатковим простором для ніг <b>
+                €
+                19
+            </b>
+        </p>
+
+
+        <div class="grid-container19-2">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("2" + w[i]).ToString();
+                string[] place = place1;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">2</p>
+                    </div>
+                }
+
+            }
+        </div>
+        <div class="grid-container19-3">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("3" + w[i]).ToString();
+                string[] place = place1;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">3</p>
+                    </div>
+                }
+
+            }
+        </div>
+
+        @for (int j = 4; j <= 7; j++)
+        {
+
+            <div class="grid-container19-4">
+
+                @for (int i = 0; i <= 5; i++)
+                {
+                    string data = (j.ToString() + w[i]).ToString();
+                    string[] place = place1;
+
+
+                    if (place.Contains<string>(data))
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                     onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+
+                    if (i == 2)
+                    {
+                        <div class="grid-item-containet-number">
+                            <p class="grid-item-number">@j</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+        }
+
+        <img src="~/Content/img/choose_place/rectangle-left.svg" class="second-rectangle-left">
+
+        <img src="~/Content/img/choose_place/right-rectangle.svg" class="second-rectangle-right">
+
+        <p class="container-place-price-info">
+            Місця “Потягнутися за невеликі кошти” <b>
+                €
+                15
+            </b>
+        </p>
+
+        <div class="grid-container30-1">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("8" + w[i]).ToString();
+                string[] place = place1;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">8</p>
+                    </div>
+                }
+            }
+        </div>
+
+
+        @for (int j = 9; j <= 10; j++)
+        {
+
+            <div class="grid-container19-4">
+
+                @for (int i = 0; i <= 5; i++)
+                {
+                    string data = (j.ToString() + w[i]).ToString();
+                    string[] place = place1;
+
+
+                    if (place.Contains<string>(data))
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                     onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+
+                    if (i == 2)
+                    {
+                        <div class="grid-item-containet-number">
+                            <p class="grid-item-number">@j</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+        }
+
+  
+    </div>
+
+    <div class="container-place" id="container-place-2" style="display:none;">
+        <img src="~/Content/img/choose_place/rectangle-left.svg" class="first-rectangle-left">
+
+        <img src="~/Content/img/choose_place/right-rectangle.svg" class="first-rectangle-right">
+
+        <p class="container-place-price-info">Місця з додатковим простором для ніг <b>€ 30</b></p>
+
+        <div class="grid-container30-1">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("1" + w[i]).ToString();
+                string[] place = place2;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">1</p>
+                    </div>
+                }
+            }
+
+
+        </div>
+
+        <p class="container-place-price-info" style="margin-top: 80px;">
+            Місця з додатковим простором для ніг <b>
+                €
+                19
+            </b>
+        </p>
+
+
+        <div class="grid-container19-2">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("2" + w[i]).ToString();
+                string[] place = place2;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">2</p>
+                    </div>
+                }
+
+            }
+        </div>
+        <div class="grid-container19-3">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("3" + w[i]).ToString();
+                string[] place = place2;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">3</p>
+                    </div>
+                }
+
+            }
+        </div>
+
+        @for (int j = 4; j <= 7; j++)
+        {
+
+            <div class="grid-container19-4">
+
+                @for (int i = 0; i <= 5; i++)
+                {
+                    string data = (j.ToString() + w[i]).ToString();
+                    string[] place = place2;
+
+
+                    if (place.Contains<string>(data))
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                     onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+
+                    if (i == 2)
+                    {
+                        <div class="grid-item-containet-number">
+                            <p class="grid-item-number">@j</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+        }
+
+        <img src="~/Content/img/choose_place/rectangle-left.svg" class="second-rectangle-left">
+
+        <img src="~/Content/img/choose_place/right-rectangle.svg" class="second-rectangle-right">
+
+        <p class="container-place-price-info">
+            Місця “Потягнутися за невеликі кошти” <b>
+                €
+                15
+            </b>
+        </p>
+
+        <div class="grid-container30-1">
+            @for (int i = 0; i <= 5; i++)
+            {
+                string data = ("8" + w[i]).ToString();
+                string[] place = place2;
+
+
+                if (place.Contains<string>(data))
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="grid-item">
+                        <div class="ticket-group">
+                            <img src="~/Content/img/choose_place/gray-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                 onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                            <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                        </div>
+                    </div>
+                }
+
+                if (i == 2)
+                {
+                    <div class="grid-item-containet-number">
+                        <p class="grid-item-number">8</p>
+                    </div>
+                }
+            }
+        </div>
+
+
+        @for (int j = 9; j <= 10; j++)
+        {
+
+            <div class="grid-container19-4">
+
+                @for (int i = 0; i <= 5; i++)
+                {
+                    string data = (j.ToString() + w[i]).ToString();
+                    string[] place = place2;
+
+
+                    if (place.Contains<string>(data))
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="grid-item">
+                            <div class="ticket-group">
+                                <img src="~/Content/img/choose_place/white-blue-ticket.svg" class="visible" onmouseover="changeImage(this)"
+                                     onmouseout="resetImage(this)" onclick="selectTicket(this)" data-ticket="@data" data-price="30">
+                                <p class="ticket-text" id="ticket-text-right">@w[i]</p>
+                            </div>
+                        </div>
+                    }
+
+                    if (i == 2)
+                    {
+                        <div class="grid-item-containet-number">
+                            <p class="grid-item-number">@j</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+        }
+
+
+    </div>
+
+        <div class="container-place-info">
+            <div>
+                <img src="~/Content/img/choose_place/gray-ticket.svg">
+                <p>Не обрані місця</p>
+            </div>
+
+            <div>
+                <img src="~/Content/img/choose_place/yellow-ticket.svg">
+                <p>Обрані місця</p>
+            </div>
+
+            <div>
+                <img src="~/Content/img/choose_place/blue-ticket.svg">
+                <p>Найкращі пропозиції місць спереду</p>
+            </div>
+
+            <div>
+                <img src="~/Content/img/choose_place/white-blue-ticket.svg">
+                <p>Найкращі пропозиції місць ззаду</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+@*<div class="container-choose-place">
     <div class="seat-selection">
         <div style="padding-bottom: 40px; padding-left: 40px; padding-top: 20px;">
             <p class="seat-selection-choice">Вибір сидіння</p>
@@ -666,11 +1291,11 @@
         </div>
     </div>
 
-</div>
+</div>*@
 
 <form class="btn-container" action="/home/choose_place" method="post">
-    <input type="hidden" id="value1" name="value1"/>
-    <input type="hidden" id="value2" name="value2"/>
+    <input type="hidden" id="value1" name="value1" />
+    <input type="hidden" id="value2" name="value2" />
     <button onclick="sub()" type="submit" class="btn-next">Далі</button>
 </form>
 
@@ -723,7 +1348,106 @@
 </div>
 <script>
 
-        function changeImage(element) {
+
+
+    function changeImage(element) {
+        if (element.getAttribute('data-clicked') !== 'true') {
+            element.setAttribute('data-original-src', element.src); // Сохраняем исходный src
+            element.src = '@Url.Content("~/Content/img/choose_place/opacity-yellow.svg")';
+        }
+    }
+
+    function resetImage(element) {
+        if (element.getAttribute('data-clicked') !== 'true') {
+            element.src = element.getAttribute('data-original-src');
+        }
+    }
+
+    let selectedAreas = {};
+    let selectedTickets = {};
+
+    function selectTicket(element) {
+        // Проверка на наличие хотя бы одного активного поля
+        if (!Object.values(selectedAreas).some(value => value === true)) {
+            return;
+        }
+
+        const ticketNumber = element.getAttribute('data-ticket');
+        const ticketPrice = element.getAttribute('data-price');
+        const area = Object.keys(selectedAreas).find(area => selectedAreas[area]);
+
+        // Если в этой области уже есть выбранный тикет, сбросить его изображение и статус
+        if (selectedTickets[area] && selectedTickets[area] !== element) {
+            selectedTickets[area].src = selectedTickets[area].getAttribute('data-original-src');
+            selectedTickets[area].setAttribute('data-clicked', 'false');
+            selectedTickets[area].classList.remove('selected');
+            selectedTickets[area] = null;
+        }
+
+        // Переключение изображения тикета
+        if (element.getAttribute('data-clicked') === 'true' && !Object.values(selectedTickets).includes(element)) {
+            element.src = element.getAttribute('data-original-src');
+            element.setAttribute('data-clicked', 'false');
+            element.classList.remove('selected');
+        } else {
+            if (!element.getAttribute('data-original-src')) {
+                element.setAttribute('data-original-src', element.src);
+            }
+            element.src = '@Url.Content("~/Content/img/choose_place/yellow-ticket.svg")';
+            element.setAttribute('data-clicked', 'true');
+        }
+
+        // Добавление класса 'selected' к кликнутому тикету
+        element.classList.add('selected');
+
+        // Обновление информации о тикете в выбранной области
+        if (selectedAreas[area]) {
+            document.getElementById(`ticketName${area}`).innerText = `${ticketNumber}`;
+            document.getElementById(`ticketPrice${area}`).innerText = `€ ${ticketPrice}`;
+            selectedTickets[area] = element;
+        }
+    }
+
+    function toggleArea(area) {
+        // Сначала делаем все области неактивными
+        Object.keys(selectedAreas).forEach(area => {
+            const areaElement = document.getElementById(`area${area}`);
+            areaElement.classList.remove('active');
+            selectedAreas[area] = false;
+        });
+
+        // Затем активируем выбранную область
+        const areaElement = document.getElementById(`area${area}`);
+        areaElement.classList.add('active');
+        selectedAreas[area] = true;
+    }
+
+
+
+    // Функция для переключения между двумя контейнерами
+    function toggleContainer(containerId) {
+        // Показываем или скрываем контейнеры в зависимости от переданного ID
+        document.getElementById('container-place-1').style.display = (containerId === 1) ? 'block' : 'none';
+        document.getElementById('container-place-2').style.display = (containerId === 2) ? 'block' : 'none';
+    }
+
+
+    // Функции для переключения на второй и первый контейнеры
+    function toggleToContainer2() {
+        toggleContainer(2);
+    }
+
+    function toggleToContainer1() {
+        toggleContainer(1);
+    }
+
+    // Добавляем обработчики событий для кнопок переключения
+    document.getElementById('area1').addEventListener('click', () => toggleContainer(1));
+    document.getElementById('area2').addEventListener('click', () => toggleContainer(2));
+
+
+
+        @*function changeImage(element) {
             if (element.getAttribute('data-clicked') !== 'true') {
                 element.setAttribute('data-original-src', element.src); // Сохраняем исходный src
                 element.src = '@Url.Content("~/Content/img/choose_place/opacity-yellow.svg")';
@@ -793,7 +1517,7 @@
             const areaElement = document.getElementById(`area${area}`);
             areaElement.classList.add('active');
             selectedAreas[area] = true;
-    }
+    }*@
 
     function sub() {
         document.getElementById(`value1`).value = document.getElementById(`ticketName1`).innerText

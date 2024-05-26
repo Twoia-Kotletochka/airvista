@@ -36,5 +36,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Place_table">
+      <EntityTypeMapping TypeName="AirWModel.Place_table">
+        <MappingFragment StoreEntitySet="Place_table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="place_name" ColumnName="place_name" />
+          <ScalarProperty Name="id_bilet" ColumnName="id_bilet" />
+          <ScalarProperty Name="id_person" ColumnName="id_person" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

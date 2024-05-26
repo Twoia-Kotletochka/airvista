@@ -28,5 +28,6 @@ namespace WDsite.Models
         public virtual DbSet<Bilet_table> Bilet_table { get; set; }
         public virtual DbSet<Countries_table> Countries_table { get; set; }
         public virtual DbSet<persons_table> persons_table { get; set; }
+        public virtual DbSet<Place_table> Place_table { get; set; }
     }
 }

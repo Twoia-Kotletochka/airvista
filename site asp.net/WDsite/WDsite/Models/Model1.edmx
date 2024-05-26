@@ -37,6 +37,16 @@
           <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="password" Type="varchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="Place_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place_name" Type="varchar" MaxLength="10" />
+          <Property Name="id_bilet" Type="int" />
+          <Property Name="id_person" Type="int" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
         <Association Name="FK_Bilet_table_Countries_table">
           <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
           <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="*" />
@@ -61,10 +71,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Place_table_Bilet_table">
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="0..1" />
+          <End Role="Place_table" Type="Self.Place_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bilet_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Place_table">
+              <PropertyRef Name="id_bilet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_table_persons_table">
+          <End Role="persons_table" Type="Self.persons_table" Multiplicity="0..1" />
+          <End Role="Place_table" Type="Self.Place_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="persons_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Place_table">
+              <PropertyRef Name="id_person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище AirWModelContainer">
           <EntitySet Name="Bilet_table" EntityType="Self.Bilet_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries_table" EntityType="Self.Countries_table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="persons_table" EntityType="Self.persons_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Place_table" EntityType="Self.Place_table" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Bilet_table_Countries_table" Association="Self.FK_Bilet_table_Countries_table">
             <End Role="Countries_table" EntitySet="Countries_table" />
             <End Role="Bilet_table" EntitySet="Bilet_table" />
@@ -72,6 +107,14 @@
           <AssociationSet Name="FK_Bilet_table_Countries_table1" Association="Self.FK_Bilet_table_Countries_table1">
             <End Role="Countries_table" EntitySet="Countries_table" />
             <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_table_Bilet_table" Association="Self.FK_Place_table_Bilet_table">
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+            <End Role="Place_table" EntitySet="Place_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_table_persons_table" Association="Self.FK_Place_table_persons_table">
+            <End Role="persons_table" EntitySet="persons_table" />
+            <End Role="Place_table" EntitySet="Place_table" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -92,6 +135,7 @@
           <Property Name="date_to" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Countries_table" Relationship="Self.FK_Bilet_table_Countries_table" FromRole="Bilet_table" ToRole="Countries_table" />
           <NavigationProperty Name="Countries_table1" Relationship="Self.FK_Bilet_table_Countries_table1" FromRole="Bilet_table" ToRole="Countries_table" />
+          <NavigationProperty Name="Place_table" Relationship="Self.FK_Place_table_Bilet_table" FromRole="Bilet_table" ToRole="Place_table" />
         </EntityType>
         <EntityType Name="Countries_table">
           <Key>
@@ -114,6 +158,19 @@
           <Property Name="phone_namber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Place_table" Relationship="Self.FK_Place_table_persons_table" FromRole="persons_table" ToRole="Place_table" />
+        </EntityType>
+        <EntityType Name="Place_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_bilet" Type="Int32" />
+          <Property Name="id_person" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Bilet_table" Relationship="Self.FK_Place_table_Bilet_table" FromRole="Place_table" ToRole="Bilet_table" />
+          <NavigationProperty Name="persons_table" Relationship="Self.FK_Place_table_persons_table" FromRole="Place_table" ToRole="persons_table" />
         </EntityType>
         <Association Name="FK_Bilet_table_Countries_table">
           <End Role="Countries_table" Type="Self.Countries_table" Multiplicity="0..1" />
@@ -139,10 +196,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Place_table_Bilet_table">
+          <End Role="Bilet_table" Type="Self.Bilet_table" Multiplicity="0..1" />
+          <End Role="Place_table" Type="Self.Place_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bilet_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Place_table">
+              <PropertyRef Name="id_bilet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_table_persons_table">
+          <End Role="persons_table" Type="Self.persons_table" Multiplicity="0..1" />
+          <End Role="Place_table" Type="Self.Place_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="persons_table">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Place_table">
+              <PropertyRef Name="id_person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="AirWEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bilet_table" EntityType="Self.Bilet_table" />
           <EntitySet Name="Countries_table" EntityType="Self.Countries_table" />
           <EntitySet Name="persons_table" EntityType="Self.persons_table" />
+          <EntitySet Name="Place_table" EntityType="Self.Place_table" />
           <AssociationSet Name="FK_Bilet_table_Countries_table" Association="Self.FK_Bilet_table_Countries_table">
             <End Role="Countries_table" EntitySet="Countries_table" />
             <End Role="Bilet_table" EntitySet="Bilet_table" />
@@ -150,6 +232,14 @@
           <AssociationSet Name="FK_Bilet_table_Countries_table1" Association="Self.FK_Bilet_table_Countries_table1">
             <End Role="Countries_table" EntitySet="Countries_table" />
             <End Role="Bilet_table" EntitySet="Bilet_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_table_Bilet_table" Association="Self.FK_Place_table_Bilet_table">
+            <End Role="Bilet_table" EntitySet="Bilet_table" />
+            <End Role="Place_table" EntitySet="Place_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_table_persons_table" Association="Self.FK_Place_table_persons_table">
+            <End Role="persons_table" EntitySet="persons_table" />
+            <End Role="Place_table" EntitySet="Place_table" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -190,6 +280,17 @@
                 <ScalarProperty Name="phone_namber" ColumnName="phone_namber" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Place_table">
+            <EntityTypeMapping TypeName="AirWModel.Place_table">
+              <MappingFragment StoreEntitySet="Place_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="place_name" ColumnName="place_name" />
+                <ScalarProperty Name="id_bilet" ColumnName="id_bilet" />
+                <ScalarProperty Name="id_person" ColumnName="id_person" />
+                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

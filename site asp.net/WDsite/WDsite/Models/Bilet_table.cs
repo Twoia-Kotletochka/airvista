@@ -14,6 +14,12 @@ namespace WDsite.Models
     
     public partial class Bilet_table
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bilet_table()
+        {
+            this.Place_table = new HashSet<Place_table>();
+        }
+    
         public int id { get; set; }
         public Nullable<int> form_id { get; set; }
         public Nullable<int> to_id { get; set; }
@@ -24,5 +30,7 @@ namespace WDsite.Models
     
         public virtual Countries_table Countries_table { get; set; }
         public virtual Countries_table Countries_table1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Place_table> Place_table { get; set; }
     }
 }

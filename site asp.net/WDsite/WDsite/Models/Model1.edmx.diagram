@@ -4,12 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b50d7221d34f42bf80a5ad8e796f2215" Name="Diagram1">
+      <Diagram DiagramId="0d2586fc66f1414ea3f59051dc446423" Name="Diagram1">
         <EntityTypeShape EntityType="AirWModel.Bilet_table" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirWModel.Countries_table" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirWModel.persons_table" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirWModel.Countries_table" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirWModel.persons_table" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirWModel.Place_table" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="AirWModel.FK_Bilet_table_Countries_table" ManuallyRouted="false" />
         <AssociationConnector Association="AirWModel.FK_Bilet_table_Countries_table1" ManuallyRouted="false" />
+        <AssociationConnector Association="AirWModel.FK_Place_table_Bilet_table" ManuallyRouted="false" />
+        <AssociationConnector Association="AirWModel.FK_Place_table_persons_table" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

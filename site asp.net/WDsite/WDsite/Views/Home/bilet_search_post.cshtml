@@ -2,7 +2,12 @@
 @{
     ViewBag.Title = "bilet_search";
 
-    IEnumerable<WDsite.Models.Bilet_table> list2 = ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>;
+    //IEnumerable<WDsite.Models.Bilet_table> list2 = null as IEnumerable<WDsite.Models.Bilet_table>;
+    //if (ViewData["list2"] != null)
+    //{
+    //    IEnumerable<WDsite.Models.Bilet_table> list2 = ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>;
+    //}
+
 }
 
 
@@ -94,13 +99,13 @@
             </div>
             <p class="flight-flights-title">Виліт з @ViewData["to"] до @ViewData["from"]</p>
             <div class="block2">
-                @if (list2 != null)
+                @if (ViewData["list2"] != null)
                 {
-                    foreach (var item in list2)
+                    foreach (var item in ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>)
                     {
                         System.TimeSpan? d = item.date_to - item.date_from;
                         <div class="flight-flights-ticket">
-                            <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px">
+                            <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height: 33px;">
 
                             <div class="flight-flights-line"></div>
 

@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Services;
 using System.Web.WebPages;
@@ -74,6 +75,21 @@ namespace WDsite.Controllers
             ViewBag.from2 = db.Countries_table.Find(b2.form_id).Redu;
             ViewBag.to2 = db.Countries_table.Find(b2.to_id).Redu;
 
+            IEnumerable<Place_table> p1 = from u in db.Place_table
+                                               where u.id_bilet == b1.id
+                                               select u;
+
+            IEnumerable<Place_table> p2 = from u in db.Place_table
+                                               where u.id_bilet == b2.id
+                                               select u;
+
+            string[] places1 = p1.Select(u => u.place_name).ToArray();
+            string[] places2 = p2.Select(u => u.place_name).ToArray();
+
+
+            ViewBag.places1 = places1;
+            ViewBag.places2 = places2;
+
             return View();
         }
         [HttpPost]
@@ -81,6 +97,19 @@ namespace WDsite.Controllers
         {
             Session["place1"] = value1;
             Session["place2"] = value2;
+            Place_table ch_place1 = new Place_table();
+            Place_table ch_place2 = new Place_table();
+            ch_place1.id_bilet = db.Bilet_table.Find(Session["bilet1"]).id;
+            ch_place2.id_bilet = db.Bilet_table.Find(Session["bilet2"]).id;
+            ch_place1.place_name = value1;
+            ch_place2.place_name = value2;
+            ch_place1.date = DateTime.Now;
+            ch_place2.date = DateTime.Now;
+
+            db.Place_table.Add(ch_place1);
+            db.Place_table.Add(ch_place2);
+
+            db.SaveChanges();
             return RedirectToAction("payment_method");
         }
         public void SaveCurrencyText(string currencyText)
@@ -278,7 +307,7 @@ namespace WDsite.Controllers
                         where u.Countries_table.id == cf.id && u.Countries_table1.id == ct.id
                         select u;
             var q1 = from i in query
-                     where i.date_from >= date_from && i.date_to <= date_to?.AddDays(1)
+                     where i.date_from >= date_from && i.date_to <= date_from?.AddDays(1)
                      select i;
 
 
@@ -288,7 +317,7 @@ namespace WDsite.Controllers
                          where u.Countries_table.id == ct.id && u.Countries_table1.id == cf.id
                          select u;
             var q2 = from i in query2
-                     where i.date_from >= date_from && i.date_to <= date_to?.AddDays(1)
+                     where i.date_from >= date_to && i.date_to <= date_to?.AddDays(1)
                      select i;
 
 
@@ -298,11 +327,23 @@ namespace WDsite.Controllers
             ViewBag.ci = ci;
             ViewBag.from_date = date_from.Value.ToString("dd.MM.yyyy");
             ViewBag.to_date = date_to.Value.ToString("dd.MM.yyyy");
+            ViewBag.list2 = q2.ToList();
             if (IsEmpty(q1) && IsEmpty(q2))
             {
                 return View("bilet_search_post");
+            }else if (IsEmpty(q1))
+            {
+                return View("bilet_search_post", null);
             }
-            ViewBag.list2 = q2.ToList();
+            else if (IsEmpty(q2))
+            {
+                ViewBag.list2 = null;
+                return View("bilet_search_post", q1.ToList());
+            }
+
+
+
+            
 
 
 
