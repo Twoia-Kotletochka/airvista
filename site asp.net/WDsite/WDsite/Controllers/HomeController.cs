@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Services;
 using System.Web.WebPages;
 using WDsite.Models;
-
 namespace WDsite.Controllers
 {
     public class HomeController : Controller
@@ -214,24 +214,26 @@ namespace WDsite.Controllers
         [HttpPost]
         public ActionResult login(string email, string password)
         {
+             
 
-            IEnumerable<persons_table> query = from u in db.persons_table
-                                               where u.email == email
-                                               select u;
-            if (IsEmpty(query) == true)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                persons_table person = query.First();
-                if (person.password == password)
+                IEnumerable<persons_table> query = from u in db.persons_table
+                                                   where u.email == email
+                                                   select u;
+                if (IsEmpty(query) == true)
                 {
-                    Session["account"] = person;
-                    Session["first_name"] = person.first_name;
+                    return RedirectToAction("Index");
                 }
+                else
+                {
+                    persons_table person = query.First();
+                    person.password = AESEncryption.Decrypt(person.password);
+                    if (person.password == password)
+                    {
+                        Session["account"] = person;
+                        Session["first_name"] = person.first_name;
+                    }
+                
             }
-
             return RedirectToAction("Index");
         }
         bool IsEmpty(IEnumerable en)
@@ -243,10 +245,16 @@ namespace WDsite.Controllers
         [HttpPost]
         public ActionResult Registration([Bind(Include = "id,first_name,last_name,gender,phone_namber,email,password")] persons_table persons_table)
         {
+
             if (ModelState.IsValid)
             {
-                db.persons_table.Add(persons_table);
-                db.SaveChanges();
+               
+
+                    persons_table p = persons_table;
+                    p.password = AESEncryption.Encrypt(persons_table.password);
+                    db.persons_table.Add(persons_table);
+                    db.SaveChanges();
+               
                 return RedirectToAction("Index");
             }
 
@@ -293,7 +301,7 @@ namespace WDsite.Controllers
 
             if (country_from.IsEmpty() || country_to.IsEmpty() || country_from == "З" || country_to == "До")
             {
-                return View("bilet_search_post");
+                return View("bilet_search_post", countries);
             }
 
             var cf = db.Countries_table
@@ -327,27 +335,28 @@ namespace WDsite.Controllers
             ViewBag.ci = ci;
             ViewBag.from_date = date_from.Value.ToString("dd.MM.yyyy");
             ViewBag.to_date = date_to.Value.ToString("dd.MM.yyyy");
+            ViewBag.list1 = q1.ToList();
             ViewBag.list2 = q2.ToList();
             if (IsEmpty(q1) && IsEmpty(q2))
             {
-                return View("bilet_search_post");
+                ViewBag.list1 = null;
+                ViewBag.list2 = null;
+                return View("bilet_search_post", countries);
             }else if (IsEmpty(q1))
             {
-                return View("bilet_search_post", null);
+                ViewBag.list1 = null;
+                
+                return View("bilet_search_post", countries);
             }
             else if (IsEmpty(q2))
             {
                 ViewBag.list2 = null;
-                return View("bilet_search_post", q1.ToList());
+                return View("bilet_search_post", countries);
             }
 
 
 
-            
-
-
-
-            return View("bilet_search_post", q1.ToList());
+            return View("bilet_search_post", countries);
         }
 
         [HttpPost]

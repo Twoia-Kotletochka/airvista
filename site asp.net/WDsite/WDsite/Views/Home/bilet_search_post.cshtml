@@ -1,4 +1,5 @@
-﻿@model IEnumerable<WDsite.Models.Bilet_table>
+﻿
+@model IEnumerable<WDsite.Models.Countries_table>
 @{
     ViewBag.Title = "bilet_search";
 
@@ -19,9 +20,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/style/flight2.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style/drop-down.css">
 </head>
-
-
+<style>
+    .hidden {
+        display: none;
+    }
+    .cha {
+        font-family: "Inter", sans-serif;
+    }
+</style>
 <body style="margin:0px">
 
     <div class="flight">
@@ -43,161 +51,416 @@
                 </div>
             </div>
 
-            @*<div class="flight-search-column">
-                <p class="flight-search-edit">Редагувати пошуковий запит</p>
-            </div>*@
+            <div class="flight-search-column">
+                <p id="b_change" class="flight-search-edit">Редагувати пошуковий запит</p>
+            </div>
         </div>
-
-        <div class="flight-flights">
-            <p class="flight-flights-title" style="margin-top: 130px">Виліт з @ViewData["from"] до @ViewData["to"]</p>
-            <div class="block1">
-                @if (Model != null)
-                {
-                    foreach (var item in Model)
-                    {
-                        System.TimeSpan? d = item.date_to - item.date_from;
-                        <div class="flight-flights-ticket">
-                            <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height:33px;">
-
-                            <div class="flight-flights-line"></div>
-
-                            <div class="flight-flights-block" style="margin-right: 160px;">
-                                <p class="flight-flights-time">@item.date_from.Value.ToString("t")</p>
-                                <p class="flight-flights-location">@item.Countries_table.Redu</p>
-                            </div>
-
-                            <div class="flight-flights-block" style="margin-top: 15px;">
-                                <p class="flight-flights-travelinfo" style="margin-top: 15px; margin-left: 125px">@d</p>
-                                <img src="~/Content/img/flight/One-plane-right.svg" />
-                                <p class="flight-flights-travelinfo" style="margin-left: 140px">@item.type</p>
-                            </div>
-
-                            <div class="flight-flights-block" style="margin-left: 160px;">
-                                <p class="flight-flights-time">@item.date_to.Value.ToString("t")</p>
-                                <p class="flight-flights-location">@item.Countries_table1.Redu</p>
-                            </div>
-
-                            <div class="flight-flights-line"></div>
-
-                            <div class="flight-flights-block">
-                                <p class="flight-flights-tariff">Тариф Basic</p>
-                                <div class="flight-flights-column">
-                                    <p class="flight-flights-oldprice">₴ <span style="text-decoration: line-through;">15,699.99</span></p>
-                                    <p class="flight-flights-hotprice">₴ @item.price.Value.ToString("#,##0.00")</p>
-                                </div>
-                                <p data-value=@item.id class="flight-flights-buy type1">Обрати</p>
-                            </div>
-
-                        </div>
-                    }
-                }
-                else
-                {
-                    <p class="flight-flights-buy">По фашому запиту нічого не знайдено</p>
-                }
-
+        <div id="change" style="background-color:white;" class="cha hidden">
+            <div class="header-search" style="display:none;width:0px">
+                <p class="header-search-nav activeflights" id="header-flight-btn">Рейс</p>
+                <p class="header-search-nav" id="header-reservation-btn">Мої бронювання</p>
+                <p class="header-search-nav" id="header-registration-btn">Реєстрація</p>
+                <p class="header-search-nav" id="header-status-btn">Статус рейсу</p>
             </div>
-            <p class="flight-flights-title">Виліт з @ViewData["to"] до @ViewData["from"]</p>
-            <div class="block2">
-                @if (ViewData["list2"] != null)
-                {
-                    foreach (var item in ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>)
-                    {
-                        System.TimeSpan? d = item.date_to - item.date_from;
-                        <div class="flight-flights-ticket">
-                            <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height: 33px;">
 
-                            <div class="flight-flights-line"></div>
+            <div class="header-flight" id="header-flight-div" style="padding-bottom:30px">
+                <div class="header-flight-line" style="display: flex; margin-bottom: 20px;">
+                    <button id="radio-with-back" class="button-radio activeradio" style="border: 1px solid #FFC107;"></button>
+                    <p class="header-search-radiobutton-text" style="color:black">В обидві сторони</p>
+                    <button id="radio-without-back" class="button-radio" style="border: 1px solid #FFC107;"></button>
+                    <p class="header-search-radiobutton-text" style="color:black">В один бік</p>
+                    <button id="radio-multy" class="button-radio" style="border: 1px solid #FFC107;"></button>
+                    <p class="header-search-radiobutton-text" style="color:black">Мульти-сіті</p>
 
-                            <div class="flight-flights-block" style="margin-right: 160px;">
-                                <p class="flight-flights-time">@item.date_from.Value.ToString("t")</p>
-                                <p class="flight-flights-location">@item.Countries_table.Redu</p>
-                            </div>
+                </div>
+                @*@using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()*@
 
-                            <div class="flight-flights-block" style="margin-top: 15px;">
-                                <p class="flight-flights-travelinfo" style="margin-top: 15px; margin-left: 125px">@d</p>
-                                <img src="~/Content/img/flight/One-plane-right.svg" />
-                                <p class="flight-flights-travelinfo" style="margin-left: 140px">@item.type</p>
-                            </div>
+                <form id="f" name="f" action="/home/bilet_search_test" method="post">
+                    <div class="header-flight-line" style="display: flex; flex-wrap: wrap;" id="with-back-div">
+                        <div style="width: 660px;display: -webkit-box;border:1px solid black;border-radius:12px;height:71px">
+                            <div class="custom-dropdown">
+                                <div id="div_country_from" class="selected-option">
+                                    <div class="start-text">З</div>
 
-                            <div class="flight-flights-block" style="margin-left: 160px;">
-                                <p class="flight-flights-time">@item.date_to.Value.ToString("t")</p>
-                                <p class="flight-flights-location">@item.Countries_table1.Redu</p>
-                            </div>
-
-                            <div class="flight-flights-line"></div>
-
-                            <div class="flight-flights-block">
-                                <p class="flight-flights-tariff">Тариф Basic</p>
-                                <div class="flight-flights-column">
-                                    <p class="flight-flights-oldprice">₴ <span style="text-decoration: line-through;">15,699.99</span></p>
-                                    <p class="flight-flights-hotprice">₴ @item.price.Value.ToString("#,##0.00")</p>
                                 </div>
-                                <p data-value=@item.id class="flight-flights-buy type2">Обрати</p>
+                                <input id="input_country_from" name="country_from" class="country_from" type="hidden" />
+                                <ul class="options">
+                                    @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                        }
+                                    }
+                                </ul>
                             </div>
 
+
+                            <div>
+                                <img src="~/Content/img/index/str.png" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
+                            </div>
+                            <div class="custom-dropdown">
+                                <div id="div_country_to" name="country_to" class="selected-option var2">
+                                    <div class="start-text">До</div>
+                                </div>
+                                <input id="input_country_to" name="country_to" type="hidden" />
+                                <ul class="options o-var2">
+                                    @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                        }
+                                    }
+                                </ul>
+                            </div>
                         </div>
 
-                    }
-                }
-                else
-                {
-                    <p class="flight-flights-buy">По фашому запиту нічого не знайдено</p>
-                }
-            </div>
 
-            <div class="flight-flights-block" style="display: flex; border: 2px dashed #B5B5B5; border-radius: 12px; margin-bottom: 20px;">
-                <img src="~/Content/img/flight/Info-blue.svg" style="margin-right: 4px; margin-top: -15px; margin-left: 4px">
-                <p class="flight-flights-about">Безкоштовна онлайн-реєстрація. Якщо ви не скористаєтеся безкоштовною онлайн-реєстрацією або якщо вона не включена у вартість рейсу, за реєстрацію в аеропорту стягуватиметься збір у розмірі €50 або еквівалент у місцевій валюті.</p>
+                        <div style="width: 335px;display: -webkit-box;">
+                            <div class="header-flight-from" style="width: 130px; border: 1px solid;">
+                                <p class="header-flight-title">Виліт</p>
+                                <input name="date_from" type="date" class="date-picker" placeholder="Дата">
+                            </div>
+                            <div class="header-flight-to" style="width: 130px; border: 1px solid; margin-left: 0px; ">
+                                <p class="header-flight-title">Повернення</p>
+                                <input name="date_to" type="date" class="date-picker" placeholder="Дата">
+                            </div>
+                        </div>
+
+                        <div style="display: inline-flex;">
+                            <div class="custom-dropdown2">
+                                <div class="selected-option2">
+                                    Класс
+
+                                </div>
+                                <ul class="options2">
+                                    <li>Бізнес</li>
+                                    <li>Економ</li>
+                                    <li>Преміум</li>
+                                </ul>
+
+                            </div>
+
+                            <button style="background: none; border: 0; color:white" onclick="submitForm('f')" type="submit" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></button>
+                        </div>
+                </form>
+                @*}*@
+
+
             </div>
-            <form style="display:flex; justify-content:center; margin-bottom:50px; margin-top:10px;" id="myForm" method="post" action="/home/choose_tariff">
-                <input type="hidden" id="hiddenInput1" name="hiddenValue1" value="">
-                <input type="hidden" id="hiddenInput2" name="hiddenValue2" value="">
-                <button style="display:none;width:600px" id="submitButton" type="submit" class="flight-flights-buy">Підтвердити вибір білетів</button>
+            <form id="f1" name="f1" action="/home/bilet_search_one_side" method="post">
+                <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="without-back-div">
+                    <div style="width: 660px; display: -webkit-box; border: 1px solid black; border-radius: 12px; height:71px">
+                        <div class="custom-dropdown">
+                            <div id="div_country_from1" class="selected-option">
+                                <div class="start-text">З</div>
+
+                            </div>
+                            <input id="input_country_from1" name="country_from1" class="country_from" type="hidden" />
+                            <ul class="options">
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                    }
+                                }
+                            </ul>
+                        </div>
+
+
+                        <div>
+                            <img src="~/Content/img/index/str.png" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
+                        </div>
+                        <div class="custom-dropdown">
+                            <div id="div_country_to1" name="country_to" class="selected-option var2">
+                                <div class="start-text">До</div>
+                            </div>
+                            <input id="input_country_to1" name="country_to1" type="hidden" />
+                            <ul class="options o-var2">
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <li><div>@item.Country</div><div>@item.Redu</div></li>
+
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-flight-class" style="margin-left: 30px; width: 163px;">
+                        <div class="header-flight-from" style="width: 140px; margin-left: -10px; border: 1px solid;border-radius:12px">
+                            <p class="header-flight-title">Дата подорожі</p>
+                            <input name="date_from" type="date" class="date-picker" placeholder="Дата">
+                        </div>
+
+                    </div>
+                    <div class="">
+
+                        <div style="display: inline-flex;">
+                            <div class="custom-dropdown2">
+                                <div class="selected-option2">
+                                    Класс
+
+                                </div>
+                                <ul class="options2">
+                                    <li>Бізнес</li>
+                                    <li>Економ</li>
+                                    <li>Преміум</li>
+                                </ul>
+
+                            </div>
+
+                            <button style="background: none; border: 0; color:white" onclick="submitForm('f1')" type="submit" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></button>
+                        </div>
+
+
+                    </div>
+                </div>
             </form>
-        </div>
 
-            <div class="flight-promo">
-                <div class="flight-promo-column">
-                    <p class="flight-promo-title">Не проґавте <span style="color: #F8AB12">акційні квитки</span> від AirVista.*</p>
-                    <p class="flight-promo-subtitle">*Ви можете скасувати підписку будь-коли.</p>
-                </div>
-
-                <div class="flight-promo-column" style="margin-top: 30px; margin-left: 0;">
-                    <div class="flight-promo-block">
-                        <img src="~/Content/img/flight/Check-blue.svg">
-                        <p class="flight-promo-possibilities">Першими дізнавайтесь про розпродаж місць.</p>
+            <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="multy-div">
+                <div style="display: block;">
+                    <div style="display: flex;">
+                        <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                        <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                        <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                        <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                            <p class="header-flight-title">Дата подорожі</p>
+                            <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; margin-top: 40px;">
+                        <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                        <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                        <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                        <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                            <p class="header-flight-title">Дата подорожі</p>
+                            <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                        </div>
+                        <div class="header-flight-class">
+                            <p class="header-flight-title">Клас / Пасажири</p>
+                            <div style="display: flex;">
+                                <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                                <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                            </div>
+                        </div>
+                        <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
                     </div>
 
-                    <div class="flight-promo-block">
-                        <img src="~/Content/img/flight/Check-blue.svg">
-                        <p class="flight-promo-possibilities">Отримуйте розродажі авіаквитків та акції прямо у свою почтову скриньку.</p>
-                    </div>
-
-                    <div class="flight-promo-block">
-                        <img src="~/Content/img/flight/Check-blue.svg">
-                        <p class="flight-promo-possibilities">Дізнавайтеся про нові маршрути та напрямки.</p>
-                    </div>
-                </div>
-
-                <div class="flight-promo-column" style="margin-bottom: 50px;">
-                    <div class="flight-promo-block" style="margin-bottom: -20px;">
-                        <input type="email" placeholder="Електронна пошта" class="flight-promo-email">
-                        <p class="flight-promo-register">Реєстрація</p>
-                    </div>
-
-                    <div class="flight-promo-block">
-                        <label class="orange-checkbox-container"><input type="checkbox" style="margin-top: 15px;"><span class="checkmark"></span></label>
-                        <p class="flight-promo-possibilities" style="margin-top: 15px;">Реєструючись, ви підтверджуєте, що приймаєте нашу</p>
-                    </div>
-
-                    <p class="flight-promo-politics">Політику конфіденційності</p>
                 </div>
             </div>
+
         </div>
+
+        <div class="header-reservation" id="header-reservation-div">
+            <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+            <input type="text" placeholder="Прізвище" class="header-reservation-input">
+            <a href="#" style="color: #fff;"><p class="header-reservation-btn">Знайти</p></a>
+        </div>
+
+        <div class="header-registration" id="header-registration-div">
+            <p class="header-registration-title">Онлайн-реєстрація можлива за <span style="font-weight: 700;">36 годин</span> до планового вильоту рейсу.</p>
+            <div class="header-registrarion-line" style="display: flex;">
+                <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+                <input type="text" placeholder="Прізвище" class="header-reservation-input">
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn">Далi</p></a>
+            </div>
+        </div>
+
+        <div class="header-status" id="header-status-div">
+            <p class="header-registration-title">Перевіряйте інформацію про рейси, затримки, скасування і зміни в розкладі рейсів.</p>
+            <div style="display: flex;">
+                <p class="header-status-nav activestatus" id="header-status-route-btn">Маршрут</p>
+                <p class="header-status-nav" id="header-status-number-btn">Номер рейсу</p>
+            </div>
+            <div style="display: flex;" id="header-status-route-div">
+                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+            <div style="display: none;" id="header-status-number-div">
+                <input type="text" placeholder="Номер рейсу" class="header-number-input">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="flight-flights">
+        <p class="flight-flights-title" style="margin-top: 130px">Виліт з @ViewData["from"] до @ViewData["to"]</p>
+        <div class="block1">
+            @if (ViewData["list1"] != null)
+            {
+                foreach (var item in ViewData["list1"] as IEnumerable<WDsite.Models.Bilet_table>)
+                {
+                    System.TimeSpan? d = item.date_to - item.date_from;
+                    <div class="flight-flights-ticket">
+                        <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height:33px;">
+
+                        <div class="flight-flights-line"></div>
+
+                        <div class="flight-flights-block" style="margin-right: 160px;">
+                            <p class="flight-flights-time">@item.date_from.Value.ToString("t")</p>
+                            <p class="flight-flights-location">@item.Countries_table.Redu</p>
+                        </div>
+
+                        <div class="flight-flights-block" style="margin-top: 15px;">
+                            <p class="flight-flights-travelinfo" style="margin-top: 15px; margin-left: 125px">@d</p>
+                            <img src="~/Content/img/flight/One-plane-right.svg" />
+                            <p class="flight-flights-travelinfo" style="margin-left: 140px">@item.type</p>
+                        </div>
+
+                        <div class="flight-flights-block" style="margin-left: 160px;">
+                            <p class="flight-flights-time">@item.date_to.Value.ToString("t")</p>
+                            <p class="flight-flights-location">@item.Countries_table1.Redu</p>
+                        </div>
+
+                        <div class="flight-flights-line"></div>
+
+                        <div class="flight-flights-block" style="margin-left:70px">
+                            <p class="flight-flights-tariff">Тариф Basic</p>
+                            <div class="flight-flights-column">
+                                <p class="flight-flights-oldprice">₴ <span style="text-decoration: line-through;">15,699.99</span></p>
+                                <p class="flight-flights-hotprice">₴ @item.price.Value.ToString("#,##0.00")</p>
+                            </div>
+                            <p data-value=@item.id class="flight-flights-buy type1">Обрати</p>
+                        </div>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="flight-flights-buy" disabled>По фашому запиту нічого не знайдено</p>
+            }
+
+        </div>
+        <p class="flight-flights-title">Виліт з @ViewData["to"] до @ViewData["from"]</p>
+        <div class="block2">
+            @if (ViewData["list2"] != null)
+            {
+                foreach (var item in ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>)
+                {
+                    System.TimeSpan? d = item.date_to - item.date_from;
+                    <div class="flight-flights-ticket">
+                        <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height: 33px;">
+
+                        <div class="flight-flights-line"></div>
+
+                        <div class="flight-flights-block" style="margin-right: 160px;">
+                            <p class="flight-flights-time">@item.date_from.Value.ToString("t")</p>
+                            <p class="flight-flights-location">@item.Countries_table.Redu</p>
+                        </div>
+
+                        <div class="flight-flights-block" style="margin-top: 15px;">
+                            <p class="flight-flights-travelinfo" style="margin-top: 15px; margin-left: 125px">@d</p>
+                            <img src="~/Content/img/flight/One-plane-right.svg" />
+                            <p class="flight-flights-travelinfo" style="margin-left: 140px">@item.type</p>
+                        </div>
+
+                        <div class="flight-flights-block" style="margin-left: 160px;">
+                            <p class="flight-flights-time">@item.date_to.Value.ToString("t")</p>
+                            <p class="flight-flights-location">@item.Countries_table1.Redu</p>
+                        </div>
+
+                        <div class="flight-flights-line"></div>
+
+                        <div class="flight-flights-block" style="margin-left:70px">
+                            <p class="flight-flights-tariff">Тариф Basic</p>
+                            <div class="flight-flights-column">
+                                <p class="flight-flights-oldprice">₴ <span style="text-decoration: line-through;">15,699.99</span></p>
+                                <p class="flight-flights-hotprice">₴ @item.price.Value.ToString("#,##0.00")</p>
+                            </div>
+                            <p data-value=@item.id class="flight-flights-buy type2">Обрати</p>
+                        </div>
+
+                    </div>
+
+                }
+            }
+            else
+            {
+                <p class="flight-flights-buy" disabled>По фашому запиту нічого не знайдено</p>
+            }
+        </div>
+
+        <div class="flight-flights-block" style="display: flex; border: 2px dashed #B5B5B5; border-radius: 12px; margin-bottom: 20px;">
+            <img src="~/Content/img/flight/Info-blue.svg" style="margin-right: 4px; margin-top: -15px; margin-left: 4px">
+            <p class="flight-flights-about">Безкоштовна онлайн-реєстрація. Якщо ви не скористаєтеся безкоштовною онлайн-реєстрацією або якщо вона не включена у вартість рейсу, за реєстрацію в аеропорту стягуватиметься збір у розмірі €50 або еквівалент у місцевій валюті.</p>
+        </div>
+        <form style="display:flex; justify-content:center; margin-bottom:50px; margin-top:10px;" id="myForm" method="post" action="/home/choose_tariff">
+            <input type="hidden" id="hiddenInput1" name="hiddenValue1" value="">
+            <input type="hidden" id="hiddenInput2" name="hiddenValue2" value="">
+            <button style="display:none;width:600px" id="submitButton" type="submit" class="flight-flights-buy">Підтвердити вибір білетів</button>
+        </form>
+    </div>
+
+    <div class="flight-promo">
+        <div class="flight-promo-column">
+            <p class="flight-promo-title">Не проґавте <span style="color: #F8AB12">акційні квитки</span> від AirVista.*</p>
+            <p class="flight-promo-subtitle">*Ви можете скасувати підписку будь-коли.</p>
+        </div>
+
+        <div class="flight-promo-column" style="margin-top: 30px; margin-left: 0;">
+            <div class="flight-promo-block">
+                <img src="~/Content/img/flight/Check-blue.svg">
+                <p class="flight-promo-possibilities">Першими дізнавайтесь про розпродаж місць.</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <img src="~/Content/img/flight/Check-blue.svg">
+                <p class="flight-promo-possibilities">Отримуйте розродажі авіаквитків та акції прямо у свою почтову скриньку.</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <img src="~/Content/img/flight/Check-blue.svg">
+                <p class="flight-promo-possibilities">Дізнавайтеся про нові маршрути та напрямки.</p>
+            </div>
+        </div>
+
+        <div class="flight-promo-column" style="margin-bottom: 50px;">
+            <div class="flight-promo-block" style="margin-bottom: -20px;">
+                <input type="email" placeholder="Електронна пошта" class="flight-promo-email">
+                <p class="flight-promo-register">Реєстрація</p>
+            </div>
+
+            <div class="flight-promo-block">
+                <label class="orange-checkbox-container"><input type="checkbox" style="margin-top: 15px;"><span class="checkmark"></span></label>
+                <p class="flight-promo-possibilities" style="margin-top: 15px;">Реєструючись, ви підтверджуєте, що приймаєте нашу</p>
+            </div>
+
+            <p class="flight-promo-politics">Політику конфіденційності</p>
+        </div>
+    </div>
+    </div>
 
 
 </body>
+<script src="~/Scripts/sc_dropdown_countries_on_header.js" asp-append-version="true"></script>
+<script src="~/Scripts/main_header.js" asp-append-version="true"></script>
 <script>
     const buttons = document.querySelectorAll('.flight-flights-buy');
     const submitButton = document.getElementById('submitButton');
@@ -284,4 +547,14 @@
             ticket.style.height = "0px";
         }
     });
+
+    document.getElementById("b_change").addEventListener("click", function () {
+        var changeDiv = document.getElementById("change");
+        if (changeDiv.classList.contains("hidden")) {
+            changeDiv.classList.remove("hidden");
+        } else {
+            changeDiv.classList.add("hidden");
+        }
+    });
+
 </script>

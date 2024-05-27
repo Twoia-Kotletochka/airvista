@@ -24,9 +24,19 @@
 
 </head>
 <style>
-    .options{
-        z-index:999;
+    .options {
+        z-index: 999;
+        
     }
+    .selected-option{
+        height:69px
+    }
+    .var2{
+        margin-left:10px
+    }
+    /*.iimg{
+        z-index:1;
+    }*/
 </style>
 <body>
 
@@ -263,12 +273,12 @@
 
             </div>
             @*@using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()*@
+                {
+                    @Html.AntiForgeryToken()*@
 
             <form id="f" name="f" action="/home/bilet_search_test" method="post">
                 <div class="header-flight-line" style="display: flex; flex-wrap: wrap;" id="with-back-div">
-                    <div style="width: 650px;display: -webkit-box;">
+                    <div style="width: 650px; display: -webkit-box; height: 73px; background: white; border-radius: 12px;">
                         <div class="custom-dropdown">
                             <div id="div_country_from" class="selected-option">
                                 <div class="start-text">З</div>
@@ -289,7 +299,7 @@
 
 
                         <div>
-                            <img src="~/Content/img/index/str.png" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
+                            <img src="~/Content/img/index/str.png" class="iimg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
                         </div>
                         <div class="custom-dropdown">
                             <div id="div_country_to" name="country_to" class="selected-option var2">
@@ -346,7 +356,7 @@
         </div>
         <form id="f1" name="f1" action="/home/bilet_search_one_side" method="post">
             <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="without-back-div">
-                <div style="width: 650px;display: -webkit-box;">
+                <div style="width: 650px; display: -webkit-box; height: 73px; background: white; border-radius: 12px;">
                     <div class="custom-dropdown">
                         <div id="div_country_from1" class="selected-option">
                             <div class="start-text">З</div>
@@ -367,7 +377,7 @@
 
 
                     <div>
-                        <img src="~/Content/img/index/str.png" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
+                        <img src="~/Content/img/index/str.png" class="iimg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer; height: 71px;">
                     </div>
                     <div class="custom-dropdown">
                         <div id="div_country_to1" name="country_to" class="selected-option var2">
@@ -411,91 +421,92 @@
 
                         <button style="background: none; border: 0; color:white" onclick="submitForm('f1')" type="submit" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></button>
                     </div>
-                    
-                    <div class="promo">
-                        <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
-                    </div>
+
+
                 </div>
-                </div>
-            </form>
-
-                <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="multy-div">
-                    <div style="display: block;">
-                        <div style="display: flex;">
-                            <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
-                            <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
-                            <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
-                            <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
-                                <p class="header-flight-title">Дата подорожі</p>
-                                <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; margin-top: 40px;">
-                            <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
-                            <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
-                            <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
-                            <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
-                                <p class="header-flight-title">Дата подорожі</p>
-                                <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
-                            </div>
-                            <div class="header-flight-class">
-                                <p class="header-flight-title">Клас / Пасажири</p>
-                                <div style="display: flex;">
-                                    <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
-                                    <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
-                                </div>
-                            </div>
-                            <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
-                        </div>
-                        <div style="display: flex;">
-                            <a href="#" style="color: #0E3049;"><p class="header-flight-addflight" style="margin-right: 150px;">Додати рейс</p></a>
-                            <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="header-reservation" id="header-reservation-div">
-                <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
-                <input type="text" placeholder="Прізвище" class="header-reservation-input">
-                <a href="#" style="color: #fff;"><p class="header-reservation-btn">Знайти</p></a>
-            </div>
-
-            <div class="header-registration" id="header-registration-div">
-                <p class="header-registration-title">Онлайн-реєстрація можлива за <span style="font-weight: 700;">36 годин</span> до планового вильоту рейсу.</p>
-                <div class="header-registrarion-line" style="display: flex;">
-                    <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
-                    <input type="text" placeholder="Прізвище" class="header-reservation-input">
-                    <a href="#" style="color: #fff;"><p class="header-reservation-btn">Далi</p></a>
+                <div class="promo">
+                    <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
                 </div>
             </div>
+        </form>
 
-            <div class="header-status" id="header-status-div">
-                <p class="header-registration-title">Перевіряйте інформацію про рейси, затримки, скасування і зміни в розкладі рейсів.</p>
+        <div class="header-flight-line" style="display: none; flex-wrap: wrap;" id="multy-div">
+            <div style="display: block;">
                 <div style="display: flex;">
-                    <p class="header-status-nav activestatus" id="header-status-route-btn">Маршрут</p>
-                    <p class="header-status-nav" id="header-status-number-btn">Номер рейсу</p>
-                </div>
-                <div style="display: flex;" id="header-status-route-div">
                     <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
                     <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
                     <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
-                    <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
                         <p class="header-flight-title">Дата подорожі</p>
-                        <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                        <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                    </div>
+                </div>
+                <div style="display: flex; margin-top: 40px;">
+                    <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                    <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                    <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                    <div class="header-flight-class" style="margin-left: 30px; width: 236px;">
+                        <p class="header-flight-title">Дата подорожі</p>
+                        <p class="header-flight-date" style="margin-right: 15px;">Обрати дату вильоту</p>
+                    </div>
+                    <div class="header-flight-class">
+                        <p class="header-flight-title">Клас / Пасажири</p>
+                        <div style="display: flex;">
+                            <p class="header-flight-date" style="margin-right: 15px;">Економ, </p>
+                            <p class="header-flight-date" style="margin-right: 45px;">1 пасажир</p>
+                        </div>
                     </div>
                     <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
                 </div>
-                <div style="display: none;" id="header-status-number-div">
-                    <input type="text" placeholder="Номер рейсу" class="header-number-input">
-                    <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
-                        <p class="header-flight-title">Дата подорожі</p>
-                        <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
-                    </div>
-                    <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+                <div style="display: flex;">
+                    <a href="#" style="color: #0E3049;"><p class="header-flight-addflight" style="margin-right: 150px;">Додати рейс</p></a>
+                    <a href="#" style="color: #F5F9FA;"><p class="header-flight-code">Ввести промокод</p></a>
                 </div>
             </div>
+        </div>
+
+        </div>
+
+        <div class="header-reservation" id="header-reservation-div">
+            <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+            <input type="text" placeholder="Прізвище" class="header-reservation-input">
+            <a href="#" style="color: #fff;"><p class="header-reservation-btn">Знайти</p></a>
+        </div>
+
+        <div class="header-registration" id="header-registration-div">
+            <p class="header-registration-title">Онлайн-реєстрація можлива за <span style="font-weight: 700;">36 годин</span> до планового вильоту рейсу.</p>
+            <div class="header-registrarion-line" style="display: flex;">
+                <input type="text" placeholder="Номер бронювання" class="header-reservation-input">
+                <input type="text" placeholder="Прізвище" class="header-reservation-input">
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn">Далi</p></a>
+            </div>
+        </div>
+
+        <div class="header-status" id="header-status-div">
+            <p class="header-registration-title">Перевіряйте інформацію про рейси, затримки, скасування і зміни в розкладі рейсів.</p>
+            <div style="display: flex;">
+                <p class="header-status-nav activestatus" id="header-status-route-btn">Маршрут</p>
+                <p class="header-status-nav" id="header-status-number-btn">Номер рейсу</p>
+            </div>
+            <div style="display: flex;" id="header-status-route-div">
+                <input type="text" placeholder="З" class="header-flight-input" style="border-radius: 12px 0 0 12px;">
+                <img src="~/Content/img/index/two-arrows.svg" style="margin: 0 -20px -10px -20px; position: relative; cursor: pointer;">
+                <input type="text" placeholder="До" class="header-flight-input" style="border-radius: 0 12px 12px 0;">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+            <div style="display: none;" id="header-status-number-div">
+                <input type="text" placeholder="Номер рейсу" class="header-number-input">
+                <div class="header-flight-class" style="margin-left: 30px; width: 430px;">
+                    <p class="header-flight-title">Дата подорожі</p>
+                    <p class="header-flight-date" style="margin-right: 15px;">01 Березня</p>
+                </div>
+                <a href="#" style="color: #fff;"><p class="header-reservation-btn" style="margin-left: 20px;">Пошук</p></a>
+            </div>
+        </div>
     </header>
     <div @*class="container"*@>
         <main role="main" class="pb-3">

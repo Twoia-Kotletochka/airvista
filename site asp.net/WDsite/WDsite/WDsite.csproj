@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\about_travelController.cs" />
+    <Compile Include="Controllers\AESEncryption.cs" />
     <Compile Include="Controllers\Bilet_tableController.cs" />
     <Compile Include="Controllers\helpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
