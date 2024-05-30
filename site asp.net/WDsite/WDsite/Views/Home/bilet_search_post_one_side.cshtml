@@ -1,4 +1,21 @@
 ﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>bilet_search_post_one_side</title>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>
+
 @model IEnumerable<WDsite.Models.Countries_table>
 @{
     ViewBag.Title = "bilet_search";
@@ -26,6 +43,7 @@
     .hidden {
         display: none;
     }
+
     .cha {
         font-family: "Inter", sans-serif;
     }
@@ -74,8 +92,8 @@
 
                 </div>
                 @*@using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()*@
+                    {
+                        @Html.AntiForgeryToken()*@
 
                 <form id="f" name="f" action="/home/bilet_search_test" method="post">
                     <div class="header-flight-line" style="display: flex; flex-wrap: wrap;" id="with-back-div">
@@ -358,62 +376,14 @@
             }
 
         </div>
-        <p class="flight-flights-title">Виліт з @ViewData["to"] до @ViewData["from"]</p>
-        <div class="block2">
-            @if (ViewData["list2"] != null)
-            {
-                foreach (var item in ViewData["list2"] as IEnumerable<WDsite.Models.Bilet_table>)
-                {
-                    System.TimeSpan? d = item.date_to - item.date_from;
-                    <div class="flight-flights-ticket">
-                        <img src="~/Content/img/flight/AirVista-logo.svg" style="margin: 50px 0 50px 30px; min-height: 33px;">
-
-                        <div class="flight-flights-line"></div>
-
-                        <div class="flight-flights-block" style="margin-right: 160px;">
-                            <p class="flight-flights-time">@item.date_from.Value.ToString("t")</p>
-                            <p class="flight-flights-location">@item.Countries_table.Redu</p>
-                        </div>
-
-                        <div class="flight-flights-block" style="margin-top: 15px;">
-                            <p class="flight-flights-travelinfo" style="margin-top: 15px; margin-left: 125px">@d</p>
-                            <img src="~/Content/img/flight/One-plane-right.svg" />
-                            <p class="flight-flights-travelinfo" style="margin-left: 140px">@item.type</p>
-                        </div>
-
-                        <div class="flight-flights-block" style="margin-left: 160px;">
-                            <p class="flight-flights-time">@item.date_to.Value.ToString("t")</p>
-                            <p class="flight-flights-location">@item.Countries_table1.Redu</p>
-                        </div>
-
-                        <div class="flight-flights-line"></div>
-
-                        <div class="flight-flights-block">
-                            <p class="flight-flights-tariff">Тариф Basic</p>
-                            <div class="flight-flights-column">
-                                <p class="flight-flights-oldprice">₴ <span style="text-decoration: line-through;">15,699.99</span></p>
-                                <p class="flight-flights-hotprice">₴ @item.price.Value.ToString("#,##0.00")</p>
-                            </div>
-                            <p data-value=@item.id class="flight-flights-buy type2">Обрати</p>
-                        </div>
-
-                    </div>
-
-                }
-            }
-            else
-            {
-                <p class="flight-flights-buy" disabled>По фашому запиту нічого не знайдено</p>
-            }
-        </div>
+        
 
         <div class="flight-flights-block" style="display: flex; border: 2px dashed #B5B5B5; border-radius: 12px; margin-bottom: 20px;">
             <img src="~/Content/img/flight/Info-blue.svg" style="margin-right: 4px; margin-top: -15px; margin-left: 4px">
             <p class="flight-flights-about">Безкоштовна онлайн-реєстрація. Якщо ви не скористаєтеся безкоштовною онлайн-реєстрацією або якщо вона не включена у вартість рейсу, за реєстрацію в аеропорту стягуватиметься збір у розмірі €50 або еквівалент у місцевій валюті.</p>
         </div>
-        <form style="display:flex; justify-content:center; margin-bottom:50px; margin-top:10px;" id="myForm" method="post" action="/home/choose_tariff">
+        <form style="display:flex; justify-content:center; margin-bottom:50px; margin-top:10px;" id="myForm" method="post" action="/home/choose_tariff_one_side">
             <input type="hidden" id="hiddenInput1" name="hiddenValue1" value="">
-            <input type="hidden" id="hiddenInput2" name="hiddenValue2" value="">
             <button style="display:none;width:600px" id="submitButton" type="submit" class="flight-flights-buy">Підтвердити вибір білетів</button>
         </form>
     </div>
@@ -462,35 +432,97 @@
 <script src="~/Scripts/sc_dropdown_countries_on_header.js" asp-append-version="true"></script>
 <script src="~/Scripts/main_header.js" asp-append-version="true"></script>
 <script>
-    const buttons = document.querySelectorAll('.flight-flights-buy');
-    const submitButton = document.getElementById('submitButton');
+    //const buttons = document.querySelectorAll('.flight-flights-buy');
+    //const submitButton = document.getElementById('submitButton');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const value = this.getAttribute('data-value');
+    //buttons.forEach(button => {
+    //    button.addEventListener('click', function () {
+    //        const value = this.getAttribute('data-value');
 
-            if (this.classList.contains('type1')) {
-                document.getElementById('hiddenInput1').value = value;
-            } else if (this.classList.contains('type2')) {
-                document.getElementById('hiddenInput2').value = value;
-            }
+    //        if (this.classList.contains('type1')) {
+    //            document.getElementById('hiddenInput1').value = value;
+    //        } else if (this.classList.contains('type2')) {
+    //            document.getElementById('hiddenInput2').value = value;
+    //        }
 
-            if (document.getElementById('hiddenInput1').value && document.getElementById('hiddenInput2').value) {
-                submitButton.style.display = 'inline-block';
-            } else {
-                submitButton.style.display = 'none';
-            }
-        });
-    });
+    //        if (document.getElementById('hiddenInput1').value && document.getElementById('hiddenInput2').value) {
+    //            submitButton.style.display = 'inline-block';
+    //        } else {
+    //            submitButton.style.display = 'none';
+    //        }
+    //    });
+    //});
 
 
-    /*------------ animation-----------*/
+    ///*------------ animation-----------*/
+    //document.addEventListener('DOMContentLoaded', function () {
+    //    const block1 = document.querySelector('.block1');
+    //    const block2 = document.querySelector('.block2');
+
+    //    toggleBlock(block1);
+    //    toggleBlock(block2);
+
+    //    function toggleBlock(block) {
+    //        const tickets = block.querySelectorAll('.flight-flights-ticket');
+    //        const buttons = block.querySelectorAll('.flight-flights-buy');
+
+    //        buttons.forEach((button, index) => {
+    //            button.addEventListener('click', function () {
+    //                const ticket = tickets[index];
+    //                const isActive = button.classList.contains('active');
+
+    //                if (!isActive) {
+    //                    tickets.forEach((t, i) => {
+    //                        if (i !== index) {
+    //                            hideTicket(t);
+    //                        }
+    //                    });
+    //                    //showTicket(ticket);
+    //                    button.classList.add('active');
+    //                    button.style.backgroundColor = '#FFA500'; // Изменение цвета кнопки на оранжевый
+    //                    button.innerText = 'Обране'; // Изменение текста на кнопке на "Обране"
+    //                } else {
+    //                    tickets.forEach((t) => showTicket(t));
+    //                    button.classList.remove('active');
+    //                    button.style.backgroundColor = '#116380'; // Возврат цвета кнопки на изначальный
+    //                    button.innerText = 'Обрати'; // Возврат текста на кнопке на "Обрати"
+
+    //                    // Очистка соответствующего hiddenInput в зависимости от блока
+    //                    const hiddenInput = block === block1 ? document.getElementById('hiddenInput1') : document.getElementById('hiddenInput2');
+    //                    hiddenInput.value = '';
+
+    //                    if (document.getElementById('hiddenInput1').value && document.getElementById('hiddenInput2').value) {
+    //                        submitButton.style.display = 'inline-block';
+    //                    } else {
+    //                        submitButton.style.display = 'none';
+    //                    }
+    //                }
+    //            });
+    //        });
+    //    }
+
+    //    function showTicket(ticket) {
+
+    //        ticket.style.transition = "1s ease";
+    //        ticket.style.margin = "0px 0px 50px 0px"
+    //        ticket.classList.remove('closed');
+    //        ticket.style.height = "133px"
+
+    //    }
+
+    //    function hideTicket(ticket) {
+    //        ticket.classList.add('closed');
+    //        ticket.style.margin = "0px";
+    //        ticket.style.transition = "1s ease";
+    //        ticket.style.height = "0px";
+    //    }
+    //});
+
     document.addEventListener('DOMContentLoaded', function () {
         const block1 = document.querySelector('.block1');
-        const block2 = document.querySelector('.block2');
+        const submitButton = document.getElementById('submitButton');
 
         toggleBlock(block1);
-        toggleBlock(block2);
 
         function toggleBlock(block) {
             const tickets = block.querySelectorAll('.flight-flights-ticket');
@@ -500,6 +532,7 @@
                 button.addEventListener('click', function () {
                     const ticket = tickets[index];
                     const isActive = button.classList.contains('active');
+                    const value = this.getAttribute('data-value');
 
                     if (!isActive) {
                         tickets.forEach((t, i) => {
@@ -507,37 +540,32 @@
                                 hideTicket(t);
                             }
                         });
-                        //showTicket(ticket);
                         button.classList.add('active');
-                        button.style.backgroundColor = '#FFA500'; // Изменение цвета кнопки на оранжевый
-                        button.innerText = 'Обране'; // Изменение текста на кнопке на "Обране"
+                        button.style.backgroundColor = '#FFA500'; // Change button color to orange
+                        button.innerText = 'Обране'; // Change button text to "Обране"
+                        document.getElementById('hiddenInput1').value = value; // Set hidden input value
                     } else {
                         tickets.forEach((t) => showTicket(t));
                         button.classList.remove('active');
-                        button.style.backgroundColor = '#116380'; // Возврат цвета кнопки на изначальный
-                        button.innerText = 'Обрати'; // Возврат текста на кнопке на "Обрати"
+                        button.style.backgroundColor = '#116380'; // Reset button color
+                        button.innerText = 'Обрати'; // Reset button text
+                        document.getElementById('hiddenInput1').value = ''; // Clear hidden input value
+                    }
 
-                        // Очистка соответствующего hiddenInput в зависимости от блока
-                        const hiddenInput = block === block1 ? document.getElementById('hiddenInput1') : document.getElementById('hiddenInput2');
-                        hiddenInput.value = '';
-
-                        if (document.getElementById('hiddenInput1').value && document.getElementById('hiddenInput2').value) {
-                            submitButton.style.display = 'inline-block';
-                        } else {
-                            submitButton.style.display = 'none';
-                        }
+                    if (document.getElementById('hiddenInput1').value) {
+                        submitButton.style.display = 'inline-block';
+                    } else {
+                        submitButton.style.display = 'none';
                     }
                 });
             });
         }
 
         function showTicket(ticket) {
-
             ticket.style.transition = "1s ease";
-            ticket.style.margin = "0px 0px 50px 0px"
+            ticket.style.margin = "0px 0px 50px 0px";
             ticket.classList.remove('closed');
-            ticket.style.height = "133px"
-
+            ticket.style.height = "133px";
         }
 
         function hideTicket(ticket) {
@@ -547,6 +575,7 @@
             ticket.style.height = "0px";
         }
     });
+
 
     document.getElementById("b_change").addEventListener("click", function () {
         var changeDiv = document.getElementById("change");

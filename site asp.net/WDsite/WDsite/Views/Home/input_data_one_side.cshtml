@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "input-data";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/style/vvesu-dani.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+<body class="I-Body">
+
+    <div class="container1">
+        <div class="content">
+            <p class="text1">Виліт</p>
+            <img src="~/Content/img/input_data/1.svg">
+        </div>
+        <div class="content">
+            <p class="text1">Вибір тарифа</p>
+            <img src="~/Content/img/input_data/1.svg">
+        </div>
+        <div class="content">
+            <p class="text1-1">Ввести дані</p>
+            <img src="~/Content/img/input_data/1.svg">
+        </div>
+        <div class="content">
+            <p class="text1">Обрати місце</p>
+            <img src="~/Content/img/input_data/1.svg">
+        </div>
+        <div class="content">
+            <p class="text1">Додати спосіб оплати</p>
+        </div>
+    </div>
+    <form action="/home/input_data_one_side" method="post">
+        <div class="container">
+            <div class="container2">
+                <div class="input-group">
+                    <label for="field1">Ім’я</label>
+                    <input name="fname" type="text" id="field1">
+                </div>
+                <div class="input-group2">
+                    <label for="field2">Прізвище</label>
+                    <input name="sname" type="text" id="field2">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container3">
+            @if (Session["ErrorMessage"] == null)
+            {
+
+            <p>* Напишіть Ім’я та Прізвище так, як в паспорті. Латинськими літерами.</p>
+             }else 
+            { 
+           <p style="color:red">*@Session["ErrorMessage"]</p>
+            }
+</div>
+        <div class="container">
+            <div class="container2">
+                <div class="input-group">
+                    <label for="field1">Стать</label>
+                    <div class="dropdown">
+                        <div style="padding-top: 15px; height: 38px;" class="dropdown-toggle">Чоловіча</div>
+                        <div class="dropdown-menu">
+                            <a href="#">Жіноча</a>
+                            <a href="#">Чоловіча</a>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="hidden" name="gender" value="Чоловіча"/>
+                <div class="input-group2">
+                    <label for="field2">E-mail</label>
+                    <input name="email" type="text" id="field2">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container4">
+            <p>Номер телефону</p>
+        </div>
+        <div class="container">
+            <div class="container2">
+                <div class="rectangle">
+                    <p>+380</p>
+                </div>
+                <div class="input-group2">
+                    <input name="namber" type="number" id="field2">
+                </div>
+            </div>
+        </div>
+
+        <div class="container5">
+            <div class="container2">
+                <label class="orange-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    <p class="text5">Я хочу отримувати безкоштовні SMS-повідомлення про рейс</p>
+                </label>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container2">
+                <button type="submit" id="nextButton" class="btn2-1">Перейти далі</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                        var dropdownToggle = document.querySelector('.dropdown-toggle');
+                        var dropdownMenu = document.querySelector('.dropdown-menu');
+                        var hiddenInput = document.querySelector('input[type="hidden"]');
+
+                        dropdownToggle.addEventListener('click', function () {
+                            dropdownMenu.classList.toggle('show');
+                        });
+
+                        dropdownMenu.addEventListener('click', function (event) {
+                        if (event.target.tagName === 'A') {
+                        var selectedValue = event.target.textContent.trim(); 
+                    dropdownToggle.textContent = selectedValue; 
+                    dropdownMenu.classList.remove('show');
+                    hiddenInput.value = selectedValue;
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>

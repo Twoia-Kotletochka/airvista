@@ -8,10 +8,14 @@ using System.Web;
 
 namespace WDsite.Controllers
 {
-    public class AESEncryption
+   
+
+   public class AESEncryption
     {
-        private static readonly byte[] key = Encoding.UTF8.GetBytes("1234567890123456"); // 128-bit key
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes("1234567890123456");
+        private static string keyfbytes = "1234567890123456";
+
+        private static readonly byte[] key = Encoding.UTF8.GetBytes(keyfbytes); // 128-bit key
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes(keyfbytes);
 
         public static string Encrypt(string plainText)
         {

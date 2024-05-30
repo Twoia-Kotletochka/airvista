@@ -552,6 +552,12 @@
     <Content Include="Views\Home\payment_method.cshtml" />
     <Content Include="Views\Home\input_data.cshtml" />
     <Content Include="Views\Home\successful_reservation.cshtml" />
+    <Content Include="Views\Home\bilet_search_post_one_side.cshtml" />
+    <Content Include="Views\Home\choose_tariff_one_side.cshtml" />
+    <Content Include="Views\Home\choose_place_one_side.cshtml" />
+    <Content Include="Views\Home\input_data_one_side.cshtml" />
+    <Content Include="Views\Home\payment_method_one_side.cshtml" />
+    <Content Include="Views\Home\successful_reservation_one_side.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
